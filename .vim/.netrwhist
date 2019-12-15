@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/paul/fit2085/week6'
+let g:netrw_dirhist_2='/home/paul/fit2085/week6/task2'
+let g:netrw_dirhist_3='/home/el9/E70949/.config/fish'
+let g:netrw_dirhist_4='/home/el9/E70949/pic_sp4_2017/a1/solution'
+let g:netrw_dirhist_5='/home/el9/E70949/shared/prog_in_c/examples/AdvIO'
+let g:netrw_dirhist_6='/home/el9/E70949/bar'
+let g:netrw_dirhist_7='/home/el9/E70949/shared/prog_in_c/lectures/Week-02'
