@@ -1,119 +1,3 @@
-date
-date -u
-date
-date -u
-man date
-apropos stdio
-man -s3 flockfile
-ls /home
-quota
-ls /
-ls /home
-cd
-ls /home
-~
-ls /home/sh8
-ls /home/sh8/S3946168
-ls /home/sh8/S3496168
-ls /home/sh8/s3946168
-ls /home/sh8/s3496168
-cd ~e70949
-cd ~e70949/shared
-ls
-cd vimconfig
-ls
-cd /sh8.s3496168
-cd /sh8/s3496168
-ls /home/sh8/s3496168
-ls /home/sh8/s3496168/HDrive
-ls
-mv _vim .vim
-cd ~e70949/shared
-vim strlen.c
-cd /home/sh8/s3496168
-ls
-cd HDrive
-ls
-cd
-cd KDrive
-pwd
-cd
-cd HDrive
-?2~CDD?
- git init
-ls
-git add
-git add .
-git commit -m "First Commit"
-git global username bcgibson22
-git config --global username bcgibson22
-git config --global user.name bcgibson22
-git config --global user.email bcgibson22@gmail.com
-git config --global user.name
-git commit -m "First Commit"
-man date
-apropos stdio
-man -s3 flockfile
-mkdir courses/maths
-mkdir courses
-mkdir courses/maths
-mkdir courses/programming
-mkdir courses/databases
-ls courses
-cd courses
-pwd
-ls
-mkdir induction
-cd courses
-cd ..
-ls
-cd ~/..
-ls
-pwd
-cd /home/../tmp
-ls
-pwd
-cd 
-ls
-cd HDrive
-ls
-pwd
-cd
-pwd
-ls
-cd courses
-ls
-~/../../
-~/../..
-~/..
-~
-cd ~/../..
-cd courses/../courses/../courses
-ls
-cd
-ls
-cd courses/../courses/../courses
-mkdir algebra
-mkdir calculus
-rm algebra
-mv algebra /maths/algebra
-mv /algebra /maths/algebra
-mv algebra maths/algebra
-mv algebra maths/clalculus
-mv calculus maths/calculus
-ls -a
-cd
-ls -a
-cd courses
-mkdir /.hidden
-mkdir courses/.hidden
-cd
-mkdir courses/.hidden
-ls
-ls -a
-cd courses
-ls -a
-cd
 cd /.courses
 ls courses
 ls ./courses
@@ -615,3 +499,502 @@ ls
 rm -r vimconfig
 ls
 vim strlen.c
+ls
+ls -l
+vim 400tes.txt
+s -l
+ls -l
+chmod 400 400tes.txt
+mv 400tes.txt 400test.txt
+ls -l
+vim read.txt
+chmod u+rw,go-rwx read.txt
+ls -l
+chmod u+r-wx,go-rwx read.txt
+ls -l
+ls
+mkdir .vim
+s -a
+ls -a\
+ls -a
+cd .vm
+cd .vim
+ls
+cd
+ls
+ls -a
+mv .vimrc ../.vim
+mv .vimrc .vim
+mv .viminfo .vim
+ls
+cd .vim
+ls
+ls -a
+cd
+vim read.txt
+s
+ls
+
+cd .vim
+la
+ls
+ls -a
+mv .viminfo ~/
+mv .vimrc ~/
+cd ..
+ls
+ls -a
+vim read.txt
+gcc -ansi -Wall -pedantic -o runme firstProgram.c
+gcc -ansi -Wall -pedantic -o runme first.c
+/runme
+./runme
+cd ~e70949/shared/prog_in_c/
+ls
+cd examples
+ls
+cd
+git add.
+git .add
+git add .
+git commit -m "First commit-pardon the junk"
+git remote add origin 
+git remote add origin https://github.com/bcgibson22/Programming-In-C.git
+git remote -v
+git push origin master
+git push -f origin master
+gvim gv-one.txt
+apt-get install vim-gtk-3
+sudo apt-get install vim-gtk-3
+cd ~e70949/shared/
+ls
+cd ~e70949/shared/prog_in_c
+ls
+cd exampls
+cd examples
+ls
+cd ..
+cd tutes
+ls
+cd ..
+ls
+cd lectures
+ls
+cd week-02
+cd Week-02
+ls
+gss -ansi -Wall -pedantic hello.o -o hello
+gcc -ansi -Wall -pedantic hello.o -o hello
+gcc -ansi -Wall -pedantic hello.c -o hello
+cp hello.c ~/hello.c
+cd
+ls
+gcc -ansi -Wall -pedantic hello.c -o hello
+./hello
+mkdir tutorials
+cd tutorials
+mkdir wk2
+mkdir wk3
+mkdir wk4
+cd ..
+ls
+mv hello.c ~/tutorials/wk2/hello.c
+cd tutorials/wk2
+ls
+gcc -ansi -Wall -pedantic hello.c -o hello
+./hello
+ls
+gcc -ansi -Wall -pedantic -Wextra hello.c -o hello
+./hello
+cd ~e70949/shared/prog_in_c
+ls
+cd lectures
+ls
+cd Week-02
+ls
+cp switch.c ~/tutorials/switch.c
+cd
+ls
+cd tutorials
+ls
+mv switch.c /wk2 switch.c
+mv switch.c /wk2/switch.c
+mv switch.c /wk2/
+mv switch.c /wk2
+mv switch.c wk2/
+cd wk2
+ls
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd Week-02
+ls
+cp switch2.c ~/tutorials/wk2
+cd
+ls
+cd tutorials/wk2
+ls
+gcc -ansi -Wall -pendantic -Wextra -o runme switch.c
+gcc -ansi -Wall -pedantic -Wextra -o runme switch.c
+
+ /.switch
+ ./switch2
+gcc -ansi -Wall -pedantic -Wextra -o runme switch
+gcc -ansi -Wall -pedantic -Wextra swich.c -o switch
+gcc -ansi -Wall -pedantic -Wextra switch.c -o switch
+gcc -ansi -Wall -pedantic -Wextra switch2.c -o switch2
+./switch2
+vim switch.c
+vim switch2.c
+gcc -ansi -Wall -pedantic -Wextra switch2.c -o switch2
+./switch2
+vim switch2.c
+gcc -ansi -Wall -pedantic -Wextra switch2.c -o switch2
+./switch2
+vim switch2.c
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd Week-02
+ls
+cp while.c ~/tutroials/wk2/while.c
+cp while.c ~/tutorials/wk2/while.c
+cp whilegt.c ~/tutorials/wk2/whilegt.c
+cp whileglt.c ~/tutorials/wk2/whileglt.c
+cp dowhile.c ~/tutorials/wk2/dowhile.c
+cd ~/tutorials/wk2/
+ls
+gcc -ansi -Wall -pedantic -Wextra dowhile.c -o dowhile
+./dowhile
+vim dowhile.c
+vim while.c
+gcc -ansi -Wall -pedantic -Wextra while.c -o while
+./while
+vim wilegt.c
+vim whilegt.c
+ls
+vim whileglt.c
+gcc -ansi -Wall -pedantic -Wextra whileglt.c -o whileglt
+./whieglt
+./whileglt
+vim whileglt.c
+cd ~e70949/shared/prog_in_c/lectures
+s
+ls
+cd Week-02
+ls
+cp continue.c ~/tutorials/wk2/continue.c
+cd ~/tutorials/wk2/
+ls
+gcc -ansi -Wall -pendantic -Wextra continue.c -o continue
+gcc -ansi -Wall -pedantic -Wextra continue.c -o continue
+vim continue.c
+./continue
+vim continue.c
+vim hello.c
+cd tutorials/wk2/
+ls
+vim continue.s
+vim continue.c
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirtforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+ls
+cd tutorials/wk
+cd tutorials/wk2/
+ls
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+vim myfirstforloop.c
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+vim myfirstforloop.c
+./myfirstforloop
+gcc -ansi -Wall -pedantic -Wextra myfirstforloop.c -o myfirstforloop -lm
+./myfirstforloop
+cd tutorials/wk2/
+ls
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathom 
+./marathon
+/.marathon
+./marathon
+ls
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+./marathon
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+vim marathon.c
+gcc -ansi -Wall -pedantic -Wextra marathon.c -o marathon 
+./marathon
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+./star-one
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+./star-one
+vim star-one.c
+cd tutorials/wk2
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+vim star-one.c
+gcc -ansi -Wall -pedantic -Wextra star-one.c -o star-one 
+./star-one
+vim star-one.c
+vim star-two.c
+vim star-one.c
+vim star-two.c
+vim star-one.c
+vim star-two.c
+vim star-one.c
+vim star-two.c
+vim star-one.c
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+./star-two
+vim star-two.c
+./star-two
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+./star-two
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+./star-two
+vim star-two.c
+gcc -ansi -Wall -pedantic -Wextra star-two.c -o star-two 
+vim star-two.c
+./star-two
+vim star-two.c
+vim star-three.c
+gcc -ansi -Wall -pedantic -Wextra star-thee.c -o star-three 
+gcc -ansi -Wall -pedantic -Wextra star-three.c -o star-three 
+./star-three
+vim star-three.c
+gcc -ansi -Wall -pedantic -Wextra star-three.c -o star-three 
+./star-three
+vim star-three.c
+./star-three
+vim star-three.c
+gcc -ansi -Wall -pedantic -Wextra star-three.c -o star-three 
+./star-three
+vim star-three.c
+./star-three
+gcc -ansi -Wall -pedantic -Wextra star-three.c -o star-three 
+./star-three
+vim star-three.c
+gcc -ansi -Wall -pedantic -Wextra star-three.c -o star-three 
+./star-three
+vim star-three.c
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+gcc -ansi -Wall -pedantic -Wextra star-four.c -o star-four 
+./star-four
+vim star-four.c
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra star-rug.c -o star-rug 
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+vim rug.c
+./rug
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c
+./rug
+gcc -ansi -Wall -pedantic -Wextra rug.c -o rug 
+./rug
+vim rug.c

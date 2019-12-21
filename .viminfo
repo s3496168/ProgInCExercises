@@ -17,10 +17,11 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
-:q
-:NERDTree
 :wq
+:q
+:s
+:q!
+:NERDTree
 :wqa
 :w
 :$
@@ -77,7 +78,6 @@ $
 :>qa
 :qa'
 :ConqueTermVSplit fish
-:s
 :a
 :'<,'>qa
 :tabnew ThreadPool.cpp
@@ -183,104 +183,277 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	i
+""0	LINE	0
+	#include <stdio.h>
+	#include <stdlib.h>
+	
+	int main(void) {
+	    int i;
 "1	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf("%d\n", i );
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 1; i < 12; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <= 1; ++ii) {
+	                printf(" ");
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("* ");
+	            }
+	        } else {
+	            for (k = 0; k <= 11; ++k) {
+	                printf("* ");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "2	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf("%d\n", i i);
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 1; i < 12; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <= 1; ++ii) {
+	                printf(" ");
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("* ");
+	            }
+	        } else {
+	            for (k = 0; k <= 11; ++k) {
+	                printf("* ");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "3	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf("%d\n", i);
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 1; i < 12; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <= 1; ++ii) {
+	                printf(" ");
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("*");
+	            }
+	        } else {
+	            for (k = 0; k <= 11; ++k) {
+	                printf("*");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "4	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf("%s\n", i);
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 0; i < 11; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <= 1; ++ii) {
+	                printf(" ");
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("*");
+	            }
+	        } else {
+	            for (k = 0; k <= 11; ++k) {
+	                printf("*");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "5	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf("%s\n", i);
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 0; i < 11; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <= 1; ++i) {
+	                printf(" ");
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("*");
+	            }
+	        } else {
+	            for (k = 0; k <= 11; ++k) {
+	                printf("*");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "6	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        int i;
-	        printf(i);
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int ii;
+	    int j;
+	    int k;
+	    for (i = 0; i < 11; ++i) {
+	        if (i % 2 == 0) {
+	            for (ii = 0; ii <=1; ++i){
+	                printf(" "):
+	            }
+	            for (j = 1; j <= 10; ++j) {
+	                printf("*");
+	            }
+	        } else {
+	            for (k=0; k<=11; ++k) {
+	            printf("*");
+	            }
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "7	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
+	
+	int main(void) {
 	    int i;
-	        return EXIT_SUCCESS;
+	    int j;
+	    int k;
+	    for (i = 0; i < 11; ++i) {
+	        if (i % 2 == 0) {
+	            for (j = 0; j <= 10; ++j) {
+	                printf("*");
+	            }
+	        } else {
+	            printf("odd");
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "8	LINE	0
 	#include <stdio.h>
 	#include <stdlib.h>
-	int main(void)
-	{
-	        return EXIT_SUCCESS;
+	
+	int main(void) {
+	    int i;
+	    int j;
+	    int k;
+	    for (i = 0; i < 11; ++i) {
+	        if (i % 2 == 0) {
+	            for (int j; j <=10; ++j){
+	                printf("*");
+	            }
+	        } else {
+	            printf("odd");
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "9	LINE	0
 	#include <stdio.h>
-	#include < stdlib.h >
-	int main(void)
-	{
-	        return EXIT_SUCCESS;
+	#include <stdlib.h>
+	
+	int main(void) {
+	    int i;
+	    for (i = 0; i < 11; ++i) {
+	        if (i%2==0) {
+	            printf("even");
+	        } else {
+	            printf("odd");
+	        }
+	        printf("\n");
+	    }
+	    return EXIT_SUCCESS;
 	}
 "a	CHAR	0
 	':
 "-	CHAR	0
-	i
+	(
 
 # global variables:
 
 # File marks:
-'0  4  12  ~/NERD_tree_1
-'1  1  7  ~/read.txt
-'2  4  3  ~/400tes.txt
-'3  4  0  ~/my-copy/NERD_tree_1
-'4  2  0  ~/demo.txt
-'5  6  25  ~/error.c
-'6  9  17  ~/error.c
-'7  53  61  ~/.vimrc
-'8  9  17  ~/error.c
-'9  9  10  ~/error.c
+'0  19  16  ~/tutorials/wk2/rug.c
+'1  26  25  ~/tutorials/wk2/rug.c
+'2  26  21  ~/tutorials/wk2/rug.c
+'3  26  36  ~/tutorials/wk2/rug.c
+'4  26  27  ~/tutorials/wk2/rug.c
+'5  26  26  ~/tutorials/wk2/rug.c
+'6  26  21  ~/tutorials/wk2/rug.c
+'7  26  26  ~/tutorials/wk2/rug.c
+'8  26  22  ~/tutorials/wk2/rug.c
+'9  26  20  ~/tutorials/wk2/rug.c
 
 # Jumplist (newest first):
+-'  19  16  ~/tutorials/wk2/rug.c
+-'  26  16  ~/tutorials/wk2/rug.c
+-'  1  8  ~/tutorials/wk2/star-four.c
+-'  26  8  ~/tutorials/wk2/star-four.c
+-'  40  8  ~/tutorials/wk2/star-four.c
+-'  1  0  ~/tutorials/wk2/star-three.c
+-'  21  8  ~/tutorials/wk2/star-three.c
+-'  28  8  ~/tutorials/wk2/star-three.c
+-'  1  0  ~/tutorials/wk2/star-two.c
+-'  23  4  ~/tutorials/wk2/star-two.c
+-'  1  0  ~/tutorials/wk2/star-one.c
+-'  24  0  ~/tutorials/wk2/star-two.c
+-'  25  0  ~/tutorials/wk2/star-two.c
+-'  16  0  ~/tutorials/wk2/star-one.c
+-'  1  0  ~/star-one.c
+-'  10  34  ~/tutorials/wk2/marathon.c
+-'  13  0  ~/tutorials/wk2/marathon.c
+-'  10  8  ~/tutorials/wk2/myfirstforloop.c
+-'  14  8  ~/tutorials/wk2/myfirstforloop.c
+-'  1  0  ~/myfirstforloop.c
+-'  1  0  ~/tutorials/wk2/continue.c
+-'  1  0  ~/tutorials/wk2/continue.s
+-'  1  0  ~/tutorials/wk2/hello.c
+-'  1  0  ~/tutorials/wk2/whileglt.c
+-'  1  0  ~/tutorials/wk2/whilegt.c
+-'  1  0  ~/tutorials/wk2/wilegt.c
+-'  1  0  ~/tutorials/wk2/while.c
+-'  1  0  ~/tutorials/wk2/dowhile.c
+-'  23  19  ~/tutorials/wk2/switch2.c
+-'  49  4  ~/tutorials/wk2/switch2.c
+-'  35  0  ~/tutorials/wk2/switch.c
+-'  1  0  ~/tutorials/wk2/switch.c
+-'  1  0  ~/gv-one.txt
 -'  4  12  ~/NERD_tree_1
 -'  24  2  ~/NERD_tree_1
 -'  1  0  ~/NERD_tree_1
@@ -346,185 +519,261 @@ $
 -'  179  72  ~/pic_sp4_2019/a1/options.c
 -'  855  16  ~/pic_sp4_2019/a1/options.c
 -'  17  8  ~/pic_sp4_2019/a1/menu.h
--'  4  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  21  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  1  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  210  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/main.c
--'  44  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  61  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  388  34  ~/pic_sp4_2019/a1/menu.c
--'  374  45  ~/pic_sp4_2019/a1/menu.c
--'  3  25  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  0  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  11  ~/pic_sp4_2019/.git/COMMIT_EDITMSG
--'  250  24  ~/pic_sp4_2019/a1/helpers.c
--'  166  35  ~/pic_sp4_2019/a1/helpers.c
--'  277  40  ~/pic_sp4_2019/a1/helpers.c
--'  80  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  1  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  17  8  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  40  0  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  68  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  58  18  ~/git/pic_sp4_2019_startup/a1/options.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.c
--'  15  8  ~/git/pic_sp4_2019_startup/a1/menu.c
--'  50  1  ~/git/pic_sp4_2019_startup/a1/main.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/main.h
--'  12  0  ~/git/pic_sp4_2019_startup/a1/helpers.h
--'  1  0  ~/git/pic_sp4_2019_startup/a1/helpers.c
--'  577  24  ~/pic_sp4_2019/a1/menu.c
--'  179  72  ~/pic_sp4_2019/a1/options.c
 
 # History of marks within files (newest to oldest):
 
-> ~/read.txt
-	"	1	2
-	^	1	8
-	.	1	7
-	+	1	7
+> ~/tutorials/wk2/rug.c
+	"	19	16
+	+	26	0
+	+	26	0
+	+	26	0
+	+	26	23
+	+	26	0
+	+	26	29
+	+	26	0
+	+	26	0
+	+	26	27
+	+	26	27
+	+	26	20
+	+	26	20
+	+	26	17
+	+	26	23
+	+	26	22
+	+	26	9
+	+	26	11
+	+	26	0
+	+	26	27
+	+	26	21
+	+	26	34
+	+	26	12
+	+	26	20
+	+	26	10
+	+	26	11
+	+	26	0
+	+	26	23
+	+	26	21
+	+	26	37
+	+	26	28
+	+	26	0
+	+	26	26
+	+	26	27
+	+	26	36
+	+	26	21
+	+	26	25
+	+	26	25
 
-> ~/NERD_tree_1
-	"	4	12
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/400tes.txt
-	"	4	3
-	^	4	4
-	.	4	3
-	+	4	3
-
-> ~/my-copy/strlen.c
-	"	1	0
-
-> ~/my-copy/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-
-> ~/demo.txt
-	"	2	0
-
-> ~/error.c
-	"	6	25
-	+	9	0
-	+	9	23
-	+	9	11
-	+	9	12
-	+	9	0
-	+	9	0
-	+	9	18
-	+	9	17
-	+	9	21
-	+	9	0
-	+	9	0
-	+	9	18
-	+	9	6
-	+	9	18
-	+	9	9
-	+	9	17
-	+	9	22
-	+	9	17
-	+	9	25
-	+	9	25
-
-> ~/.vimrc
-	"	53	61
-	^	53	62
-	.	53	61
-	+	52	29
-	+	53	61
-
-> ~/pic_sp4_2019/a1/NERD_tree_1
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/pic_sp4_2019/a1/helpers.c
-	"	210	0
-	+	277	0
-	+	277	39
-	+	277	0
-
-> ~/pic_sp4_2019/a1/main.c
-	"	1	0
-
-> ~/pic_sp4_2019/a1/menu.c
-	"	388	34
-	+	577	22
-	+	577	22
-	+	577	46
-	+	577	46
-	+	577	33
-	+	577	33
-	+	577	16
-	+	577	0
-	+	577	16
-	+	577	0
-	+	577	0
-	+	577	34
-	+	577	34
-	+	577	33
-	+	577	0
-	+	577	0
-	+	577	65
-
-> ~/pic_sp4_2019/.git/MERGE_MSG
-	"	3	25
-	^	3	26
-	.	3	25
-	+	3	25
-
-> ~/pic_sp4_2019/.git/COMMIT_EDITMSG
-	"	1	11
-	^	1	12
-	.	1	11
-	+	3	1
-	+	4	18
-	+	1	64
-	+	3	52
-	+	1	65
-	+	2	6
-	+	1	11
-
-> ~/shared/prog_in_c/assignments/a1/startup/main.c
-	"	80	0
-
-> ~/shared/prog_in_c/assignments/a1/startup/NERD_tree_1
-	"	7	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/shared/prog_in_c/assignments/a1/startup/menu.h
-	"	17	8
+> ~/tutorials/wk2/star-four.c
+	"	1	8
 	+	40	0
 	+	40	0
+	+	40	0
+	+	40	0
+	+	40	0
+	+	40	0
+	+	40	21
+	+	40	23
+	+	40	24
+	+	40	0
+	+	40	12
+	+	40	15
+	+	40	25
+	+	40	12
+	+	40	20
+	+	40	20
+	+	40	24
+	+	40	9
+	+	40	31
+	+	40	20
+	+	40	20
+	+	40	14
+	+	40	20
+	+	40	17
+	+	40	17
 
-> ~/git/pic_sp4_2019_startup/a1/options.h
-	"	68	0
-	^	92	38
-	.	92	0
-	+	103	0
-	+	103	0
-	+	103	0
-	+	92	0
+> ~/tutorials/wk2/star-three.c
+	"	1	0
+	+	28	0
+	+	28	9
+	+	28	0
+	+	28	30
+	+	28	23
+	+	28	21
+	+	28	23
+	+	28	21
+	+	28	25
+	+	28	17
+	+	28	17
 
-> ~/git/pic_sp4_2019_startup/a1/options.c
-	"	58	18
-	.	65	0
-	+	65	0
+> ~/tutorials/wk2/star-two.c
+	"	1	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	0
+	+	24	5
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	15
+	+	23	9
+	+	23	28
+	+	23	26
+	+	23	25
+	+	23	17
+	+	23	25
+	+	23	27
+	+	23	20
+	+	23	13
+	+	23	20
+	+	23	17
+	+	23	13
+	+	23	9
+	+	23	0
+	+	23	27
+	+	23	23
+	+	23	20
+	+	23	12
+	+	23	12
+	+	23	11
+	+	23	25
+	+	23	20
+	+	23	14
 
-> ~/git/pic_sp4_2019_startup/a1/NERD_tree_1
-	"	13	6
-	.	1	0
-	+	1	0
+> ~/tutorials/wk2/star-one.c
+	"	1	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	16
+	+	16	0
+	+	16	17
+	+	16	23
+	+	16	17
+	+	16	20
+	+	16	22
+	+	16	9
+	+	16	30
+	+	16	0
+	+	16	22
+	+	16	21
+	+	16	20
+	+	16	8
+
+> ~/star-one.c
+	"	1	0
+
+> ~/tutorials/wk2/marathon.c
+	"	10	34
+	+	13	28
+	+	13	13
+	+	13	28
+	+	13	0
+	+	13	30
+	+	13	8
+	+	13	3
+	+	13	23
+	+	13	0
+	+	13	4
+	+	13	23
+	+	13	17
+	+	13	7
+	+	13	4
+	+	13	18
+	+	13	22
+	+	13	44
+	+	13	35
+	+	13	29
+	+	13	15
+	+	13	34
+	+	13	10
+	+	13	19
+	+	13	24
+	+	13	30
+	+	13	0
+	+	13	12
+	+	13	14
+	+	13	5
+	+	13	9
+	+	13	2
+	+	13	5
+	+	13	2
+	+	13	2
+	+	13	23
+
+> ~/tutorials/wk2/myfirstforloop.c
+	"	10	8
+	+	14	0
+	+	14	39
+	+	14	35
+	+	14	53
+	+	14	21
+	+	14	21
+	+	14	18
+	+	14	20
+	+	14	57
+	+	14	53
+	+	14	19
+	+	14	56
+	+	14	20
+	+	14	18
+	+	14	22
+	+	14	13
+	+	14	6
+	+	14	10
+	+	14	22
+	+	14	21
+	+	14	0
+	+	14	25
+	+	14	30
+	+	14	8
+	+	14	9
+	+	14	10
+	+	14	23
+	+	14	0
+	+	14	18
+	+	14	16
+	+	14	22
+	+	14	23
+	+	14	22
+	+	14	22
+	+	14	9
+	+	14	10
+	+	14	0
+	+	14	22
+	+	14	8
+	+	14	17
+	+	14	24
+	+	14	17
+	+	14	11
+	+	14	17
+	+	14	17
+	+	14	18
+	+	14	21
+	+	14	8
+	+	14	8
+	+	14	59
+	+	14	0
+	+	14	23
+	+	14	13
+	+	14	58
+	+	14	58
+	+	14	0
+	+	14	23
+	+	14	17
+	+	14	15
+	+	14	0
+	+	14	51
+	+	14	8
+	+	14	21
+	+	14	18
+	+	14	58
+	+	14	24
+	+	14	32
+	+	14	31
+	+	14	15
+	+	14	32
+	+	14	0
+
+> ~/myfirstforloop.c
+	"	1	0
