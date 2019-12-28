@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/invalid denom
+~MSle0~/_s
 
 # Last Substitute Search Pattern:
 ~MSle0&?
@@ -18,9 +18,11 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:q
-:s
 :q!
+:q
+:WQ
+:!
+::q
 :NERDTree
 :wqa
 :w
@@ -78,6 +80,7 @@ $
 :>qa
 :qa'
 :ConqueTermVSplit fish
+:s
 :a
 :'<,'>qa
 :tabnew ThreadPool.cpp
@@ -101,6 +104,17 @@ $
 :236
 
 # Search String History (newest to oldest):
+?/_s
+?/choice
+?/main
+?/was
+?/menu
+?/malloc
+?/print
+?/matrix_sum
+?/summat
+?/othermat
+?/matrix
 ?/invalid denom
 ?/guess
 ?/process_menu
@@ -127,7 +141,6 @@ $
 ?/help
 ?/assert(FALSE)
 ? \<single_thread\>
-?/main
 ? \<read_lock\>
 ?/read
 ?/lock
@@ -183,296 +196,569 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
-	
-	int main(void) {
-	    int i;
+""0	CHAR	0
+	j
 "1	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 1; i < 12; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <= 1; ++ii) {
-	                printf(" ");
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("* ");
-	            }
-	        } else {
-	            for (k = 0; k <= 11; ++k) {
-	                printf("* ");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "2	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 1; i < 12; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <= 1; ++ii) {
-	                printf(" ");
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("* ");
-	            }
-	        } else {
-	            for (k = 0; k <= 11; ++k) {
-	                printf("* ");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "3	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 1; i < 12; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <= 1; ++ii) {
-	                printf(" ");
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("*");
-	            }
-	        } else {
-	            for (k = 0; k <= 11; ++k) {
-	                printf("*");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "4	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 0; i < 11; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <= 1; ++ii) {
-	                printf(" ");
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("*");
-	            }
-	        } else {
-	            for (k = 0; k <= 11; ++k) {
-	                printf("*");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "5	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 0; i < 11; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <= 1; ++i) {
-	                printf(" ");
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("*");
-	            }
-	        } else {
-	            for (k = 0; k <= 11; ++k) {
-	                printf("*");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "6	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int ii;
-	    int j;
-	    int k;
-	    for (i = 0; i < 11; ++i) {
-	        if (i % 2 == 0) {
-	            for (ii = 0; ii <=1; ++i){
-	                printf(" "):
-	            }
-	            for (j = 1; j <= 10; ++j) {
-	                printf("*");
-	            }
-	        } else {
-	            for (k=0; k<=11; ++k) {
-	            printf("*");
-	            }
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "7	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int j;
-	    int k;
-	    for (i = 0; i < 11; ++i) {
-	        if (i % 2 == 0) {
-	            for (j = 0; j <= 10; ++j) {
-	                printf("*");
-	            }
-	        } else {
-	            printf("odd");
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "8	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    int j;
-	    int k;
-	    for (i = 0; i < 11; ++i) {
-	        if (i % 2 == 0) {
-	            for (int j; j <=10; ++j){
-	                printf("*");
-	            }
-	        } else {
-	            printf("odd");
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "9	LINE	0
-	#include <stdio.h>
-	#include <stdlib.h>
+	#include "main.h"
 	
-	int main(void) {
-	    int i;
-	    for (i = 0; i < 11; ++i) {
-	        if (i%2==0) {
-	            printf("even");
-	        } else {
-	            printf("odd");
-	        }
-	        printf("\n");
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
+	#include <ctype.h>
+	#include "options.h"
+	#include "menu.c"
+	
+	/*added definitions*/
+	#define SCREENWIDTH 80
+	
+	/**
+	 * extracts the seed (a long int) from a string passed in
+	 **/
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
 	    }
-	    return EXIT_SUCCESS;
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
+	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
+	/**
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "a	CHAR	0
 	':
 "-	CHAR	0
-	(
+	j
 
 # global variables:
 
 # File marks:
-'0  19  16  ~/tutorials/wk2/rug.c
-'1  26  25  ~/tutorials/wk2/rug.c
-'2  26  21  ~/tutorials/wk2/rug.c
-'3  26  36  ~/tutorials/wk2/rug.c
-'4  26  27  ~/tutorials/wk2/rug.c
-'5  26  26  ~/tutorials/wk2/rug.c
-'6  26  21  ~/tutorials/wk2/rug.c
-'7  26  26  ~/tutorials/wk2/rug.c
-'8  26  22  ~/tutorials/wk2/rug.c
-'9  26  20  ~/tutorials/wk2/rug.c
+'0  11  35  ~/assignment-one/readme.txt
+'1  77  34  ~/assignment-one/main.c
+'2  103  34  ~/assignment-one/main.c
+'3  103  36  ~/assignment-one/main.c
+'4  2  0  ~/assignment-one/readme.txt
+'5  103  4  ~/assignment-one/main.c
+'6  103  27  ~/assignment-one/main.c
+'7  87  19  ~/assignment-one/menu.c
+'8  103  4  ~/assignment-one/main.c
+'9  103  4  ~/assignment-one/main.c
 
 # Jumplist (newest first):
--'  19  16  ~/tutorials/wk2/rug.c
--'  26  16  ~/tutorials/wk2/rug.c
--'  1  8  ~/tutorials/wk2/star-four.c
--'  26  8  ~/tutorials/wk2/star-four.c
--'  40  8  ~/tutorials/wk2/star-four.c
--'  1  0  ~/tutorials/wk2/star-three.c
--'  21  8  ~/tutorials/wk2/star-three.c
--'  28  8  ~/tutorials/wk2/star-three.c
--'  1  0  ~/tutorials/wk2/star-two.c
--'  23  4  ~/tutorials/wk2/star-two.c
--'  1  0  ~/tutorials/wk2/star-one.c
--'  24  0  ~/tutorials/wk2/star-two.c
--'  25  0  ~/tutorials/wk2/star-two.c
--'  16  0  ~/tutorials/wk2/star-one.c
--'  1  0  ~/star-one.c
--'  10  34  ~/tutorials/wk2/marathon.c
--'  13  0  ~/tutorials/wk2/marathon.c
--'  10  8  ~/tutorials/wk2/myfirstforloop.c
--'  14  8  ~/tutorials/wk2/myfirstforloop.c
--'  1  0  ~/myfirstforloop.c
--'  1  0  ~/tutorials/wk2/continue.c
--'  1  0  ~/tutorials/wk2/continue.s
--'  1  0  ~/tutorials/wk2/hello.c
--'  1  0  ~/tutorials/wk2/whileglt.c
--'  1  0  ~/tutorials/wk2/whilegt.c
--'  1  0  ~/tutorials/wk2/wilegt.c
--'  1  0  ~/tutorials/wk2/while.c
--'  1  0  ~/tutorials/wk2/dowhile.c
--'  23  19  ~/tutorials/wk2/switch2.c
--'  49  4  ~/tutorials/wk2/switch2.c
--'  35  0  ~/tutorials/wk2/switch.c
--'  1  0  ~/tutorials/wk2/switch.c
--'  1  0  ~/gv-one.txt
--'  4  12  ~/NERD_tree_1
--'  24  2  ~/NERD_tree_1
--'  1  0  ~/NERD_tree_1
--'  1  0  ~/read.txt
--'  4  3  ~/400tes.txt
--'  1  0  ~/400tes.txt
--'  4  0  ~/my-copy/NERD_tree_1
--'  5  2  ~/my-copy/NERD_tree_1
--'  1  0  ~/my-copy/NERD_tree_1
--'  1  0  ~/my-copy/strlen.c
--'  2  0  ~/demo.txt
--'  1  0  ~/demo.txt
+-'  11  35  ~/assignment-one/readme.txt
+-'  2  0  ~/assignment-one/readme.txt
+-'  77  34  ~/assignment-one/main.c
+-'  103  4  ~/assignment-one/main.c
+-'  1  0  ~/assignment-one/readme.txt
+-'  87  19  ~/assignment-one/menu.c
+-'  1  0  ~/assignment-one/menu.c
+-'  172  0  ~/assignment-one/menu.c
+-'  4  0  ~/assignment-one/menu.h
+-'  27  0  ~/assignment-one/menu.h
+-'  1  0  ~/assignment-one/options.cvim
+-'  1  0  ~/assignment-one/options.h
+-'  95  0  ~/assignment-one/options.h
+-'  67  0  ~/assignment-one/options.c
+-'  68  0  ~/assignment-one/options.c
+-'  1  0  ~/assignment-one/shared.h
+-'  11  0  ~/assignment-one/shared.h
+-'  1  0  ~/assignment-one/helpers.c
+-'  2  0  ~/assignment-one/helpers.c
+-'  1  0  ~/assignment-one/helpers.h
+-'  13  0  ~/assignment-one/helpers.h
+-'  1  0  ~/assignment-one/helper.h
+-'  2  0  ~/assignment-one/helper.h
+-'  1  0  ~/main.c
+-'  173  4  ~/assignment-one/menu.c
+-'  1  0  ~/tutorials/wk3/strtol_example.c
+-'  1  0  ~/strtol_exercise.c
+-'  1  0  ~/menu.c
+-'  14  4  ~/tutorials/wk3/strtol_exercise.c
+-'  1  0  ~/assignment-one/strtol_exercise.c
+-'  1  0  ~/tutorials/wk3/strtol_exercise.c
+-'  38  0  ~/assignment-one/menu.h
+-'  1  0  ~/assignment-one/main.h
+-'  32  4  ~/assignment-one/test.c
+-'  43  0  ~/assignment-one/test.c
+-'  1  0  ~/test.c
+-'  1  0  ~/assignment-one/test.
+-'  174  0  ~/assignment-one/menu.c
+-'  65  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/shaker.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/shaker.c
+-'  2  18  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
+-'  1  0  ~/assignment-one/maiin.c
+-'  2  0  ~/assignment-one/main.h
+-'  1  0  ~/assignment-one/herleprs.c
+-'  44  4  ~/assignment-one/test.c
+-'  55  4  ~/assignment-one/test.c
+-'  1  28  /home/el9/E70949/shared/prog_in_c/examples/DynAlloc/malloc_1.c
+-'  106  72  /home/el9/E70949/shared/prog_in_c/examples/DynAlloc/malloc_1.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/examples/DynAlloc/maoc_1.c
+-'  1  0  ~/tutorials/wk3/strtol.c
+-'  27  0  ~/tutorials/wk3/matrix_add.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/examples/matrix_add.c
+-'  37  29  ~/tutorials/wk3/matrix_add.c
+-'  28  17  ~/tutorials/wk3/matrix_add.c
+-'  1  5  ~/tutorials/wk3/matrix_add.c
+-'  2  0  ~/tutorials/wk3/matrix_add.c
+-'  49  0  ~/tutorials/wk3/matrix_add.c
+-'  1  0  ~/tutorials/wk3/matrix_add
+-'  1  17  ~/assignment-one/main
+-'  23  4  ~/tutorials/wk3/week-three-act-one.c
+-'  28  9  ~/tutorials/wk3/week-three-act-one.c
+-'  32  0  ~/tutorials/wk3/strtol_exercise.c
+-'  33  0  ~/tutorials/wk3/strtol_exercise.c
+-'  33  0  ~/tutorials/wk3/strtol_example.c
+-'  1  0  ~/tutorials/wk3/getchars.c
+-'  16  4  ~/tutorials/wk3/getchars.c
+-'  21  0  ~/tutorials/wk3/getchars.c
+-'  1  0  ~/tutorials/wk3/getname.c
+-'  22  0  ~/tutorials/wk3/getname.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/getname.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/enumtostring.c
+-'  2  0  ~/tutorials/wk3/size.c
+-'  1  0  ~/tutorials/wk3/size.c
 -'  6  25  ~/error.c
 -'  9  8  ~/error.c
 -'  53  61  ~/.vimrc
 -'  52  0  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  48  0  ~/NERD_tree_1
--'  855  2  ~/NERD_tree_1
+-'  4  0  ~/NERD_tree_1
+-'  811  2  ~/NERD_tree_1
+-'  1  0  ~/NERD_tree_1
 -'  4  0  ~/pic_sp4_2019/a1/NERD_tree_1
 -'  21  2  ~/pic_sp4_2019/a1/NERD_tree_1
 -'  1  0  ~/pic_sp4_2019/a1/NERD_tree_1
@@ -481,8 +767,8 @@ $
 -'  1  0  ~/pic_sp4_2019/a1/main.c
 -'  44  0  ~/pic_sp4_2019/a1/NERD_tree_1
 -'  61  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  867  7  ~/NERD_tree_1
--'  1665  2  ~/NERD_tree_1
+-'  823  7  ~/NERD_tree_1
+-'  1621  2  ~/NERD_tree_1
 -'  388  34  ~/pic_sp4_2019/a1/menu.c
 -'  374  45  ~/pic_sp4_2019/a1/menu.c
 -'  3  25  ~/pic_sp4_2019/.git/MERGE_MSG
@@ -490,290 +776,380 @@ $
 -'  1  11  ~/pic_sp4_2019/.git/COMMIT_EDITMSG
 -'  250  24  ~/pic_sp4_2019/a1/helpers.c
 -'  166  35  ~/pic_sp4_2019/a1/helpers.c
--'  277  40  ~/pic_sp4_2019/a1/helpers.c
--'  80  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  1  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  17  8  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  40  0  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  68  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  58  18  ~/git/pic_sp4_2019_startup/a1/options.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.c
--'  15  8  ~/git/pic_sp4_2019_startup/a1/menu.c
--'  50  1  ~/git/pic_sp4_2019_startup/a1/main.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/main.h
--'  12  0  ~/git/pic_sp4_2019_startup/a1/helpers.h
--'  1  0  ~/git/pic_sp4_2019_startup/a1/helpers.c
--'  577  24  ~/pic_sp4_2019/a1/menu.c
--'  179  72  ~/pic_sp4_2019/a1/options.c
--'  855  16  ~/pic_sp4_2019/a1/options.c
--'  17  8  ~/pic_sp4_2019/a1/menu.h
--'  55  8  ~/pic_sp4_2019/a1/menu.h
--'  51  30  ~/.vimrc
--'  17  8  ~/pic_sp4_2019/a1/menu.h
--'  55  8  ~/pic_sp4_2019/a1/menu.h
--'  17  8  ~/pic_sp4_2019/a1/menu.h
--'  55  8  ~/pic_sp4_2019/a1/menu.h
--'  189  0  ~/pic_sp4_2019/a1/options.c
--'  179  72  ~/pic_sp4_2019/a1/options.c
--'  179  72  ~/pic_sp4_2019/a1/options.c
--'  855  16  ~/pic_sp4_2019/a1/options.c
--'  17  8  ~/pic_sp4_2019/a1/menu.h
 
 # History of marks within files (newest to oldest):
 
-> ~/tutorials/wk2/rug.c
-	"	19	16
-	+	26	0
-	+	26	0
-	+	26	0
-	+	26	23
-	+	26	0
-	+	26	29
-	+	26	0
-	+	26	0
-	+	26	27
-	+	26	27
-	+	26	20
-	+	26	20
-	+	26	17
-	+	26	23
-	+	26	22
-	+	26	9
-	+	26	11
-	+	26	0
-	+	26	27
-	+	26	21
-	+	26	34
-	+	26	12
-	+	26	20
-	+	26	10
-	+	26	11
-	+	26	0
-	+	26	23
-	+	26	21
-	+	26	37
-	+	26	28
-	+	26	0
-	+	26	26
-	+	26	27
-	+	26	36
-	+	26	21
-	+	26	25
-	+	26	25
+> ~/assignment-one/readme.txt
+	"	11	35
+	^	11	36
+	.	11	35
+	+	2	0
+	+	6	21
+	+	5	79
+	+	6	38
+	+	7	81
+	+	10	38
+	+	9	78
+	+	12	0
+	+	11	35
 
-> ~/tutorials/wk2/star-four.c
-	"	1	8
-	+	40	0
-	+	40	0
-	+	40	0
-	+	40	0
-	+	40	0
-	+	40	0
-	+	40	21
-	+	40	23
-	+	40	24
-	+	40	0
-	+	40	12
-	+	40	15
-	+	40	25
-	+	40	12
-	+	40	20
-	+	40	20
-	+	40	24
-	+	40	9
-	+	40	31
-	+	40	20
-	+	40	20
-	+	40	14
-	+	40	20
-	+	40	17
-	+	40	17
+> ~/assignment-one/main.c
+	"	77	34
+	+	103	70
+	+	103	269
+	+	103	70
+	+	103	70
+	+	103	11
+	+	103	7
+	+	103	75
+	+	103	59
+	+	103	116
+	+	103	37
+	+	103	4
+	+	103	4
+	+	103	135
+	+	103	32
+	+	103	43
+	+	103	4
+	+	103	4
+	+	103	0
+	+	103	5
+	+	103	59
+	+	103	4
+	+	103	5
+	+	103	4
+	+	103	60
+	+	103	0
+	+	103	1
+	+	103	59
+	+	103	15
+	+	103	9
+	+	103	22
+	+	103	21
+	+	103	26
+	+	103	22
+	+	103	7
+	+	103	5
+	+	103	8
+	+	103	18
+	+	103	29
+	+	103	21
+	+	103	0
+	+	103	0
+	+	103	19
+	+	103	29
+	+	103	25
+	+	103	26
+	+	103	0
+	+	103	12
+	+	103	8
+	+	103	10
+	+	103	0
+	+	103	25
+	+	103	9
+	+	103	18
+	+	103	29
+	+	103	10
+	+	103	24
+	+	103	26
+	+	103	24
+	+	103	59
+	+	103	15
+	+	103	10
+	+	103	5
+	+	103	11
+	+	103	4
+	+	103	15
+	+	103	4
+	+	103	14
+	+	103	13
+	+	103	12
+	+	103	0
+	+	103	38
+	+	103	62
+	+	103	0
+	+	103	56
+	+	103	8
+	+	103	13
+	+	103	0
+	+	103	0
+	+	103	0
+	+	103	5
+	+	103	4
+	+	103	10
+	+	103	0
+	+	103	13
+	+	103	10
+	+	103	30
+	+	103	0
+	+	103	30
+	+	103	0
+	+	103	19
+	+	103	23
+	+	103	26
+	+	103	0
+	+	103	20
+	+	103	34
+	+	103	13
+	+	103	27
+	+	103	36
+	+	103	35
+	+	103	34
 
-> ~/tutorials/wk2/star-three.c
+> ~/assignment-one/menu.c
+	"	87	19
+	^	87	20
+	.	93	0
+	+	173	118
+	+	173	14
+	+	173	115
+	+	173	118
+	+	173	14
+	+	173	116
+	+	173	111
+	+	173	14
+	+	173	111
+	+	173	51
+	+	173	52
+	+	173	52
+	+	173	52
+	+	173	109
+	+	173	14
+	+	173	118
+	+	173	113
+	+	173	18
+	+	173	26
+	+	173	0
+	+	173	0
+	+	173	32
+	+	173	32
+	+	173	32
+	+	173	32
+	+	173	32
+	+	173	32
+	+	173	33
+	+	173	78
+	+	173	25
+	+	172	25
+	+	172	0
+	+	172	4
+	+	172	30
+	+	172	30
+	+	172	30
+	+	172	30
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	32
+	+	172	32
+	+	172	32
+	+	172	32
+	+	172	32
+	+	172	30
+	+	172	30
+	+	172	0
+	+	172	0
+	+	172	11
+	+	172	7
+	+	172	27
+	+	172	0
+	+	172	15
+	+	172	0
+	+	172	9
+	+	172	27
+	+	172	0
+	+	172	41
+	+	172	0
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	31
+	+	172	13
+	+	172	12
+	+	172	38
+	+	172	0
+	+	172	12
+	+	172	38
+	+	172	12
+	+	172	38
+	+	172	12
+	+	172	38
+	+	172	12
+	+	172	38
+	+	172	12
+	+	172	38
+	+	172	12
+	+	172	38
+	+	172	0
+	+	172	23
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	172	13
+	+	172	39
+	+	93	0
+
+> ~/assignment-one/menu.h
+	"	4	0
+	+	38	51
+	+	38	50
+
+> ~/assignment-one/options.cvim
 	"	1	0
-	+	28	0
-	+	28	9
-	+	28	0
-	+	28	30
-	+	28	23
-	+	28	21
-	+	28	23
-	+	28	21
-	+	28	25
-	+	28	17
-	+	28	17
 
-> ~/tutorials/wk2/star-two.c
-	"	1	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	25	0
-	+	24	5
-	+	23	0
-	+	23	0
-	+	23	0
-	+	23	15
-	+	23	9
-	+	23	28
-	+	23	26
-	+	23	25
-	+	23	17
-	+	23	25
-	+	23	27
-	+	23	20
-	+	23	13
-	+	23	20
-	+	23	17
-	+	23	13
-	+	23	9
-	+	23	0
-	+	23	27
-	+	23	23
-	+	23	20
-	+	23	12
-	+	23	12
-	+	23	11
-	+	23	25
-	+	23	20
-	+	23	14
-
-> ~/tutorials/wk2/star-one.c
-	"	1	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	16
-	+	16	0
-	+	16	17
-	+	16	23
-	+	16	17
-	+	16	20
-	+	16	22
-	+	16	9
-	+	16	30
-	+	16	0
-	+	16	22
-	+	16	21
-	+	16	20
-	+	16	8
-
-> ~/star-one.c
+> ~/assignment-one/options.h
 	"	1	0
 
-> ~/tutorials/wk2/marathon.c
-	"	10	34
-	+	13	28
-	+	13	13
-	+	13	28
-	+	13	0
-	+	13	30
-	+	13	8
-	+	13	3
-	+	13	23
-	+	13	0
-	+	13	4
-	+	13	23
-	+	13	17
-	+	13	7
-	+	13	4
-	+	13	18
-	+	13	22
-	+	13	44
-	+	13	35
-	+	13	29
-	+	13	15
-	+	13	34
-	+	13	10
-	+	13	19
-	+	13	24
-	+	13	30
-	+	13	0
-	+	13	12
-	+	13	14
-	+	13	5
-	+	13	9
-	+	13	2
-	+	13	5
-	+	13	2
-	+	13	2
-	+	13	23
+> ~/assignment-one/options.c
+	"	67	0
 
-> ~/tutorials/wk2/myfirstforloop.c
-	"	10	8
-	+	14	0
-	+	14	39
-	+	14	35
-	+	14	53
-	+	14	21
-	+	14	21
-	+	14	18
-	+	14	20
-	+	14	57
-	+	14	53
-	+	14	19
-	+	14	56
-	+	14	20
-	+	14	18
-	+	14	22
-	+	14	13
-	+	14	6
-	+	14	10
-	+	14	22
-	+	14	21
-	+	14	0
-	+	14	25
-	+	14	30
-	+	14	8
-	+	14	9
-	+	14	10
-	+	14	23
-	+	14	0
-	+	14	18
-	+	14	16
-	+	14	22
-	+	14	23
-	+	14	22
-	+	14	22
-	+	14	9
-	+	14	10
-	+	14	0
-	+	14	22
-	+	14	8
-	+	14	17
-	+	14	24
-	+	14	17
-	+	14	11
-	+	14	17
-	+	14	17
-	+	14	18
-	+	14	21
-	+	14	8
-	+	14	8
-	+	14	59
-	+	14	0
-	+	14	23
-	+	14	13
-	+	14	58
-	+	14	58
-	+	14	0
-	+	14	23
-	+	14	17
-	+	14	15
-	+	14	0
-	+	14	51
-	+	14	8
-	+	14	21
-	+	14	18
-	+	14	58
-	+	14	24
-	+	14	32
-	+	14	31
-	+	14	15
-	+	14	32
-	+	14	0
+> ~/assignment-one/shared.h
+	"	1	0
 
-> ~/myfirstforloop.c
+> ~/assignment-one/helpers.c
+	"	1	0
+
+> ~/assignment-one/helpers.h
+	"	1	0
+
+> ~/assignment-one/helper.h
+	"	1	0
+
+> ~/main.c
+	"	1	0
+
+> ~/tutorials/wk3/strtol_example.c
+	"	1	0
+
+> ~/tutorials/wk3/strtol_exercise.c
+	"	14	4
+
+> ~/strtol_exercise.c
+	"	1	0
+
+> ~/menu.c
+	"	1	0
+
+> ~/assignment-one/strtol_exercise.c
+	"	1	0
+
+> ~/assignment-one/test.c
+	"	25	4
+	+	43	34
+	+	43	17
+	+	43	13
+	+	43	37
+	+	43	31
+	+	43	7
+	+	43	29
+	+	43	0
+	+	43	0
+	+	43	12
+	+	43	9
+	+	43	17
+	+	43	4
+	+	43	34
+	+	43	4
+	+	43	37
+	+	43	38
+	+	43	4
+	+	43	1
+	+	43	0
+	+	43	0
+	+	43	1
+	+	43	5
+	+	43	0
+	+	43	1
+	+	43	29
+	+	43	0
+	+	43	19
+	+	43	10
+	+	43	17
+	+	43	4
+	+	43	37
+	+	43	6
+	+	43	0
+	+	43	39
+	+	43	21
+	+	43	48
+	+	43	68
+	+	43	0
+	+	43	54
+	+	43	38
+	+	43	53
+	+	43	38
+	+	43	26
+	+	43	29
+	+	43	23
+	+	43	36
+	+	43	1
+	+	43	1
+	+	43	0
+	+	43	18
+	+	43	19
+	+	43	27
+	+	43	0
+	+	43	40
+	+	43	0
+	+	43	62
+	+	43	30
+	+	43	31
+	+	43	25
+	+	43	34
+	+	43	48
+	+	43	0
+	+	43	55
+	+	43	60
+	+	43	33
+	+	43	8
+	+	43	1
+	+	43	1
+	+	43	34
+	+	43	48
+	+	43	0
+	+	43	0
+	+	43	4
+	+	43	4
+	+	43	37
+	+	43	26
+	+	43	54
+	+	43	71
+	+	43	4
+	+	43	8
+	+	43	4
+	+	43	36
+	+	43	9
+	+	43	0
+	+	43	27
+	+	43	44
+	+	43	9
+	+	43	0
+	+	43	4
+	+	43	9
+	+	43	13
+	+	43	29
+	+	43	26
+	+	43	67
+	+	43	36
+	+	43	47
+	+	43	61
+	+	43	4
+	+	43	36
+
+> ~/assignment-one/main.h
+	"	1	0
+
+> ~/test.c
 	"	1	0
