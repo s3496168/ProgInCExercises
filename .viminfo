@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/_s
+~Msle0~/\<output\>
 
 # Last Substitute Search Pattern:
 ~MSle0&?
@@ -17,9 +17,12 @@
 $
 
 # Command Line History (newest to oldest):
+:q
 :wq
 :q!
-:q
+:wq!
+:::
+:wq:wq:
 :WQ
 :!
 ::q
@@ -104,6 +107,7 @@ $
 :236
 
 # Search String History (newest to oldest):
+? \<output\>
 ?/_s
 ?/choice
 ?/main
@@ -197,490 +201,445 @@ $
 
 # Registers:
 ""0	CHAR	0
-	j
+	 
 "1	LINE	0
-	#include "main.h"
+	#include <string.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include "week-three-act-one.c"
+	#define a_length 5
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	int str_function(char str[num], char* output, int ten);
+	char* something(void);
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
-	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
-	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
-	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
+	int main() {
+	    char* demo;
+	    printf("Please enter some numbers with a comma in between: ");
+	    demo = something();
+	    (void)demo;
+	    /*printf(demo);*/
+	    return 0;
 	}
+	char* something() {
+	    static char nums[a_length + 1];
+	    const char s[] = ",";
+	    char* token;
+	    char* end = end;
+	    long n;
+	    long q = 0;
+	    /*get first token*/
+	    long a = 0;
+	    /*    fgets(nums, 81, stdin);*/
+	    fgets(nums, 81, stdin);
+	    token = strtok(nums, s);
+	    /*walk through the other tokens*/
+	    printf(token);
+	    while (token != NULL) {
 	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
+	        n = str_function(token, end, 10);
+	        /*n = strtol(token, &end, 10); */
+	        printf("%ld\n", n);
+	        q = q + n;
 	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
+	        if (q > a) {
+	            a = q;
+	            printf("%ld\n", n);
+	        }
+	        token = strtok(NULL, s);
+	    }
+	
+	    printf("%ld\n", a);
+	    return 0;
+	}
 "2	LINE	0
-	#include "main.h"
+	#include <string.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include "week-three-act-one.c"
+	#define a_length 5
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	int str_function(char str[num], char* output, int ten);
+	char* something(void);
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
-	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
-	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
-	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
+	int main() {
+	    char* demo;
+	    printf("Please enter some numbers with a comma in between: ");
+	    demo = something();
+	    (void)demo;
+	    /*printf(demo);*/
+	    return 0;
 	}
+	char* something() {
+	    static char nums[a_length + 1];
+	    const char s[] = ",";
+	    char* token;
+	    char* end = end;
+	    long n;
+	    long q = 0;
+	    /*get first token*/
+	    long a = 0;
+	    /*    fgets(nums, 81, stdin);*/
+	    fgets(nums, 81, stdin);
+	    token = strtok(nums, s);
+	    /*walk through the other tokens*/
+	    printf(token);
+	    while (token != NULL) {
 	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
+	        n = str_function(token, end, 10);
+	        /*n = strtol(token, &end, 10); */
+	        printf("%ld\n", n);
+	        q = q + n;
 	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
+	        if (q > a) {
+	            a = q;
+	            printf("%ld\n", n);
+	        }
+	        token = strtok(NULL, s);
+	    }
+	
+	    printf("%ld\n", a);
+	    return 0;
+	}
 "3	LINE	0
-	#include "main.h"
+	#include <string.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include "week-three-act-one.c"
+	#define a_length 5
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	int str_function(char str[num], char* output, int ten);
+	char* something(void);
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
-	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
-	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
-	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
+	int main() {
+	    char* demo;
+	    printf("Please enter some numbers with a comma in between: ");
+	    demo = something();
+	    (void)demo;
+	    /*printf(demo);*/
+	    return 0;
 	}
+	char* something() {
+	    static char nums[a_length + 1];
+	    const char s[] = ",";
+	    char* token;
+	    char* end = end;
+	    long n;
+	    long q = 0;
+	    /*get first token*/
+	    long a = 0;
+	    /*    fgets(nums, 81, stdin);*/
+	    fgets(nums, 81, stdin);
+	    token = strtok(nums, s);
+	    /*walk through the other tokens*/
+	    printf(token);
+	    while (token != NULL) {
 	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
+	        n = str_function(token, end, 10);
+	        /*n = strtol(token, &end, 10); */
+	        printf("%ld\n",n);
+	        q = q + n;
 	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
+	        if (q > a) {
+	            a = q;
+	            printf("%ld\n", n);
+	        }
+	        token = strtok(NULL, s);
+	    }
+	
+	    printf("%ld\n", a);
+	    return 0;
+	}
 "4	LINE	0
-	#include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
+	#define num 80
 	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
+	int str_function();
+	/*
+	int main(void) {
+	    printf("Please enter a number: ");
+	    str_function();
+	    return EXIT_SUCCESS;
+	}*/
+	int str_function(char str[num], char *output, int ten) {
+	    /*
+	    char str[num];
+	    char* output;*/
+	    int intake;
 	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
+	    /*Get user input*/
+	    /*   printf("Please enter a number: ");*/
+	    /*fgets(str, num, stdin);*/
+	
+	    /*consume trailing newline*/
+	    str[strlen(str) - 1] = 0;
+	    intake = strtol(str, &output, ten);
+	    /*check to see if final character has been reached*/
+	    if (*output != '\0') {
+	        printf("Error! Data entered is not numeric. \n\n");
+	        return EXIT_FAILURE;
+	    } else {
+	
+	        /*printf("You gave: %ld\n\n", intake);*/
+	        return intake;
 	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
 	}
-	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
-	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "5	LINE	0
-	#include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include "week-three-act-two.c"
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	#define num 80
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
+	int str_function();
+	/*
+	int main(void) {
+	    printf("Please enter a number: ");
+	    str_function();
+	    return EXIT_SUCCESS;
+	}*/
+	int str_function(char str[num], char *output, int ten) {
+	    /*
+	    char str[num];
+	    char* output;*/
+	    int intake;
 	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
+	    /*Get user input*/
+	    /*   printf("Please enter a number: ");*/
+	    /*fgets(str, num, stdin);*/
 	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
+	    /*consume trailing newline*/
+	    str[strlen(str) - 1] = 0;
+	    intake = strtol(str, &output, ten);
+	    /*check to see if final character has been reached*/
+	    if (*output != '\0') {
+	        printf("Error! Data entered is not numeric. \n\n");
+	        return EXIT_FAILURE;
+	    } else {
+	
+	        /*printf("You gave: %ld\n\n", intake);*/
+	        return intake;
 	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
 	}
-	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
-	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "6	LINE	0
-	#include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	#define num 80
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
+	int str_function();
+	/*
+	int main(void) {
+	    printf("Please enter a number: ");
+	    str_function();
+	    return EXIT_SUCCESS;
+	}*/
+	int str_function(char str[num], char *output, int ten) {
+	    /*
+	    char str[num];
+	    char* output;*/
+	    long intake;
 	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
+	    /*Get user input*/
+	    /*   printf("Please enter a number: ");*/
+	    /*fgets(str, num, stdin);*/
 	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
+	    /*consume trailing newline*/
+	    str[strlen(str) - 1] = 0;
+	    intake = strtol(str, &output, ten);
+	    /*check to see if final character has been reached*/
+	    if (*output != '\0') {
+	        printf("Error! Data entered is not numeric. \n\n");
+	        return EXIT_FAILURE;
+	    } else {
+	
+	        /*printf("You gave: %ld\n\n", intake);*/
+	        return intake;
 	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
 	}
-	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
-	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "7	LINE	0
-	#include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	#define num 80
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
+	int str_function();
+	/*
+	int main(void) {
+	    printf("Please enter a number: ");
+	    str_function();
+	    return EXIT_SUCCESS;
+	}*/
+	int str_function(char str[num], char *output, int ten) {
+	    /*
+	    char str[num];
+	    char* output;*/
+	    long intake;
 	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
+	    /*Get user input*/
+	    /*   printf("Please enter a number: ");*/
+	    /*fgets(str, num, stdin);*/
 	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
+	    /*consume trailing newline*/
+	    str[strlen(str) - 1] = 0;
+	    intake = strtol(str, &output, ten);
+	    /*check to see if final character has been reached*/
+	    if (*output != '\0') {
+	        printf("Error! Data entered is not numeric. \n\n");
+	        return EXIT_FAILURE;
+	    } else {
+	
+	         printf("You gave: %ld\n\n", intake);
+	        return intake;
 	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
 	}
-	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
-	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "8	LINE	0
-	#include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	#define num 80
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
+	int str_function();
+	/*
+	int main(void) {
+	    printf("Please enter a number: ");
+	    str_function();
+	    return EXIT_SUCCESS;
+	}*/
+	int str_function(char str[num], char *output, int ten) {
+	    /*
+	    char str[num];
+	    char* output;*/
+	    int intake;
 	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
+	    /*Get user input*/
+	    /*   printf("Please enter a number: ");*/
+	    /*fgets(str, num, stdin);*/
 	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
+	    /*consume trailing newline*/
+	    str[strlen(str) - 1] = 0;
+	    intake = strtol(str, &output, ten);
+	    /*check to see if final character has been reached*/
+	    if (*output != '\0') {
+	        printf("Error! Data entered is not numeric. \n\n");
+	        return EXIT_FAILURE;
+	    } else {
+	
+	        /* printf("You gave: %d\n\n", intake);*/
+	        printf(intake);
+	        return intake;
 	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
 	}
-	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
-	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "9	LINE	0
-	#include "main.h"
+	#include <string.h>
+	#include <stdlib.h>
+	#include <stdio.h>
+	#include "week-three-act-one.c"
+	#define a_length 5
 	
-	#include "shared.h"
-	#include <limits.h>
-	#include <errno.h>
-	#include <ctype.h>
-	#include "options.h"
-	#include "menu.c"
+	int str_function(char str[num], char* output, int ten);
+	char* something(void);
 	
-	/*added definitions*/
-	#define SCREENWIDTH 80
-	
-	/**
-	 * extracts the seed (a long int) from a string passed in
-	 **/
-	static long get_seed(const char strseed[]) {
-	    char* end;
-	    long result;
-	#define DECIMAL 10
-	    /* try to extract a long integer */
-	    result = strtol(strseed, &end, DECIMAL);
-	    /* check it is within the valid range */
-	    if (errno == ERANGE) {
-	
-	        fprintf(stderr,
-	                "Error: %s is outside the allowed range for a "
-	                "long integer.\n",
-	                strseed);
-	        exit(IR_FAILURE);
-	    }
-	    /* search for any trailing characters */
-	    while (isspace(*end)) {
-	        ++end;
-	    }
-	    if (*end) {
-	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
-	        exit(IR_FAILURE);
-	    }
-	    return result;
+	int main() {
+	    char* demo;
+	    printf("Please enter some numbers with a comma in between: ");
+	    demo = something();
+	    (void)demo;
+	    /*printf(demo);*/
+	    return 0;
 	}
+	    char* something() {
+	        static char nums[a_length + 1];
+	        const char s[] = ",";
+	        char* token;
+	        char* end = end;
+	        long n;
+	        long q = 0;
+	        /*get first token*/
+	        long a = 0;
+	        /*    fgets(nums, 81, stdin);*/
+	        fgets(nums, 81, stdin);
+	        token = strtok(nums, s);
+	        /*walk through the other tokens*/
+	        printf(token);
+	        while (token != NULL) {
 	
-	enum {
-	    MIN_ARGS = 1,
-	    CORRECT_ARGS,
-	    OVERFLOW_ARGS
-	};
+	            n = str_function(token, end, 10);
+	            /*n = strtol(token, &end, 10); */
+	            q = q + n;
 	
-	#define SEED_ARG 1
-	/**
-	 * you are expected to READ the comments here and fill in your code BETWEEN the
+	            if (q > a) {
+	                a = q;
+	                printf("%ld\n", n);
+	            }
+	            token = strtok(NULL, s);
+	        }
+	
+	        printf("%ld\n", a);
+	        return 0;
+	    }
+	
 "a	CHAR	0
 	':
 "-	CHAR	0
-	j
+	 
 
 # global variables:
 
 # File marks:
-'0  11  35  ~/assignment-one/readme.txt
-'1  77  34  ~/assignment-one/main.c
-'2  103  34  ~/assignment-one/main.c
-'3  103  36  ~/assignment-one/main.c
-'4  2  0  ~/assignment-one/readme.txt
-'5  103  4  ~/assignment-one/main.c
-'6  103  27  ~/assignment-one/main.c
-'7  87  19  ~/assignment-one/menu.c
-'8  103  4  ~/assignment-one/main.c
-'9  103  4  ~/assignment-one/main.c
+'0  7  0  ~/tutorials/wk3/week-three-act-one.c
+'1  36  8  ~/tutorials/wk3/week-three-act-two.c
+'2  1  0  ~/week-three-act-two.c
+'3  49  8  ~/tutorials/wk3/week-three-act-two.c
+'4  49  22  ~/tutorials/wk3/week-three-act-two.c
+'5  4  0  ~/tutorials/wk3/week-three-act-one.c
+'6  37  30  ~/tutorials/wk3/week-three-act-one.c
+'7  37  47  ~/tutorials/wk3/week-three-act-one.c
+'8  37  8  ~/tutorials/wk3/week-three-act-one.c
+'9  37  70  ~/tutorials/wk3/week-three-act-one.c
 
 # Jumplist (newest first):
+-'  7  0  ~/tutorials/wk3/week-three-act-one.c
+-'  4  0  ~/tutorials/wk3/week-three-act-one.c
+-'  36  8  ~/tutorials/wk3/week-three-act-two.c
+-'  49  8  ~/tutorials/wk3/week-three-act-two.c
+-'  1  0  ~/week-three-act-two.c
+-'  2  0  ~/week-three-act-two.c
+-'  37  0  ~/tutorials/wk3/week-three-act-one.c
+-'  1  0  ~/tutorials/wk3/week3-act-one.c
+-'  1  0  ~/assignment-one/main.c
+-'  103  0  ~/assignment-one/main.c
+-'  1  0  ~/tutorials/wk3/getname.c
+-'  6  4  ~/tutorials/wk3/scanf-demo.c
+-'  13  4  ~/tutorials/wk3/scanf-demo.c
+-'  67  0  /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-advanced.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-advanced.c
+-'  15  0  /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-basic.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-basic.c
+-'  1  0  ~/tutorials/wk3/week-three-activityone.c
+-'  1  0  ~/week-three-activity-two.c
+-'  1  0  ~/tutorials/wk3/week-three-activity-two.c
+-'  76  0  ~/tutorials/wk3/size.c
+-'  1  0  ~/tutorials/wk2/rug.c
+-'  1  0  ~/tutorials/wk2/dowhile.c
+-'  20  8  ~/tutorials/wk2/whileglt.c
+-'  38  0  ~/tutorials/wk2/star-four.c
+-'  1  0  ~/tutorials/wk2/star-four.c
+-'  1  0  ~/tutorials/wk3/size.c
+-'  1  0  ~/tutorials/wk3/getchars.c
+-'  21  0  ~/tutorials/wk3/getchars.c
+-'  1  0  ~/tutorials/wk3/marathon.c
+-'  32  0  ~/tutorials/wk3/strtol_example.c
+-'  1  0  ~/tutorials/wk3/strtol_example.c
 -'  11  35  ~/assignment-one/readme.txt
 -'  2  0  ~/assignment-one/readme.txt
--'  77  34  ~/assignment-one/main.c
--'  103  4  ~/assignment-one/main.c
 -'  1  0  ~/assignment-one/readme.txt
 -'  87  19  ~/assignment-one/menu.c
 -'  1  0  ~/assignment-one/menu.c
@@ -702,7 +661,6 @@ $
 -'  2  0  ~/assignment-one/helper.h
 -'  1  0  ~/main.c
 -'  173  4  ~/assignment-one/menu.c
--'  1  0  ~/tutorials/wk3/strtol_example.c
 -'  1  0  ~/strtol_exercise.c
 -'  1  0  ~/menu.c
 -'  14  4  ~/tutorials/wk3/strtol_exercise.c
@@ -737,419 +695,294 @@ $
 -'  49  0  ~/tutorials/wk3/matrix_add.c
 -'  1  0  ~/tutorials/wk3/matrix_add
 -'  1  17  ~/assignment-one/main
--'  23  4  ~/tutorials/wk3/week-three-act-one.c
--'  28  9  ~/tutorials/wk3/week-three-act-one.c
 -'  32  0  ~/tutorials/wk3/strtol_exercise.c
 -'  33  0  ~/tutorials/wk3/strtol_exercise.c
 -'  33  0  ~/tutorials/wk3/strtol_example.c
--'  1  0  ~/tutorials/wk3/getchars.c
--'  16  4  ~/tutorials/wk3/getchars.c
--'  21  0  ~/tutorials/wk3/getchars.c
--'  1  0  ~/tutorials/wk3/getname.c
 -'  22  0  ~/tutorials/wk3/getname.c
 -'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/getname.c
 -'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/enumtostring.c
 -'  2  0  ~/tutorials/wk3/size.c
--'  1  0  ~/tutorials/wk3/size.c
 -'  6  25  ~/error.c
 -'  9  8  ~/error.c
--'  53  61  ~/.vimrc
--'  52  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  4  0  ~/NERD_tree_1
--'  811  2  ~/NERD_tree_1
--'  1  0  ~/NERD_tree_1
--'  4  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  21  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  1  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  210  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/main.c
--'  44  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  61  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  823  7  ~/NERD_tree_1
--'  1621  2  ~/NERD_tree_1
--'  388  34  ~/pic_sp4_2019/a1/menu.c
--'  374  45  ~/pic_sp4_2019/a1/menu.c
--'  3  25  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  0  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  11  ~/pic_sp4_2019/.git/COMMIT_EDITMSG
--'  250  24  ~/pic_sp4_2019/a1/helpers.c
--'  166  35  ~/pic_sp4_2019/a1/helpers.c
 
 # History of marks within files (newest to oldest):
 
-> ~/assignment-one/readme.txt
-	"	11	35
-	^	11	36
-	.	11	35
-	+	2	0
-	+	6	21
-	+	5	79
-	+	6	38
-	+	7	81
-	+	10	38
-	+	9	78
-	+	12	0
-	+	11	35
+> ~/tutorials/wk3/week-three-act-one.c
+	"	7	0
+	+	37	36
+	+	37	26
+	+	37	10
+	+	37	33
+	+	37	17
+	+	37	16
+	+	37	11
+	+	37	4
+	+	37	22
+	+	37	16
+	+	37	23
+	+	37	11
+	+	37	17
+	+	37	28
+	+	37	8
+	+	37	4
+	+	37	7
+	+	37	26
+	+	37	46
+	+	37	26
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	23
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	18
+	+	37	28
+	+	37	20
+	+	37	20
+	+	37	26
+	+	37	5
+	+	37	36
+	+	37	29
+	+	37	5
+	+	37	4
+	+	37	4
+	+	37	0
+	+	37	0
+	+	37	0
+	+	37	8
+	+	37	29
+	+	37	29
+	+	37	25
+	+	37	1
+	+	37	2
+	+	37	43
+	+	37	46
+	+	37	4
+	+	37	30
+	+	37	20
+	+	37	5
+	+	37	18
+	+	37	43
+	+	37	13
+	+	37	48
+	+	37	49
+	+	37	14
+	+	37	14
+	+	37	14
+	+	37	14
+	+	37	10
+	+	37	52
+	+	37	10
+	+	37	52
+	+	37	46
+	+	37	52
+	+	37	0
+	+	37	37
+	+	37	32
+	+	37	37
+	+	37	32
+	+	37	37
+	+	37	15
+	+	37	20
+	+	37	36
+	+	37	4
+	+	37	14
+	+	37	6
+	+	37	0
+	+	37	32
+	+	37	36
+	+	37	37
+	+	37	36
+	+	37	38
+	+	37	31
+	+	37	29
+	+	37	37
+	+	37	37
+	+	37	37
+	+	37	38
+	+	37	22
+	+	37	0
+	+	37	7
+	+	37	28
+	+	37	47
+	+	37	6
+	+	37	30
+	+	37	0
+
+> ~/tutorials/wk3/week-three-act-two.c
+	"	36	8
+	+	49	14
+	+	49	0
+	+	49	24
+	+	49	23
+	+	49	14
+	+	49	9
+	+	49	19
+	+	49	20
+	+	49	4
+	+	49	14
+	+	49	15
+	+	49	6
+	+	49	30
+	+	49	18
+	+	49	5
+	+	49	20
+	+	49	4
+	+	49	19
+	+	49	11
+	+	49	24
+	+	49	30
+	+	49	13
+	+	49	34
+	+	49	31
+	+	49	30
+	+	49	2
+	+	49	0
+	+	49	4
+	+	49	25
+	+	49	0
+	+	49	16
+	+	49	23
+	+	49	24
+	+	49	39
+	+	49	40
+	+	49	0
+	+	49	26
+	+	49	0
+	+	49	0
+	+	49	52
+	+	49	0
+	+	49	0
+	+	49	37
+	+	49	31
+	+	49	32
+	+	49	15
+	+	49	0
+	+	49	5
+	+	49	13
+	+	49	0
+	+	49	30
+	+	49	18
+	+	49	0
+	+	49	28
+	+	49	33
+	+	49	32
+	+	49	36
+	+	49	32
+	+	49	32
+	+	49	45
+	+	49	58
+	+	49	42
+	+	49	9
+	+	49	37
+	+	49	45
+	+	49	40
+	+	49	8
+	+	49	55
+	+	49	32
+	+	49	18
+	+	49	9
+	+	49	7
+	+	49	0
+	+	49	24
+	+	49	13
+	+	49	38
+	+	49	40
+	+	49	30
+	+	49	37
+	+	49	6
+	+	49	8
+	+	49	14
+	+	49	19
+	+	49	17
+	+	49	14
+	+	49	18
+	+	49	0
+	+	49	34
+	+	49	28
+	+	49	0
+	+	49	23
+	+	49	22
+	+	49	0
+	+	49	0
+	+	49	13
+	+	49	4
+	+	49	0
+	+	49	0
+	+	49	17
+	+	49	22
+
+> ~/week-three-act-two.c
+	"	1	0
+
+> ~/tutorials/wk3/week3-act-one.c
+	"	1	0
 
 > ~/assignment-one/main.c
-	"	77	34
-	+	103	70
-	+	103	269
-	+	103	70
-	+	103	70
-	+	103	11
-	+	103	7
-	+	103	75
-	+	103	59
-	+	103	116
-	+	103	37
-	+	103	4
-	+	103	4
-	+	103	135
-	+	103	32
-	+	103	43
-	+	103	4
-	+	103	4
-	+	103	0
-	+	103	5
-	+	103	59
-	+	103	4
-	+	103	5
-	+	103	4
-	+	103	60
-	+	103	0
-	+	103	1
-	+	103	59
-	+	103	15
-	+	103	9
-	+	103	22
-	+	103	21
-	+	103	26
-	+	103	22
-	+	103	7
-	+	103	5
-	+	103	8
-	+	103	18
-	+	103	29
-	+	103	21
-	+	103	0
-	+	103	0
-	+	103	19
-	+	103	29
-	+	103	25
-	+	103	26
-	+	103	0
-	+	103	12
-	+	103	8
-	+	103	10
-	+	103	0
-	+	103	25
-	+	103	9
-	+	103	18
-	+	103	29
-	+	103	10
-	+	103	24
-	+	103	26
-	+	103	24
-	+	103	59
-	+	103	15
-	+	103	10
-	+	103	5
-	+	103	11
-	+	103	4
-	+	103	15
-	+	103	4
-	+	103	14
-	+	103	13
-	+	103	12
-	+	103	0
-	+	103	38
-	+	103	62
-	+	103	0
-	+	103	56
-	+	103	8
-	+	103	13
-	+	103	0
-	+	103	0
-	+	103	0
-	+	103	5
-	+	103	4
-	+	103	10
-	+	103	0
-	+	103	13
-	+	103	10
-	+	103	30
-	+	103	0
-	+	103	30
-	+	103	0
-	+	103	19
-	+	103	23
-	+	103	26
-	+	103	0
-	+	103	20
-	+	103	34
-	+	103	13
-	+	103	27
-	+	103	36
-	+	103	35
-	+	103	34
-
-> ~/assignment-one/menu.c
-	"	87	19
-	^	87	20
-	.	93	0
-	+	173	118
-	+	173	14
-	+	173	115
-	+	173	118
-	+	173	14
-	+	173	116
-	+	173	111
-	+	173	14
-	+	173	111
-	+	173	51
-	+	173	52
-	+	173	52
-	+	173	52
-	+	173	109
-	+	173	14
-	+	173	118
-	+	173	113
-	+	173	18
-	+	173	26
-	+	173	0
-	+	173	0
-	+	173	32
-	+	173	32
-	+	173	32
-	+	173	32
-	+	173	32
-	+	173	32
-	+	173	33
-	+	173	78
-	+	173	25
-	+	172	25
-	+	172	0
-	+	172	4
-	+	172	30
-	+	172	30
-	+	172	30
-	+	172	30
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	32
-	+	172	32
-	+	172	32
-	+	172	32
-	+	172	32
-	+	172	30
-	+	172	30
-	+	172	0
-	+	172	0
-	+	172	11
-	+	172	7
-	+	172	27
-	+	172	0
-	+	172	15
-	+	172	0
-	+	172	9
-	+	172	27
-	+	172	0
-	+	172	41
-	+	172	0
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	31
-	+	172	13
-	+	172	12
-	+	172	38
-	+	172	0
-	+	172	12
-	+	172	38
-	+	172	12
-	+	172	38
-	+	172	12
-	+	172	38
-	+	172	12
-	+	172	38
-	+	172	12
-	+	172	38
-	+	172	12
-	+	172	38
-	+	172	0
-	+	172	23
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	172	13
-	+	172	39
-	+	93	0
-
-> ~/assignment-one/menu.h
-	"	4	0
-	+	38	51
-	+	38	50
-
-> ~/assignment-one/options.cvim
 	"	1	0
 
-> ~/assignment-one/options.h
+> ~/tutorials/wk3/getname.c
 	"	1	0
 
-> ~/assignment-one/options.c
+> ~/tutorials/wk3/scanf-demo.c
+	"	6	4
+	+	13	0
+	+	13	13
+	+	13	9
+	+	13	12
+	+	13	12
+	+	13	9
+	+	13	34
+	+	13	16
+	+	13	28
+	+	13	22
+	+	13	28
+	+	13	42
+	+	13	4
+	+	13	13
+	+	13	11
+	+	13	33
+	+	13	4
+	+	13	14
+	+	13	38
+	+	13	0
+
+> /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-advanced.c
 	"	67	0
 
-> ~/assignment-one/shared.h
+> /home/el9/E70949/shared/prog_in_c/examples/InputValidation/getString-basic.c
+	"	15	0
+
+> ~/tutorials/wk3/week-three-activityone.c
 	"	1	0
 
-> ~/assignment-one/helpers.c
+> ~/week-three-activity-two.c
 	"	1	0
 
-> ~/assignment-one/helpers.h
+> ~/tutorials/wk3/week-three-activity-two.c
 	"	1	0
 
-> ~/assignment-one/helper.h
+> ~/tutorials/wk3/size.c
+	"	76	0
+
+> ~/tutorials/wk2/rug.c
 	"	1	0
 
-> ~/main.c
+> ~/tutorials/wk2/dowhile.c
 	"	1	0
 
-> ~/tutorials/wk3/strtol_example.c
+> ~/tutorials/wk2/whileglt.c
+	"	20	8
+
+> ~/tutorials/wk2/star-four.c
+	"	38	0
+
+> ~/tutorials/wk3/getchars.c
 	"	1	0
 
-> ~/tutorials/wk3/strtol_exercise.c
-	"	14	4
-
-> ~/strtol_exercise.c
+> ~/tutorials/wk3/marathon.c
 	"	1	0
 
-> ~/menu.c
-	"	1	0
-
-> ~/assignment-one/strtol_exercise.c
-	"	1	0
-
-> ~/assignment-one/test.c
-	"	25	4
-	+	43	34
-	+	43	17
-	+	43	13
-	+	43	37
-	+	43	31
-	+	43	7
-	+	43	29
-	+	43	0
-	+	43	0
-	+	43	12
-	+	43	9
-	+	43	17
-	+	43	4
-	+	43	34
-	+	43	4
-	+	43	37
-	+	43	38
-	+	43	4
-	+	43	1
-	+	43	0
-	+	43	0
-	+	43	1
-	+	43	5
-	+	43	0
-	+	43	1
-	+	43	29
-	+	43	0
-	+	43	19
-	+	43	10
-	+	43	17
-	+	43	4
-	+	43	37
-	+	43	6
-	+	43	0
-	+	43	39
-	+	43	21
-	+	43	48
-	+	43	68
-	+	43	0
-	+	43	54
-	+	43	38
-	+	43	53
-	+	43	38
-	+	43	26
-	+	43	29
-	+	43	23
-	+	43	36
-	+	43	1
-	+	43	1
-	+	43	0
-	+	43	18
-	+	43	19
-	+	43	27
-	+	43	0
-	+	43	40
-	+	43	0
-	+	43	62
-	+	43	30
-	+	43	31
-	+	43	25
-	+	43	34
-	+	43	48
-	+	43	0
-	+	43	55
-	+	43	60
-	+	43	33
-	+	43	8
-	+	43	1
-	+	43	1
-	+	43	34
-	+	43	48
-	+	43	0
-	+	43	0
-	+	43	4
-	+	43	4
-	+	43	37
-	+	43	26
-	+	43	54
-	+	43	71
-	+	43	4
-	+	43	8
-	+	43	4
-	+	43	36
-	+	43	9
-	+	43	0
-	+	43	27
-	+	43	44
-	+	43	9
-	+	43	0
-	+	43	4
-	+	43	9
-	+	43	13
-	+	43	29
-	+	43	26
-	+	43	67
-	+	43	36
-	+	43	47
-	+	43	61
-	+	43	4
-	+	43	36
-
-> ~/assignment-one/main.h
-	"	1	0
-
-> ~/test.c
+> ~/tutorials/wk2/while.c
 	"	1	0
