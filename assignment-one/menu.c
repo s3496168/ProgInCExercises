@@ -15,8 +15,10 @@
 /*added prototypes*/
 void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
 void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
-
-typedef char selection[NUM_MENU_ITEMS][SCREENWIDTH - 1];
+/*
+ * This char is no longer needed in this manner
+ * it has been moved to the appropriate function*/
+typedef char selection[NUM_MENU_ITEMS][SCREENWIDTH + 1];
 
 menu themenu;
 selection s;
@@ -46,19 +48,40 @@ void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
      * displays the menu as specified by the assignment document. It must be
      * displayed exactly as outlined in the assignment specification.
     **/
+    /*   char selection[NUM_MENU_ITEMS][SCREENWIDTH+1]{*/
     selection s = {"reverse a string",             "play guess a number",
                    "fold a string",                "validate tictactoe winner",
                    "check if change can be given", "access the help menu",
                    "quit the program"};
+    /*memmove used here to prevent undefined behaviou-
+     * this can occur if using memcpy with overlapping regions*/
+    memmove(menu, s, sizeof(s));
 }
 
 void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
-    selection s;
-    themenu;
+    /*redundant part b code
+     * selection s;
+    themenu;*/
+    /*Create char array to display heading*/
+
+    char* head = "Welcome to my menu";
+    int dash;
+    int strlen_head = strlen(head);
     int i;
+    puts(head);
+    for (dash = 0; dash < strlen_head; ++dash) {
+        printf("%s", "-");
+    }
+    printf("\n");
+
     for (i = 0; i < NUM_MENU_ITEMS; ++i) {
+        /*redundant partb code
         memcpy(&themenu[i], &s[i], sizeof(s[0]));
         printf("%d %s\n", i + 1, themenu[i]);
+        */
+        /*normal output variable from options.c
+         * the printf statement from part b is refractored here*/
+        normal_output("%d) %s\n", i + 1, menu[i]);
     }
 }
 
@@ -71,76 +94,108 @@ enum menu_choice select_menu_item(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
 
     int input;
     char* end;
+    enum input_result result;
     char line[SCREENWIDTH + 1];
+    display_menu(menu);
     printf("please enter your choice: ");
     fgets(line, SCREENWIDTH + 1, stdin);
+
     /*check for buffer overflow*/
     if (line[strlen(line) - 1] != '\n') {
-        printf("Error: buffer overflow\n\n");
+        printf("Internal error: buffer overflow\n\n");
         return IR_FAILURE;
     }
-    /* remove newline */
+    /* remove newline to reset application */
     line[strlen(line) - 1] = 0;
-    /* ascii '0' != 0*/ /* retrieve number*/
+    /* assign enum*/
     input = strtol(line, &end, 10);
+    result = input;
 
-    if (*end != '\0') {
+    /*utilise ascii to detect non numeric data*/
+    /*if (*end != '\0') {
         printf("Error: data entered was not numeric.\n\n");
         return IR_FAILURE;
-    }
+    }*/
 
     /*Report an error if number is too large*/
 
-    if (input > NUM_MENU_ITEMS) {
+    /*if (result > NUM_MENU_ITEMS) {
         printf(
             "You entered: %d. This is too high; please enter a number less "
             "than %d\n\n",
-            input, NUM_MENU_ITEMS);
+            result, NUM_MENU_ITEMS);
         return IR_FAILURE;
     }
-
+    IR_FAILURE;
+    */
     /*Report an error if number is too small*/
-
-    if (input < MIN_NUM_MENU_ITEMS) {
-        printf(
-            "You entered: %d. This is too low; please enter a positive "
-            "number greater than %d\n\n",
-            input, MIN_NUM_MENU_ITEMS);
-        return IR_FAILURE;
-    }
-
-    return IR_SUCCESS;
+    /*
+        if (result < MIN_NUM_MENU_ITEMS) {
+            printf(
+                "You entered: %d. This is too low; please enter a positive "
+                "number greater than %d\n\n",
+                result, MIN_NUM_MENU_ITEMS);
+            return IR_FAILURE;
+        }
+    */
+    return result;
 }
+void display_help(void) { printf("I will help\n"); }
+void quit() {}
 
 /**
  * process input from the menu and launch each of the options
  **/
 void menu_process_choice(enum menu_choice selected_choice) {
+    /*redundant part b code*/
+    /* enum menu_choice choice;*/
+    /*using selected_choice as per prototype*/
 
-    enum menu_choice choice;
-
-    if (choice == 1) {
-        printf("%d was chosen\n", choice);
+    if (selected_choice == MNU_REV) {
+        reverse_string(NULL);
+    } else if (selected_choice == MNU_FOLD) {
+        fold(NULL, 0);
+    } else if (selected_choice == MNU_TICTACTOE) {
+        ttt_board aboard;
+        ttt_check_win(aboard);
+    } else if (selected_choice == MNU_CHG) {
+        cash_register reg;
+        change_requests reqs;
+        int num_requests = 0;
+        can_give_change(reg, reqs, num_requests);
+    } else if (selected_choice == MNU_HELP) {
+        display_help();
+    } else if (selected_choice == MNU_QUIT) {
+        quit();
+    } else {
+        error_output("invalid option selected.\n");
     }
-    if (choice == 2) {
-        printf("%d was chosen\n", choice);
-    }
-    if (choice == 3) {
-        printf("%d was chosen\n", choice);
-    }
-    if (choice == 4) {
-        printf("%d was chosen\n", choice);
-    }
-    if (choice == 5) {
-        printf("%d was chosen\n", choice);
-    }
-    if (choice == 6) {
-        printf("%d was chosen\n", choice);
-    }
-
-    if (choice == 7) {
-        printf("%d was chosen\n", choice);
-    }
+    /*
+    switch (selected_choice) {
+    case MNU_REV: {
+        reverse_string(NULL);
+    } break;
+    case MNU_FOLD: {
+        fold(NULL, 0);
+    } break;
+    case MNU_TICTACTOE: {
+        ttt_board aboard;
+        ttt_check_win(aboard);
+    } break;
+    case MNU_CHG: {
+        cash_register reg;
+        change_requests reqs;
+        int num_requests = 0;
+        can_give_change(reg, reqs, num_requests);
+    } break;
+    case MNU_HELP: {
+        display_help();
+    } break;
+    case MNU_QUIT:{
+    quit();
+    }break;
+    default: { error_output("Invalid\n"); }
+    }*/
 }
 
 /**

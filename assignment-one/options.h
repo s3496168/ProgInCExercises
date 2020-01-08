@@ -84,10 +84,11 @@ enum ttt_result {
 typedef enum ttt_board_cell ttt_board[BOARDHEIGHT][BOARDWIDTH];
 
 void reverse_string(char[]);
-void guess_a_number(void);
+void guess_a_number(long);
 char* fold(char[], unsigned);
 struct falsible_register can_give_change(const cash_register,
-                                         const change_requests);
+                                         const change_requests,
+                                         int num_requests);
 BOOLEAN ttt_init_board(ttt_board, const char[]);
 enum ttt_result ttt_check_win(ttt_board);
 void display_help(void);

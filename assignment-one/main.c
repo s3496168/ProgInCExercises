@@ -5,7 +5,7 @@
 #include <errno.h>
 #include <ctype.h>
 #include "options.h"
-#include "menu.c"
+/*#include "menu.c"*/
 
 /*added definitions*/
 #define SCREENWIDTH 80
@@ -56,7 +56,11 @@ void display_menu();
 int main(int argc, char* argv[]) {
     /* the user's menu choice */
     enum menu_choice choice;
-    /* the menus themselves */
+    menu themenu;
+    /* redundant code from part b
+     * note that some of this is now down below
+     * the menus themselves */
+    /*
     printf("%s\n", "Welcome to my menu");
     int j;
     for (j = 0; j <= 18; ++j) {
@@ -76,7 +80,7 @@ int main(int argc, char* argv[]) {
         ch = getchar();
     } while (ch != 4 || ch != 13 || ch != EOF);
     return IR_EOF;
-
+*/
     long seed;
     if (argc < MIN_ARGS || argc >= OVERFLOW_ARGS) {
         fprintf(stderr,
@@ -87,7 +91,7 @@ int main(int argc, char* argv[]) {
                 "Where seed is an optional argument which is a "
                 "positive integer seed for the random number "
                 "generator.\n");
-        return IR_FAILURE;
+        return EXIT_FAILURE;
     }
     seed = argc == CORRECT_ARGS ? get_seed(argv[SEED_ARG]) : EOF;
     /* initialise the menu with the data to be displayed to the user */
@@ -98,5 +102,36 @@ int main(int argc, char* argv[]) {
      * seed as well as no further input is required */
     /* process the user input and run the appropriate menu
      * item */
-    return IR_SUCCESS;
+    /*so it WAS supposed to go here all along*/
+    init_menu(themenu);
+    /*A do while loop here, just like in the redundant code above*/
+    do {
+        /*BOOLEAN used here too-success as per options.h*/
+        BOOLEAN success = FALSE;
+        /*choice as as the reference for the menu_choice enum found in menu.h
+         * set above, select_menu_item from menu.c*/
+        choice = select_menu_item(themenu);
+
+        /*Provide facilities for error handling
+         * error_output function from menu.c*/
+        if (choice == MNU_INVAL) {
+            error_output("Error! Invalid option selected.");
+        } else if (choice == MNU_GUESS) {
+            /*This requires the seed to be passed in to
+             * allow the random number to generate-
+             * note that no further input is subsequently required*/
+            /*Also note that the correct parameters need to be
+             * passed in options.c and options.h*/
+            guess_a_number(seed);
+        } else {
+            /*process the choice and execute the relevant menu item*/
+            menu_process_choice(choice);
+        }
+        if (success != FALSE) {
+            /*fprint used here to run print from error stream*/
+            fprintf(stderr, "Invalid option selected!\n");
+        }
+
+    } while (choice != MNU_QUIT);
+    return EXIT_SUCCESS;
 }

@@ -4,7 +4,7 @@
 #include "week-three-act-one.c"
 #define a_length 5
 
-int str_function(char str[num], char* output, int ten);
+/*int str_function(char str[num], char* output, int ten);*/
 char* something(void);
 
 int main() {
@@ -12,9 +12,9 @@ int main() {
     printf("Please enter some numbers with a comma in between: ");
     demo = something();
     (void)demo;
-    /*printf(demo);*/
     return 0;
 }
+
 char* something() {
     static char nums[a_length + 1];
     const char s[] = ",";
@@ -28,17 +28,15 @@ char* something() {
     fgets(nums, 81, stdin);
     token = strtok(nums, s);
     /*walk through the other tokens*/
-    printf(token);
+
     while (token != NULL) {
 
-        n = str_function(token, end, 10);
-        /*n = strtol(token, &end, 10); */
-        printf("%ld\n", n);
+        /*n = str_function(token, end, 10);*/
+        n = strtol(token, &end, 10);
         q = q + n;
 
         if (q > a) {
             a = q;
-            printf("%ld\n", n);
         }
         token = strtok(NULL, s);
     }
