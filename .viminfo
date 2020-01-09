@@ -2,13 +2,13 @@
 # You may edit it if you're careful!
 
 # Value of 'encoding' when this file was written
-*encoding=utf-8
+*encoding=latin1
 
 
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~Msle0~/\<str\>
+~Msle0~/);
 
 # Last Substitute Search Pattern:
 ~MSle0&?
@@ -17,12 +17,13 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
+:WQ
 :q!
+:ew
 :wq!
 :s
-:WQ
 :::
 :wq:wq:
 :!
@@ -107,6 +108,7 @@ $
 :236
 
 # Search String History (newest to oldest):
+? );
 ? \<str\>
 ? \<output\>
 ?/_s
@@ -202,313 +204,224 @@ $
 
 # Registers:
 ""0	CHAR	0
-	)
+	s
 "1	LINE	0
-	#include "options.h"
+	#include "main.h"
 	
-	#include <assert.h>
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
 	#include <ctype.h>
+	#include "options.h"
+	/*#include "menu.c"*/
 	
-	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
+	/*added definitions*/
+	#define SCREENWIDTH 80
 	
 	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
+	 * extracts the seed (a long int) from a string passed in
 	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
+	    }
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
 	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
 	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "2	LINE	0
-	#include "options.h"
+	#include <string.h>
+	#include <time.h>
 	
-	#include <assert.h>
-	#include <ctype.h>
-	
-	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
+	#include "helpers.h"
+	#include "shared.h"
+	#ifndef OPTIONS_H
+	#define OPTIONS_H
 	
 	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
+	 * the index of the cash register array that is occupied by each denomination,
+	 *if there are any of that denomination
 	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
+	enum denom_ind {
+	    FIVE_CENTS_IND,
+	    TEN_CENTS_IND,
+	    TWENTY_CENTS_IND,
+	    FIFTY_CENTS_IND,
+	    ONE_DOLLAR_IND,
+	    TWO_DOLLAR_IND,
+	    FIVE_DOLLAR_IND,
+	    TEN_DOLLAR_IND
+	};
 	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	enum denom_val {
+	    FIVE_CENTS_VAL = 5,
+	    TEN_CENTS_VAL = 10,
+	    TWENTY_CENTS_VAL = 20,
+	    FIFTY_CENTS_VAL = 50,
+	    ONE_DOLLAR_VAL = 100,
+	    TWO_DOLLAR_VAL = 200,
+	    FIVE_DOLLAR_VAL = 500,
+	    TEN_DOLLAR_VAL = 1000
+	};
+	
+	struct denomination {
+	    enum denom_ind index;
+	    enum denom_val value;
+	    int count;
+	};
+	
+	struct currency {
+	    int dollars;
+	    int cents;
+	};
+	
+	#define NUM_DENOMS 8
+	#define MAX_CHANGES 50
+	
+	typedef struct denomination cash_register[NUM_DENOMS];
+	typedef struct currency change_requests[MAX_CHANGES];
 "3	LINE	0
-	#include "options.h"
-	
-	#include <assert.h>
-	#include <ctype.h>
-	
-	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
-	
-	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
-	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
-	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	#include <stdio.h>
+	#include <math.h>
+	#include <stdlib.h>
+	#ifndef SHARED_H
+	#define SHARED_H
+	typedef enum boolean {
+	    FALSE,
+	    TRUE
+	} BOOLEAN;
+	#endif
 "4	LINE	0
-	#include "options.h"
+	#include "main.h"
 	
-	#include <assert.h>
+	#include "shared.h"
+	#include <limits.h>
+	#include <errno.h>
 	#include <ctype.h>
+	#include "options.h"
+	/*#include "menu.c"*/
 	
-	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
+	/*added definitions*/
+	#define SCREENWIDTH 80
 	
 	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
+	 * extracts the seed (a long int) from a string passed in
 	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
+	static long get_seed(const char strseed[]) {
+	    char* end;
+	    long result;
+	#define DECIMAL 10
+	    /* try to extract a long integer */
+	    result = strtol(strseed, &end, DECIMAL);
+	    /* check it is within the valid range */
+	    if (errno == ERANGE) {
+	
+	        fprintf(stderr,
+	                "Error: %s is outside the allowed range for a "
+	                "long integer.\n",
+	                strseed);
+	        exit(IR_FAILURE);
+	    }
+	    /* search for any trailing characters */
+	    while (isspace(*end)) {
+	        ++end;
+	    }
+	    if (*end) {
+	        fprintf(stderr, "Error: %s is not a valid seed.\n", strseed);
+	        exit(IR_FAILURE);
+	    }
+	    return result;
 	}
 	
+	enum {
+	    MIN_ARGS = 1,
+	    CORRECT_ARGS,
+	    OVERFLOW_ARGS
+	};
+	
+	#define SEED_ARG 1
 	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	 * you are expected to READ the comments here and fill in your code BETWEEN the
 "5	LINE	0
-	#include "options.h"
-	
-	#include <assert.h>
-	#include <ctype.h>
-	
 	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
-	
-	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
-	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
-	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
 "6	LINE	0
-	#include "options.h"
+	#include <string.h>
+	#include <time.h>
 	
-	#include <assert.h>
-	#include <ctype.h>
-	
-	#include "menu.h"
-	
-	#define ANSWERWIDTH 5
-	/**
-	 * This file contains the implementations of the different options that are
-	 * part of the assignment. This file should contain only the logic to implement
-	 * each function and return values. It should not contain any input or output.
-	 * If you need to do input or output, you must expose functions in the menu.c
-	 * and menu.h library and call those functions in this module.
-	 **/
+	#include "helpers.h"
+	#include "shared.h"
+	#ifndef OPTIONS_H
+	#define OPTIONS_H
 	
 	/**
-	 * reverse_string(): takes as an argument a string that you must reverse
-	 *inplace. You must not move the nul terminator but must swap each char in the
-	 *first half of the string to the appropriate location in the second half of the
-	 * string and vice-versa.
+	 * the index of the cash register array that is occupied by each denomination,
+	 *if there are any of that denomination
 	 **/
-	void reverse_string(char str[]) {
-	    /*note-normal_output was provided in menu.c for usage
-	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
+	enum denom_ind {
+	    FIVE_CENTS_IND,
+	    TEN_CENTS_IND,
+	    TWENTY_CENTS_IND,
+	    FIFTY_CENTS_IND,
+	    ONE_DOLLAR_IND,
+	    TWO_DOLLAR_IND,
+	    FIVE_DOLLAR_IND,
+	    TEN_DOLLAR_IND
+	};
 	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
-	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	enum denom_val {
+	    FIVE_CENTS_VAL = 5,
+	    TEN_CENTS_VAL = 10,
+	    TWENTY_CENTS_VAL = 20,
+	    FIFTY_CENTS_VAL = 50,
+	    ONE_DOLLAR_VAL = 100,
+	    TWO_DOLLAR_VAL = 200,
+	    FIVE_DOLLAR_VAL = 500,
+	    TEN_DOLLAR_VAL = 1000
+	};
+	
+	struct denomination {
+	    enum denom_ind index;
+	    enum denom_val value;
+	    int count;
+	};
+	
+	struct currency {
+	    int dollars;
+	    int cents;
+	};
+	
+	#define NUM_DENOMS 8
+	#define MAX_CHANGES 50
+	
+	typedef struct denomination cash_register[NUM_DENOMS];
+	typedef struct currency change_requests[MAX_CHANGES];
 "7	LINE	0
 	#include "options.h"
 	
@@ -518,6 +431,9 @@ $
 	#include "menu.h"
 	
 	#define ANSWERWIDTH 5
+	#define SCREENWIDTH 80
+	void read_rest_of_line(void);
+	
 	/**
 	 * This file contains the implementations of the different options that are
 	 * part of the assignment. This file should contain only the logic to implement
@@ -535,31 +451,28 @@ $
 	void reverse_string(char str[]) {
 	    /*note-normal_output was provided in menu.c for usage
 	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
-	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
+	    int g;
+	    int count;
+	    char line[SCREENWIDTH + 1];
 	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	        "Please enter a string to reverse "
+	        "(maximum of 80 characters): ");
+	
+	    /* BOOLEAN success = FALSE;*/
+	    fgets(line, SCREENWIDTH + 1, stdin);
+	    line[strlen(line) - 1] = 0;
+	    /*printf("You answered: %s\n", line);*/
+	
+	    str = (char*)malloc(sizeof(line));
+	    memcpy(str, line, sizeof(line));
+	
+	    for (g = 0; str[g]; ++g) {
+	        if (str[g] != '\n') {
+	            count++;
+	        }
+	    }
+	    if (count > 80) {
+	        printf("Error: input was too long. Please try again.\n");
 "8	LINE	0
 	#include "options.h"
 	
@@ -569,6 +482,9 @@ $
 	#include "menu.h"
 	
 	#define ANSWERWIDTH 5
+	#define SCREENWIDTH 80
+	void read_rest_of_line(void);
+	
 	/**
 	 * This file contains the implementations of the different options that are
 	 * part of the assignment. This file should contain only the logic to implement
@@ -586,31 +502,28 @@ $
 	void reverse_string(char str[]) {
 	    /*note-normal_output was provided in menu.c for usage
 	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
-	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
+	    int g;
+	    int count;
+	    char line[SCREENWIDTH+1];
 	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	        "Please enter a string to reverse "
+	        "(maximum of 80 characters): ");
+	
+	    /* BOOLEAN success = FALSE;*/
+	    fgets(line, SCREENWIDTH+1, stdin);
+	    line[strlen(line) - 1] = 0;
+	    /*printf("You answered: %s\n", line);*/
+	
+	    str = (char*)malloc(sizeof(line));
+	    memcpy(str, line, sizeof(line));
+	
+	    for (g = 0; str[g]; ++g) {
+	        if (str[g] != '\n') {
+	            count++;
+	        }
+	    }
+	    if (count > 80) {
+	        str = 0;
 "9	LINE	0
 	#include "options.h"
 	
@@ -620,6 +533,9 @@ $
 	#include "menu.h"
 	
 	#define ANSWERWIDTH 5
+	#define SCREENWIDTH 80
+	void read_rest_of_line(void);
+	
 	/**
 	 * This file contains the implementations of the different options that are
 	 * part of the assignment. This file should contain only the logic to implement
@@ -637,62 +553,66 @@ $
 	void reverse_string(char str[]) {
 	    /*note-normal_output was provided in menu.c for usage
 	     * its job is to process strings*/
-	    normal_output("You have reached reverse a string.\n");
-	}
-	
-	/**
-	 * play the guess a number game. Generate a random number between 1 and 10.
-	 * Give the user ten guesses to guess the number.
-	 **/
-	void guess_a_number(long seed) {
-	    int guess = 10;
-	    int answer;
-	    char* end;
-	    char line[ANSWERWIDTH + 1];
-	    int solution = (rand() % 10) + 1;
-	    BOOLEAN success = FALSE;
-	    srand(seed);
-	    srand(time(NULL));
+	    int g;
+	    int count;
+	    char line[SCREENWIDTH + 10];
 	    normal_output(
-	        "I have selected a number between 1 and 10. You have %d guesses "
-	        "left.\n",
-	        guess);
-	    /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-	    /*checking for buffer overflow as these functions are not
-	     * supposed to return anything*/
-	    /*  answer = strtol(line, &end, 10);
-	      printf("You answered: %d\n", answer);*/
+	        "Please enter a string to reverse "
+	        "(maximum of 80 characters): ");
+	
+	    /* BOOLEAN success = FALSE;*/
+	    fgets(line, SCREENWIDTH + 10, stdin);
+	    line[strlen(line) - 1] = 0;
+	    /*printf("You answered: %s\n", line);*/
+	
+	    str = (char*)malloc(sizeof(line));
+	    memcpy(str, line, sizeof(line));
+	
+	    for (g = 0; str[g]; ++g) {
+	        if (str[g] != '\n') {
+	            count++;
+	        }
+	    }
+	    if (count > 80) {
+	        str = 0;
 "a	CHAR	0
 	':
 "-	CHAR	0
-	)
+	s
 
 # global variables:
 
 # File marks:
-'0  100  20  ~/assignment-one/options.c
-'1  188  15  ~/assignment-one/options.c
-'2  188  26  ~/assignment-one/options.c
-'3  188  39  ~/assignment-one/options.c
-'4  188  3  ~/assignment-one/options.c
-'5  188  4  ~/assignment-one/options.c
-'6  188  16  ~/assignment-one/options.c
-'7  188  23  ~/assignment-one/options.c
-'8  188  0  ~/assignment-one/options.c
-'9  188  23  ~/assignment-one/options.c
+'0  29  4  ~/assignment-one/menu.c
+'1  139  0  ~/assignment-one/main.c
+'2  1  0  ~/assignment-one/options.h
+'3  1  0  ~/assignment-one/shared.h
+'4  140  8  ~/assignment-one/main.c
+'5  1  0  ~/assignment-one/main.h
+'6  96  0  ~/assignment-one/options.h
+'7  49  20  ~/assignment-one/options.c
+'8  226  28  ~/assignment-one/options.c
+'9  226  29  ~/assignment-one/options.c
 
 # Jumplist (newest first):
--'  100  20  ~/assignment-one/options.c
--'  188  8  ~/assignment-one/options.c
--'  108  0  ~/assignment-one/menu.c
--'  116  8  ~/assignment-one/menu.c
--'  71  9  ~/assignment-one/main.c
--'  116  9  ~/assignment-one/main.c
+-'  29  4  ~/assignment-one/menu.c
+-'  46  4  ~/assignment-one/menu.c
+-'  139  0  ~/assignment-one/main.c
+-'  140  0  ~/assignment-one/main.c
+-'  1  0  ~/assignment-one/options.h
+-'  96  0  ~/assignment-one/options.h
+-'  1  0  ~/assignment-one/shared.h
+-'  11  0  ~/assignment-one/shared.h
+-'  1  0  ~/assignment-one/main.h
+-'  2  0  ~/assignment-one/main.h
+-'  49  20  ~/assignment-one/options.c
+-'  226  4  ~/assignment-one/options.c
+-'  108  4  ~/assignment-one/menu.c
+-'  141  4  ~/assignment-one/main.c
+-'  15  19  ~/assignment-one/menu.c
+-'  225  20  ~/assignment-one/menu.c
+-'  1  0  ~/main.c
 -'  1  0  ~/options.c
--'  97  4  ~/assignment-one/menu.c
--'  61  4  ~/assignment-one/main.c
--'  138  4  ~/assignment-one/main.c
--'  226  0  ~/assignment-one/menu.c
 -'  121  3  ~/assignment-one-answers/a1partb/menu.c
 -'  81  4  ~/assignment-one-answers/a1partb/menu.c
 -'  19  4  ~/assignment-one/menu.h
@@ -703,17 +623,12 @@ $
 -'  47  0  ~/assignment-one-answers/a1partb/main.c
 -'  77  0  ~/assignment-one-answers/a1partb/options.c
 -'  23  0  ~/assignment-one-answers/a1partb/options.c
--'  85  0  ~/assignment-one/options.h
--'  94  0  ~/assignment-one/options.h
 -'  4  0  ~/NERD_tree_2
 -'  19  2  ~/NERD_tree_2
 -'  1  0  ~/NERD_tree_2
 -'  1  0  ~/NERD_tree_1
 -'  19  2  ~/NERD_tree_1
 -'  99  16  ~/assignment-one-answers/a1partb/main.c
--'  93  0  ~/assignment-one/options.h
--'  87  0  ~/assignment-one/options.h
--'  95  0  ~/assignment-one/options.h
 -'  1  0  ~/assignment-one/main,c
 -'  1  0  ~/assignment-one-answers/main.c
 -'  2  0  ~/assignment-one-answers/main.c
@@ -777,144 +692,13 @@ $
 -'  1  0  ~/tutorials/wk3/getchars.c
 -'  21  0  ~/tutorials/wk3/getchars.c
 -'  1  0  ~/tutorials/wk3/marathon.c
--'  108  0  ~/assignment-one/menu.c
--'  60  15  ~/assignment-one/options.c
+-'  1  0  ~/tutorials/wk3/read_res_of_line.c
+-'  227  8  ~/assignment-one/options.c
 
 # History of marks within files (newest to oldest):
 
-> ~/assignment-one/options.c
-	"	100	20
-	+	188	8
-	+	188	55
-	+	188	0
-	+	188	203
-	+	188	170
-	+	188	51
-	+	188	17
-	+	188	32
-	+	188	37
-	+	188	16
-	+	188	27
-	+	188	31
-	+	188	16
-	+	188	24
-	+	188	41
-	+	188	39
-	+	188	43
-	+	188	17
-	+	188	35
-	+	188	30
-	+	188	58
-	+	188	70
-	+	188	32
-	+	188	63
-	+	188	20
-	+	188	0
-	+	188	158
-	+	188	147
-	+	188	16
-	+	188	54
-	+	188	17
-	+	188	17
-	+	188	17
-	+	188	30
-	+	188	17
-	+	188	21
-	+	188	17
-	+	188	4
-	+	188	12
-	+	188	0
-	+	188	8
-	+	188	0
-	+	188	0
-	+	188	20
-	+	188	0
-	+	188	75
-	+	188	30
-	+	188	16
-	+	188	41
-	+	188	20
-	+	188	51
-	+	188	18
-	+	188	46
-	+	188	25
-	+	188	0
-	+	188	52
-	+	188	43
-	+	188	30
-	+	188	30
-	+	188	26
-	+	188	0
-	+	188	16
-	+	188	287
-	+	188	38
-	+	188	154
-	+	188	273
-	+	188	234
-	+	188	61
-	+	188	169
-	+	188	266
-	+	188	20
-	+	188	20
-	+	188	63
-	+	188	35
-	+	188	33
-	+	188	19
-	+	188	18
-	+	188	0
-	+	188	67
-	+	188	52
-	+	188	0
-	+	188	43
-	+	188	33
-	+	188	0
-	+	188	56
-	+	188	61
-	+	188	31
-	+	188	31
-	+	188	31
-	+	188	31
-	+	188	180
-	+	188	42
-	+	188	96
-	+	188	0
-	+	188	5
-	+	188	39
-	+	188	61
-	+	188	0
-	+	188	21
-	+	188	21
-
-> ~/main.c
-	"	1	0
-
 > ~/assignment-one/menu.c
-	"	108	0
-	.	140	0
-	+	226	7
-	+	226	4
-	+	226	30
-	+	226	37
-	+	226	24
-	+	226	32
-	+	226	28
-	+	226	26
-	+	226	11
-	+	226	16
-	+	226	0
-	+	226	0
-	+	226	4
-	+	226	5
-	+	226	27
-	+	226	34
-	+	226	4
-	+	226	20
-	+	226	5
-	+	226	6
-	+	226	5
-	+	226	1
-	+	226	1
-	+	226	1
+	"	29	4
 	+	226	0
 	+	226	1
 	+	226	1
@@ -978,146 +762,289 @@ $
 	+	226	0
 	+	226	22
 	+	226	0
-	+	115	4
-	+	118	5
-	+	122	4
-	+	130	4
-	+	129	0
-	+	132	4
-	+	140	4
-	+	115	4
-	+	118	5
-	+	122	4
-	+	130	4
-	+	132	4
-	+	140	0
+	+	226	4
+	+	226	5
+	+	226	4
+	+	226	4
+	+	226	0
+	+	226	4
+	+	226	4
+	+	226	4
+	+	226	5
+	+	226	4
+	+	226	4
+	+	226	4
+	+	226	0
+	+	226	19
+	+	226	16
+	+	226	16
+	+	226	20
+	+	226	30
+	+	226	39
+	+	226	24
+	+	226	55
+	+	226	35
+	+	226	0
+	+	226	0
+	+	226	6
+	+	226	30
+	+	226	0
+	+	226	0
+	+	226	26
+	+	226	35
+	+	226	11
+	+	226	0
+	+	226	54
+	+	226	11
+	+	226	13
+	+	226	20
+	+	226	16
+
+> ~/tutorials/wk3/read_rest_of_line.c
+	"	1	5
+	+	57	0
+	+	57	56
+	+	57	0
+	+	57	2
+	+	57	22
+	+	57	1
+	+	57	0
+	+	57	14
+
+> ~/assignment-one/options.c
+	"	57	27
+	+	219	0
+	+	219	26
+	+	219	19
+	+	219	19
+	+	219	1
+	+	219	6
+	+	219	1
+	+	219	17
+	+	219	19
+	+	219	4
+	+	219	4
+	+	219	4
+	+	219	11
+	+	219	4
+	+	219	4
+	+	219	4
+	+	219	19
+	+	219	4
+	+	219	0
+	+	219	65
+	+	219	0
+	+	219	0
+	+	219	25
+	+	219	4
+	+	219	5
+	+	219	0
+	+	219	0
+	+	219	0
+	+	219	17
+	+	219	10
+	+	219	27
+	+	219	14
+	+	219	12
+	+	219	37
+	+	219	0
+	+	219	14
+	+	219	8
+	+	219	17
+	+	219	20
+	+	219	30
+	+	219	27
+	+	219	33
+	+	219	65
+	+	219	0
+	+	219	0
+	+	219	0
+	+	219	80
+	+	219	63
+	+	219	54
+	+	219	63
+	+	219	22
+	+	219	75
+	+	219	27
+	+	219	8
+	+	219	27
+	+	219	63
+	+	219	62
+	+	219	63
+	+	219	51
+	+	219	66
+	+	219	74
+	+	219	49
+	+	219	34
+	+	219	60
+	+	219	60
+	+	219	25
+	+	219	60
+	+	219	61
+	+	219	66
+	+	219	74
+	+	219	27
+	+	219	8
+	+	219	40
+	+	219	62
+	+	219	8
+	+	219	26
+	+	219	0
+	+	219	64
+	+	219	31
+	+	219	71
+	+	219	24
+	+	219	23
+	+	219	27
+	+	219	34
+	+	219	37
+	+	219	27
+	+	219	0
+	+	219	0
+	+	219	27
+	+	219	0
+	+	219	0
+	+	219	22
+	+	219	27
+	+	219	0
+	+	219	27
+	+	219	8
+	+	219	17
+	+	219	36
+	+	219	58
+	+	219	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiveprint.c
+	"	20	0
 
 > ~/assignment-one/main.c
-	"	71	9
-	+	138	0
-	+	138	69
-	+	138	47
-	+	138	14
-	+	138	47
-	+	138	47
-	+	138	47
-	+	138	34
-	+	138	0
-	+	138	32
-	+	138	73
-	+	138	0
-	+	138	55
-	+	138	51
-	+	138	67
-	+	138	0
-	+	138	32
-	+	138	0
-	+	138	69
-	+	138	38
-	+	138	29
-	+	138	0
-	+	138	33
-	+	138	20
-	+	138	32
-	+	138	74
-	+	138	20
-	+	138	75
-	+	138	57
-	+	138	31
-	+	138	39
-	+	138	49
-	+	138	18
-	+	138	18
-	+	138	32
-	+	138	9
-	+	138	37
-	+	138	9
-	+	138	13
-	+	138	32
-	+	138	27
-	+	138	27
-	+	138	62
-	+	138	47
-	+	138	54
-	+	138	60
-	+	138	29
-	+	138	13
-	+	138	0
-	+	138	26
-	+	138	0
-	+	138	14
-	+	138	16
-	+	138	0
-	+	138	29
-	+	138	32
-	+	138	36
-	+	138	38
-	+	138	12
-	+	138	16
-	+	138	0
-	+	138	52
-	+	138	22
-	+	138	19
-	+	138	55
-	+	138	4
-	+	138	14
-	+	138	27
-	+	138	43
-	+	138	32
-	+	138	40
-	+	138	0
-	+	138	12
-	+	138	16
-	+	138	11
-	+	138	0
-	+	138	16
-	+	138	10
-	+	138	10
-	+	138	4
-	+	138	0
-	+	138	39
-	+	138	7
-	+	138	23
-	+	138	10
-	+	138	4
-	+	138	10
-	+	138	8
-	+	138	15
-	+	138	38
-	+	138	42
-	+	138	12
-	+	138	51
-	+	138	20
-	+	138	40
-	+	138	10
-	+	138	37
-	+	138	31
-	+	138	8
-	+	138	0
+	"	64	4
+	+	141	39
+	+	141	49
+	+	141	18
+	+	141	18
+	+	141	32
+	+	141	9
+	+	141	37
+	+	141	9
+	+	141	13
+	+	141	32
+	+	141	27
+	+	141	27
+	+	141	62
+	+	141	47
+	+	141	54
+	+	141	60
+	+	141	29
+	+	141	13
+	+	141	0
+	+	141	26
+	+	141	0
+	+	141	14
+	+	141	16
+	+	141	0
+	+	141	29
+	+	141	32
+	+	141	36
+	+	141	38
+	+	141	12
+	+	141	16
+	+	141	0
+	+	141	52
+	+	141	22
+	+	141	19
+	+	141	55
+	+	141	4
+	+	141	14
+	+	141	27
+	+	141	43
+	+	141	32
+	+	141	40
+	+	141	0
+	+	141	12
+	+	141	16
+	+	141	11
+	+	141	0
+	+	141	16
+	+	141	10
+	+	141	10
+	+	141	4
+	+	141	0
+	+	141	39
+	+	141	7
+	+	141	23
+	+	141	10
+	+	141	4
+	+	141	10
+	+	141	8
+	+	141	15
+	+	141	38
+	+	141	42
+	+	141	12
+	+	141	51
+	+	141	20
+	+	141	40
+	+	141	10
+	+	141	37
+	+	141	31
+	+	141	8
+	+	141	0
+	+	141	31
+	+	141	26
+	+	141	23
+	+	141	29
+	+	141	0
+	+	141	4
+	+	141	9
+	+	141	29
+	+	141	6
+	+	141	26
+	+	141	31
+	+	141	39
+	+	141	36
+	+	141	24
+	+	141	24
+	+	141	25
+	+	141	0
+	+	141	4
+	+	141	27
+	+	141	33
+	+	141	0
+	+	141	6
+	+	141	31
+	+	141	1
+	+	141	0
+	+	141	0
+	+	141	29
+	+	141	8
+	+	141	19
+	+	141	4
+
+> ~/tutorials/wk3/rest_of_line.c
+	"	1	0
+
+> ~/tutorials/wk3/rest_of_the_line.c
+	"	1	0
 
 > ~/options.c
 	"	1	0
 
 > ~/assignment-one/options.h
-	"	54	29
+	"	1	0
 	+	96	23
 	+	96	56
 
-> /home/el9/E70949/shared/prog_in_c/tutes/old/week4_tute_sp4_2017/random.c
-	"	90	0
-
-> ~/assignment-one/option.c
+> ~/assignment-one/shared.h
 	"	1	0
 
-> ~/assignment-one-answers/a1partb/menu.c
-	"	121	3
-	+	144	35
+> ~/assignment-one/main.h
+	"	1	0
 
-> ~/assignment-one-answers/a1partb/options.c
-	"	46	26
+> ~/tutorials/wk3/week-three-act-three.c
+	"	1	0
 
 > ~/assignment-one/menu.h
-	"	39	3
+	"	1	0
 	+	40	19
 	+	40	38
 	+	40	18
@@ -1129,36 +1056,23 @@ $
 	+	40	14
 	+	40	14
 
-> ~/assignment-one-answers/a1partb/main.c
-	"	102	25
-	^	1	2
-
-> ~/assignment-one/shared.h
+> ~/tutorials/wk3/read_res_of_line.c
 	"	1	0
 
-> ~/NERD_tree_1
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/NERD_tree_2
-	"	4	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> options/h
+> ~/tutorials/wk3/week-tree-act-two.c
 	"	1	0
 
-> ~/assignment-one-answers/menu.c
+> ~/tutorials/wk3/week-three-act-four.c
 	"	1	0
 
-> ~/assignment-one-answers/a1partb/options.h
-	"	90	1
+> ~/tutorials/wk3/week-four-act-four.c
+	"	1	0
 
-> ~/assignment-one-answers/a1partb/menu.h
-	"	34	0
+> ~/main.c
+	"	1	0
 
-> ~/assignment-one/helpers.h
+> /home/el9/E70949/shared/prog_in_c/tutes/old/week4_tute_sp4_2017/random.c
+	"	90	0
+
+> ~/assignment-one/option.c
 	"	1	0

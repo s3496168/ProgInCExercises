@@ -6,6 +6,9 @@
 #include "menu.h"
 
 #define ANSWERWIDTH 5
+#define THISWIDTH 80
+#define LOOPWIDTH 10000
+
 /**
  * This file contains the implementations of the different options that are
  * part of the assignment. This file should contain only the logic to implement
@@ -23,13 +26,41 @@
 void reverse_string(char str[]) {
     /*note-normal_output was provided in menu.c for usage
      * its job is to process strings*/
-    normal_output("You have reached reverse a string.\n");
-}
+    int g;
+    int count = 0;
+    char line[LOOPWIDTH];
+    normal_output(
+        "Please enter a string to reverse "
+        "(maximum of 80 characters): ");
 
+    fgets(line, LOOPWIDTH, stdin);
+    line[strlen(line) - 1] = 0;
+    /*printf("You answered: %s\n", line);*/
+
+    /*  str = (char*)malloc(sizeof(line));
+      memcpy(str, line, sizeof(line));
+  */
+    for (g = 0; line[g]; ++g) {
+        count++;
+    }
+    if (count > THISWIDTH) {
+        printf("Error: input was too long. Please try again.\n");
+        memset(line, 0, sizeof line);
+        reverse_string(str);
+    }
+    if (count <= THISWIDTH) {
+        str = (char*)malloc(sizeof(line));
+        memcpy(str, line, sizeof(line));
+        normal_output("The reverse of the string entered is: %s", str + 1);
+        putchar(*str);
+        free(str);
+        normal_output("\n");
+    }
+}
 /**
- * play the guess a number game. Generate a random number between 1 and 10.
- * Give the user ten guesses to guess the number.
- **/
+* play the guess a number game. Generate a random number between 1 and 10.
+* Give the user ten guesses to guess the number.
+**/
 void guess_a_number(long seed) {
     int guess = 10;
     int answer;
@@ -40,35 +71,35 @@ void guess_a_number(long seed) {
     srand(seed);
     srand(time(NULL));
     normal_output(
-        "I have selected a number between 1 and 10. You have %d guesses "
+        "I have selected a number between 1 and 10. You have %d "
+        "guesses "
         "left.\n",
         guess);
     /*fgets(line, ANSWERWIDTH + 1, stdin);*/
-    /*checking for buffer overflow as these functions are not
-     * supposed to return anything*/
     /*  answer = strtol(line, &end, 10);
       printf("You answered: %d\n", answer);*/
     while (guess >= 1 && success == FALSE && success != TRUE) {
-        printf("Please enter your guess: ");
+        normal_output("Please enter your guess: ");
         fgets(line, ANSWERWIDTH + 1, stdin);
         /*remove trailing newline*/
         line[strlen(line) - 1] = 0;
 
         answer = strtol(line, &end, 10);
         if (*end != '\0') {
-            printf("Error! this data is not numeric! \n");
+            error_output("Error! this data is not numeric! \n");
         } else {
 
             if (answer == solution) {
                 /*assigning the value of true to success does nothing
                  * but cause an unused variable warning
                  * and is left here for consistency-see above
-                 * break has been used to facilitate an ability to break out
+                 * break has been used to facilitate an ability to break
+                 * out
                  * of the loop*/
                 /*success = TRUE;*/
-                printf("Congratulations! You have won the game!\n");
+                normal_output("Congratulations! You have won the game!\n");
 
-                printf("Would you like to play again: ");
+                normal_output("Would you like to play again (y/n): ");
                 fgets(line, ANSWERWIDTH + 1, stdin);
                 /*remove trailing newline*/
                 line[strlen(line) - 1] = 0;
@@ -86,28 +117,28 @@ void guess_a_number(long seed) {
                     printf("Thanks for playing guess a game\n");
                     break;
                 }*/ else {
-                    printf("Thanks for playing \"guess a game\"\n");
+                    normal_output("Thanks for playing \"guess a game\"\n");
                     return;
                 }
             } else if (answer > solution) {
-                printf(
+                normal_output(
                     "try a lower number "
                     "(you have %d guesses left). \n",
                     guess - 1);
                 guess--;
             } else if (answer < solution) {
-                printf(
+                normal_output(
                     "try a higher number "
                     "(you have %d guesses left). \n",
                     guess - 1);
                 guess--;
             } else {
-                printf("Sorry for the internal error\n");
+                error_output("Sorry for the internal error\n");
             }
         }
     }
     if (guess == 0) {
-        printf("You ran out of guesses!");
+        normal_output("You ran out of guesses!");
     }
 }
 /**

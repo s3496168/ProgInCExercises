@@ -104,8 +104,10 @@ int main(int argc, char* argv[]) {
      * item */
     /*so it WAS supposed to go here all along*/
     init_menu(themenu);
+
     /*A do while loop here, just like in the redundant code above*/
     do {
+
         /*BOOLEAN used here too-success as per options.h*/
         BOOLEAN success = FALSE;
         /*choice as as the reference for the menu_choice enum found in menu.h

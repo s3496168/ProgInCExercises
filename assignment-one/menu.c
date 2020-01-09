@@ -16,8 +16,7 @@
 void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
 void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
 /*
- * This char is no longer needed in this manner
- * it has been moved to the appropriate function*/
+ * left here as legacy an to continue existing structure*/
 typedef char selection[NUM_MENU_ITEMS][SCREENWIDTH + 1];
 
 menu themenu;
@@ -53,7 +52,7 @@ void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
                    "fold a string",                "validate tictactoe winner",
                    "check if change can be given", "access the help menu",
                    "quit the program"};
-    /*memmove used here to prevent undefined behaviou-
+    /*memmove used here to prevent undefined behaviour
      * this can occur if using memcpy with overlapping regions*/
     memmove(menu, s, sizeof(s));
 }
@@ -70,9 +69,9 @@ void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
     int i;
     puts(head);
     for (dash = 0; dash < strlen_head; ++dash) {
-        printf("%s", "-");
+        normal_output("%s", "-");
     }
-    printf("\n");
+    normal_output("\n");
 
     for (i = 0; i < NUM_MENU_ITEMS; ++i) {
         /*redundant partb code
@@ -97,12 +96,13 @@ enum menu_choice select_menu_item(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
     enum input_result result;
     char line[SCREENWIDTH + 1];
     display_menu(menu);
-    printf("please enter your choice: ");
+    normal_output("please enter your choice: ");
     fgets(line, SCREENWIDTH + 1, stdin);
 
-    /*check for buffer overflow*/
+    /*check for and clear buffer overflow*/
     if (line[strlen(line) - 1] != '\n') {
-        printf("Internal error: buffer overflow\n\n");
+        read_rest_of_line();
+        error_output("Internal error: buffer overflow\n\n");
         return IR_FAILURE;
     }
     /* remove newline to reset application */
@@ -170,7 +170,7 @@ void menu_process_choice(enum menu_choice selected_choice) {
     } else {
         error_output("invalid option selected.\n");
     }
-    /*
+    /*left here for comparrison
     switch (selected_choice) {
     case MNU_REV: {
         reverse_string(NULL);

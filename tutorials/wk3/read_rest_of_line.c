@@ -17,40 +17,40 @@ void read_rest_of_line(void) {
     /* clear out the error status of the file pointer */
     clearerr(stdin);
 }
-/*
-typedef enum {FALSE, TRUE} BOOLEAN;
+
+typedef enum {
+    FALSE,
+    TRUE
+} BOOLEAN;
 #define LINELEN 80
 #define EXTRACHARS 2
-int main(void)
-{
-        char line[LINELEN + EXTRACHARS];
-        BOOLEAN success = FALSE;
-        while(!success)
-        {
-                printf("please enter your name: ");
-                /* read in the line */
-/*               fgets(line, LINELEN + EXTRACHARS, stdin);*/
-/* test if the newline character was stored - if
- * it was
- * not then we have buffer overflow and therefore
- * must clear the buffer
- */
-/* if(line[strlen(line) - 1] != '\n')
- {
-         printf("buffer overflow!\n");
-         read_rest_of_line();
-         continue;
- }*/
-/* if we get here then we have successfully
- * gotten input
- * of a valid length so we set success to TRUE
- */
-/*       success = TRUE;*/
-/*     }(/
-     /* remove the newline character as it is no longer
-      * needed */
-/* line[strlen(line)-1] = 0;
-        printf("%s\n", line);
+int main(void) {
+    char line[LINELEN + EXTRACHARS];
+    BOOLEAN success = FALSE;
+    while (!success) {
+        printf("please enter your name: ");
+        /* read in the line */
+        fgets(line, LINELEN + EXTRACHARS, stdin);
+        /* test if the newline character was stored - if
+         * it was
+         * not then we have buffer overflow and therefore
+         * must clear the buffer
+         */
+        if (line[strlen(line) - 1] != '\n') {
+            printf("buffer overflow!\n");
+            read_rest_of_line();
+            continue;
+        }
+        /* if we get here then we have successfully
+         * gotten input
+         * of a valid length so we set success to TRUE
+         */
+        success = TRUE;
+    }
+    /* remove the newline character as it is no longer
+     * needed */
+    line[strlen(line) - 1] = 0;
+    printf("%s\n", line);
 
-        return EXIT_SUCCESS;
-}*/
+    return EXIT_SUCCESS;
+}
