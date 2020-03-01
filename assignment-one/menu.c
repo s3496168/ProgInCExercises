@@ -11,15 +11,27 @@
 #define SCREENWIDTH 80
 #define NUM_MENU_ITEMS 7
 #define MIN_NUM_MENU_ITEMS 1
+#define NUM_MENU_HELP_ITEMS 6
+#define MIN_NUM_HELP_MENU_ITEMS 1
+
+void init_help_menu();
+void display_help_menu();
 
 /*added prototypes*/
+
 void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
 void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]);
+
+void init_help_menu(char help_menu[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1]);
+
+void display_help_menu(char help_menu[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1]);
+
 /*
  * left here as legacy an to continue existing structure*/
 typedef char selection[NUM_MENU_ITEMS][SCREENWIDTH + 1];
-
 menu themenu;
+help_menu thehelpmenu;
+
 selection s;
 
 /**
@@ -29,6 +41,7 @@ selection s;
  * reach a newline character (that's the end of the buffer that we should
  * read).
  **/
+
 static void read_rest_of_line(void) {
     int ch;
     while (ch = getc(stdin), ch != '\n' && ch != EOF)
@@ -41,13 +54,14 @@ static void read_rest_of_line(void) {
  * provided menu array. Please note that hardcoding of array indexes here
  * will result in a 50% penalty on this requirement.
  **/
+
 void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
 
     /**
      * displays the menu as specified by the assignment document. It must be
      * displayed exactly as outlined in the assignment specification.
     **/
-    /*   char selection[NUM_MENU_ITEMS][SCREENWIDTH+1]{*/
+    /*    char selection[NUM_MENU_ITEMS][SCREENWIDTH + 1] {*/
     selection s = {"reverse a string",             "play guess a number",
                    "fold a string",                "validate tictactoe winner",
                    "check if change can be given", "access the help menu",
@@ -56,11 +70,19 @@ void init_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
      * this can occur if using memcpy with overlapping regions*/
     memmove(menu, s, sizeof(s));
 }
+void init_help_menu(char help_menu[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1]) {
+
+    char help_s[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1] = {
+        "Reverse a string help",    "Guess a number help",
+        "Fold a string help",       "Validate tictacttoe winner help",
+        "Give correct change help", "Quit help"};
+    memmove(help_menu, help_s, sizeof(help_s));
+}
+
+/*enum for help menu*/
 
 void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
-    /*redundant part b code
-     * selection s;
-    themenu;*/
+    /*redundant part b code*/
     /*Create char array to display heading*/
 
     char* head = "Welcome to my menu";
@@ -74,13 +96,32 @@ void display_menu(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
     normal_output("\n");
 
     for (i = 0; i < NUM_MENU_ITEMS; ++i) {
-        /*redundant partb code
+
+        /*redundant partb code*/
+        /*
         memcpy(&themenu[i], &s[i], sizeof(s[0]));
         printf("%d %s\n", i + 1, themenu[i]);
-        */
-        /*normal output variable from options.c
-         * the printf statement from part b is refractored here*/
+*/
+        /*normal output variable from options.c*/
+        /* the printf statement from part b is refractored here*/
         normal_output("%d) %s\n", i + 1, menu[i]);
+    }
+}
+
+void display_help_menu(char help_menu[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1]) {
+
+    char* head = "Welcome to my help menu";
+    int dash;
+    int strlen_head = strlen(head);
+    int j;
+    puts(head);
+    for (dash = 0; dash < strlen_head; ++dash) {
+        normal_output("%s", "-");
+    }
+    normal_output("\n");
+    for (j = 0; j < NUM_MENU_HELP_ITEMS; ++j) {
+
+        normal_output("%d) %s\n", j + 1, help_menu[j]);
     }
 }
 
@@ -112,40 +153,119 @@ enum menu_choice select_menu_item(char menu[NUM_MENU_ITEMS][SCREENWIDTH + 1]) {
     result = input;
 
     /*utilise ascii to detect non numeric data*/
-    /*if (*end != '\0') {
+    if (*end != '\0') {
         printf("Error: data entered was not numeric.\n\n");
         return IR_FAILURE;
-    }*/
+    }
 
     /*Report an error if number is too large*/
-
-    /*if (result > NUM_MENU_ITEMS) {
+    if (result > NUM_MENU_ITEMS) {
         printf(
             "You entered: %d. This is too high; please enter a number less "
             "than %d\n\n",
             result, NUM_MENU_ITEMS);
         return IR_FAILURE;
     }
-    IR_FAILURE;
-    */
+
     /*Report an error if number is too small*/
-    /*
-        if (result < MIN_NUM_MENU_ITEMS) {
-            printf(
-                "You entered: %d. This is too low; please enter a positive "
-                "number greater than %d\n\n",
-                result, MIN_NUM_MENU_ITEMS);
-            return IR_FAILURE;
-        }
-    */
+
+    if (result < MIN_NUM_MENU_ITEMS) {
+        printf(
+            "You entered: %d. This is too low; please enter a positive "
+            "number greater than %d\n\n",
+            result, MIN_NUM_MENU_ITEMS);
+        return IR_FAILURE;
+    }
+
     return result;
 }
-void display_help(void) { printf("I will help\n"); }
+
+enum help_menu_choice select_help_menu_item(
+    char help_menu[NUM_MENU_HELP_ITEMS][SCREENWIDTH + 1]) {
+    /* please note that this is a stub
+                                          return
+                                          value.       You must delete this
+                                          * comment and the return value
+                                          below it
+                                          or I will penalise for this*/
+    int input;
+    char* end;
+    enum input_result resultH;
+    char line[SCREENWIDTH + 1];
+    display_help_menu(help_menu);
+    normal_output("please enter your choice: ");
+    fgets(line, SCREENWIDTH + 1, stdin);
+    /*check for and clear buffer overflow*/
+    if (line[strlen(line) - 1] != '\n') {
+        read_rest_of_line();
+        error_output("Internal error: buffer overflow\n\n");
+        return IR_FAILURE;
+    }
+    /*remove newline to reset application*/
+    line[strlen(line) - 1] = 0;
+    /*assign enum*/
+    input = strtol(line, &end, 10);
+    resultH = input;
+
+    return resultH;
+}
+
 void quit() {}
+
+void help_menu_process_choice(enum help_menu_choice selected_help_choice) {
+    switch (selected_help_choice) {
+        case HLP_REV: {
+            reverse_help(NULL);
+        } break;
+        case HLP_GUESS: {
+            guess_help(NULL);
+        } break;
+        case HLP_FOLD: {
+            fold_help(NULL);
+        } break;
+        case HLP_TICTACTOE: {
+            tictactoe_help(NULL);
+        } break;
+        case HLP_CHG: {
+            change_help(NULL);
+        } break;
+        case HLP_QUIT: {
+            quit();
+        } break;
+        default: { error_output("Invalid\n"); }
+    }
+}
+
+void display_help() {
+
+    enum help_menu_choice help_choice;
+    help_menu thehelpmenu;
+
+    init_help_menu(thehelpmenu);
+    /*    display_help_menu(thehelpmenu);*/
+    /*    help_menu_process_choice(help_choice);*/
+    do {
+        BOOLEAN success = TRUE;
+
+        help_choice = select_help_menu_item(thehelpmenu);
+
+        if (help_choice == HLP_INVAL) {
+            error_output("Error! Invalid option selected.");
+        } else {
+
+            help_menu_process_choice(help_choice);
+        }
+        if (success != TRUE) {
+
+            fprintf(stderr, "Invalid option selected!\n ");
+        }
+    } while (help_choice != HLP_QUIT);
+}
 
 /**
  * process input from the menu and launch each of the options
  **/
+
 void menu_process_choice(enum menu_choice selected_choice) {
     /*redundant part b code*/
     /* enum menu_choice choice;*/
@@ -195,12 +315,13 @@ void menu_process_choice(enum menu_choice selected_choice) {
     quit();
     }break;
     default: { error_output("Invalid\n"); }
-    }*/
+    }
+ */
 }
-
 /**
- * simply calls printf to do the outputting to a file.
- **/
+* simply calls printf to do the outputting to a file.
+**/
+
 int normal_output(const char format[], ...) {
     va_list vl;
     int result;
@@ -211,9 +332,11 @@ int normal_output(const char format[], ...) {
 }
 
 /**
- * simply display a prefix of Error: then display whatever message(s) have
+ * simply display a prefix of Error: then display whatever
+ *message(s) have
  * been passed in
  **/
+
 int error_output(const char format[], ...) {
     va_list vl;
     int result = 0;
