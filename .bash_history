@@ -1,43 +1,3 @@
-cd ../
-ls
-./program tests/meep
-cd tests
-ls
-cd ../
-ls
-./program tests/meep meep
-./program tests/meep 
-vim fileio.c
-vim main.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim 
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-vim main.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
 ./program tests/meep 
 vim fileio.c
 vim main.c
@@ -998,3 +958,43 @@ cd doom/2017
 vim q4.c
 cd doom/2017/
 vim q4.c
+ls
+ls -a
+ls
+git add .
+git add --all
+git commit -m "post-exam-2019-SP4-Commit"
+git push origin master
+ls
+vim read.txt
+cd ~70949
+cd ~e70949/shared/vimconfig/copyconfig
+cd ~e70949/shared/vimconfig/
+ls
+copyconfig
+./copyconfig
+cd
+mkdir demo
+cd demo
+vim hello.txt
+ls
+cd ../
+ls
+help
+helptutorial
+help tutorial
+vim helptutorial
+vim demo.txt
+pwd
+ls /home
+date
+date -u
+history
+aprops
+apropos
+man man
+du -sh .
+mkdir induction_2020
+cd induction_2020
+exit
+ls
