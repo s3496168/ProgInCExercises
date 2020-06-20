@@ -1,1000 +1,1000 @@
-./program tests/meep 
-vim fileio.c
-vim main.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-vim main.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h -o program
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim line.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim line.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-vim line.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim line.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-vim fileio.h
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-vim line.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-./program tests/meep 
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim line.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h -o program
-./program tests/meep 
+quota
+quota man
+man quota
 ls
-vim ui.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-./program tests/meep 
-vim ui.c
-vim main.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-./program tests/meep 
-vim fileio.c
-vim ui.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim ui.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-./program tests/meep 
-vim ui.c
-vim ui.h
-vim shared.c
-vim shared.h
-vim main.h
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim ui.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-./program tests/meep 
-vim fileio.c
-vim main.c
-vim fileio.c
-vim main.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-vim fileio.h
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-vim readme.txt
+mkdir lastyear
+vim read.txt
+mv -r assignment-one lastyear
+mv assignment-one lastyear
+ls
+mv assignment-one-answers lastyear
+mv FunctPtr lasyear
+mv FuncPtr lasyear
+mv _vim lastyear
+mv -r assinment-one-c-s3496168.zip
+mv assinment-one-c-s3496168.zip
+mv assinment-one-c-s3496168.zip lastyear
+mv assignment-one-c-s3496168.zip lastyear
+mv assignment-one-c-3496168.zip lastyear
+mv assignment-one-c-34961698.zip lastyear
+mv assignment-one-s3496168.zip lastyear
+mv assignment-one-test lastyear
+mv assignment-two lastyear
+mv assignment2 lastyear
+mv backup lastyear
+mv backup-phone.tar.gz lastyear
+mv backup.tar.bz2
+mv backup.tar.bz2 lastyear
+mv backup.tar.gz lastyear
+mv backup.zip lastyear
+ls
+mv _viminfo lastyear
+mv _vimrc lastyear
+mv courses lastyear
+mv demo lastyear
+mv 400test.txt
+mv 400test.txt lastyear
+mv demo.txt
+mv demo.txt lastyear
+mv my_copy lastyear
+mv my-copy lastyear
+mv read.txt lastyear
+mv vims lastyear
+mv tutorials lasyear
+mv syntax lastyear
+mv new lastyear
+vim hello lastyear
+mv hello lastyear
+mv runme lastyear
+mv hello lastyear
+mv -r hello lastyear
+mv phone.txt lastyear
+mv first.c lastyear
+mv doom lastyear
+mv programming lastyear
+mv demo.txt lastyear
+ls
+mv first lastyear
+mv induction.zip lastyear
+mv vim-test.txt lastyear
+mv startup lastyear
+mv induction lastyear
+mv fileio.c lastyear
+ls
+mv maths-backup lasyear
+mv startup lastyear
+ls
+mv lasyear lastyear
+ls
+ls .a
+ls -a
+.viminfo lastyear
+mv .viminfo lastyear
+mv .vimrc lastyear
+mv .swp lastyear
+cd lastyear
+mv .swp ~/
+ls
 cd
 ls
-cd assignment-two
-la
+ls -a
+date
+date -u
+man date
+man -s3 flockfile
+man flockfile
+ls /lastyear
+ls /bin
+ls /home
+ls /~
 ls
-mkdir s3496168-A2P2-Brearne-Gibson
-cp startup s3496168-A2P2-Brearne-Gibson
-cp -r startup s3496168-A2P2-Brearne-Gibson
-cd s3496168-A2P2-Brearne-Gibson
-ls
-zip -r s3496168-A2-P2-Brearne-Gibson.zip s3496168-A2P2-Brearne-Gibson
-ls
-cd ..
-ls
-zip -r s3496168-A2-P2-Brearne-Gibson.zip s3496168-A2P2-Brearne-Gibson
+ls -a
+ls /home
+ls ~/
+ls /
+ls /RMIThome
+ls /~s3496168
+ls /s3496168
+ls ~/
+cd ../
 ls
 cd ../
 ls
-cd assignment-two/startup
-vim linkedlist.c
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim fileio.
-vim fileio.c
-vim linkedlist.c
-vim fileio.c
-vim linkedlist.h
-vim fileio.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.c main.h fileio.c fileio.h line.c line.h ui.h ui.c -o program
-vim linkedlist.c
-cd assignment-two/startup
-vim line.c
-cd assignment-two/solutions
-vim linkedlist.c
+cd ~/
+ls
+git push origin master
+git add --all
+git commit -m "cleaned up directories, moved all of last year's stuff out"
+git push origin master
+pwd
+ls
+mkdir weeks
+mkdir assignments
+cd weeks
+mkdir week-01
+mkdir week-02
+mkdir week-03
+mkdir week-04
+mkdir week-05
+mkdir week-06
+mkdir week-07
+mkdir week-08
+mkdir week-09
+mkdir week-10
+mkdir week-11
+mkdir week-12
+cd week-01
+mkdir courses
+mkdir courses/maths
+mkdir courses/programming
+mkdir courses/databases
+ls courses
+cd courses
+pwd
+ls
+mkdir induction
+ls
+cd ~/
+pwd
+cd weeks/week-01
+ls
+cd courses
+ls
+mkdir maths/algebra
+mkdir maths/calculus
+cd algebra
+ls
+cd maths/algebra
+ls ~/weeks/week-01/courses
+cd ../../
+ls
+cd ../
+ls
+cd ../
+ls
+cd week-01
+ls
+cd ~/
+la -a
+ls -a
+cd weeks/week-01
+ls
+mkdir courses/ .hidden
+mkdir courses/.hidden
 ls
 ls -a
-vim fileio.c
-vim linkedlist.h
-vim fileio.c
-vim fileio.h
-grep line_make *.c
-vim line.c
-vim fileio.c
-vim fileio.h
-vim fileio.c
-vim linkedlist.h
-cd assignment-two/startup
-vim linkedlist.c
-ls -a
-rm .linkedlist.c.swp
-vim linkedlist.c
-vim linkedlist.h
-vim linkedlist.c
-vim fileio.c
-vim linkedlist.h
-vim linkedlist.c
-vim linkedlist.h
-vim linkedlist.c
-vim fileio.c
-vim fileio.h
-vim line.c
-vim fileio.c
-vim linkedlist.c
-vim fileio.h
-vim linkedlist.c
-vim fileio.c
-vim linkedlist.c
-vim linkedlist.c
-vim fileio.c
-cd assignment-two/startup
-vim linkedlist.c
-vim linkedlist.h
-cd assignment-two/solutions
-vim main.c
-cd assignment-two/solutions
-vim main.c
-grep _array *.c
-vim action.c
-vim main.c
-vim main.h
-vim main.c
-vim linkedlist.h
-vim main.c
-cd assignment-two/startup
-vim main.c
+ls courses
+ls ./courses
+ls ./courses/
+cd maths
+cd courses/maths
+nano assignment1
+ls
+cat assignment1
+mv assignment1 assignment1.txt
+ls
+cd ../
+ls
+cd maths
+ls
+mv assignment1.txt ../induction
+mv ../induction ../
+ls
 ../
 cd ../
 ls
-cd startup
-vim main.c
-vim action.c
-vim main.c
-vim main.h
-vim main.c
-vim main.h
-vim linkedlist.h
-vim linkedlist.c
-vim linkedlist.h
-vim main.c
-cd assignment-two/soultions
-cd assignment-two/soultion
-cd assignment-two
-ls
-cd solutions
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h -o program -g
-
-cd assignment-two/startup
-ls
-assignment-two/startup
-cd assignment=two/soultions
-cd assignment-two/so;utions
-cd assignment-two/solutions
-vim main.c
-ls
 cd ../
-vim main.c
-cd solutions
 ls
-vim main.c
-cd assignment-two/startup
-vim main.c
-vim action.c
-vimfileio.c
-vim fileio.c
-vim main.c
-cd assignment-two/startup
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h action.c action.h ui.c ui.h -o program
+cd induction
+cd courses
 ls
-cd assignment-two/startup
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h ui.c ui.h linkedlist.c linkedlist.h action.c action.h helpers.c helpers.h shared.h -o program -g
-vim line.c
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h ui.c ui.h linkedlist.c linkedlist.h action.c action.h helpers.c helpers.h shared.h -o program -g
-vim action.h
-vim action.c
-vim main.c
-vim action.h
-grep action_key *.c
-grep action_key *.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-cd assignment-two/startup
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h ui.c ui.h linkedlist.c linkedlist.h action.c action.h -o program -g
-gcc -ansi -Wall -pedantic -Wextra -Werror main.h main.c fileio.c fileio.h line.c line.h ui.c ui.h linkedlist.c linkedlist.h action.c action.h helpers.c helpers.h shared.h -o program -g
+cd maths
+mv ../induction ../../
 cd ../../
 ls
-cd assignment-one.c
-cd assignment-one
-vim main.c
-vim menu.c
-vim menu.h
-vim menu.c
-cd assignment-two/solutions
-ls
-#CPvim line.c
-vim line.c
-vim actions.h
-vim action.h
-vim action.c
-grep do_save *.c
-grep do_save *.h
-grep action- *.c
-grep action_ *.c
-vim helpers.h
-vim helpers.c
-vim actions.h
-vim action.h
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-ls
-vim file_funcs.c
-vim file_process.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_process.h
-vim file_process.c
-vim file_funcs.c
-vim file_process.h
-vim file_process.c
-vim file_process.h
-vim file_process.c
-ls
-vim makefile
-vim Makefile
-vim filefuncs.h
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-grep union *.c
-grep union *.h
-vim file_funcs.c
-vim file_funcs.u
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-cd assignment-one/
-ls
-vim menu.c
-vim menu.h
-vim menu.c
-~e70949/shared/prog_in_c/examples/FuncPtr
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
- cd ~e70949/shared/prog_in_c
-ls
-cd assignments
-ls
-cd a1
-ls
-cd a1partb
-ls
-vim main.c
-vim menu.c
-vim menu.h
-vim menu.c
-vim menu.h
-cd assignment-two/startup
-vim action.h
-~e70949/shared/prog_in_c/examples/FuncPtr
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-ls
-vim filefuncs.c
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim readme.txt
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-cd assignment-two/startup
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-grep function *.c
-grep function *.h
-vim actio.h
-vim action/h
-vim action.h
-vim action.c
-grep NUM_A *.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-cd ~e70949/shared/prog_in_c/
-ls
-cd a2
-ls
 cd ../
 ls
-cd assignments
+cd week-01
 ls
-cd a2
+cp induction/assignment1. txt ./
+cp induction/assignment1.txt ./
 ls
-cd sample
-ls
-cd ../data
-ls
+cd courses/maths
+cp -r ./ ../maths-backup
 cd ../
 ls
-cd sample
-./cpt220_ed ibid
-./cpt220_ed ../data/ibid
-./cpt220_ed ../data/pg10.txt
-./cpt220_ed ../data/ibid
-ls
-cd ../
-ls
-cd cdata
-cd data
-ls
-cd assignment-two/startup
-vim action.h
-vim action.c
-ls -a
-rm action.c.swp
-rm .action.c.swp
-rm .action.h.swp
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-cd assignment-two/startup
-vim action.c
-cd ~e70949/shared/prog_in_c/
-cd Examples
-ls
-cd examples
-ls
-cd FuncPtr
-ls
-vim file_funcs.c
-cd assignment-two/startup
-vim action.h
-vim action.c
-vim action.h
-cd assignment-two/startup
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-cd assignment-two/startup
-ls
-vim action.c
-cd ~e70949/shared/prog_in_c/
-ls
-cd examples
-ls
-cd FuncPtr
-ls
-file_process.c
-cd file_process.c
-vim file_process.c
-ls
-vim file_process.c
-cd file_funcs.c
-vim file_funcs.c
-cd assignment-two/startup
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-vim action.c
-vim ui.h
-vim ui.c
-cd cd ~e70949/shared/prog_in_c/
-cd ~e70949/shared/prog_in_c/
-cd Examples
-cd examples
-ls
-vd FuncPtr
-cd FuncPtr
-ls
-vim file_funcs.c
-ls
-cd FuncPtr
-ls
-vim demo.txt
-./file_funcs demo.txt
-vim demo.txt
-./file_funcs demo.txt
-vim demo.txt
-./file_funcs demo.txt
-vim demo.txt
-./file_funcs demo.txt
-vim demo.txt.shifted
-cd assignment-two/startup
-vim action.c
-vim action.h
-cd ~e70949/shared/prog_in_c/
-cd examples
-cd FuncPtr
-ls
-vim file_funcs.c
-vim file_funcs.h
-cd ~/
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-vim file_funcs.c
-cd ~/assignment-two/startup
-
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-vim file_funcs.c
-cd ~/assignment-two/startup
-vim action.c
-ls -a
-rm .action.h
-rm .action.h.swp
-rm .action.c.swp
-vim action.c
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-vim file_funcs.c
-cd ~/assignment-two/startup
-vim action.c
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-vim file_funcs.c
-grep string *.c
-
-cd ~/assignment-two/startup
-vim action.c
-vim action.h
-vim action.c
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-ls
-grep main *.c
-vim file_funcs.c
-cd ~/assignment-two/startup
-ls
-vim actiln.c
-vim action.c
-vim ui.c
-vim action.c
-cd ~e70949/shared/prog_in_c/examples/FuncPtr
-ls
-vim file_process.c
-grep name *.c
-vim file_process.c
-vim file_process.h
-vim file_process.c
-cd ~/assignment-two/startup
-vim action.c
-cd ~e70949/shared/prog_in_c/examples/
-grep repl *.c
-ls
-cd structs
-cd Structs
-ls
-grep repl *.c
-cd ../
-cd OtherExamples
-grep repl *.c
-cd ../
-cd InputValidation
-ls
-grep repl *.c
-cd ../
-cd FuncPtr
-grep repl *.c
-grep repl *.h
-cd ~/assignment-two/startup
-vim main.c
-vim action.c
-vim action.h
-vim action.c
-ls
-ls -a
-rm .action.h.swp
-ls -a
-vim ui.c
-vim action.c
-vim action.h
-cd assignment-two/startup
-vim action.c
-vim action.h
-vim action.c
-vim action.h
-ls -a
-vim action.h
-cd assignment-one
-vim menu.h
-vim menu.c
-cd ~e70949/shared/prog_in_c/examples
-cd FuncPtr
-ls
-./file_funcs 
-./file_funcs readme.txt
-cd ../
-ls
-cp -r FunctPtr ~/
-cp -r FuncPtr ~/
-cd ~/
-cd FuncPtr 
-vim demo.txt
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-grep string *.c
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-cd assignment-two/startup
-vim action.h
-ls
-./program 
-vim action.c
-vim ui.c
-vim ui.h
-vim ui.c
-vim ui.h
-vim ui.c
-vim ui.h
-cd ~e70949/shared/prog_in_c/
-cd examples
-cd FuncPtr
-cd file_funcs.c
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-vim file_process.c
-vim file_funcs.h
-vim file_funcs.c
-vim file_funcs.h
-cd ~/assignment-two/startup
-cd ui.h
-vim ui.c
-vim ui.h
-vim ui.c
-cd ../
-ls
-zip s3496168-A2-P3-Brearne-Gibson.zip startup
-zip -r s3496168-A2-P3-Brearne-Gibson.zip startup
-cd assignment-one
-ls
-cd
-ls
-mkdir doom
-cd doom
-mkdir 2017
-cd 2017
-vim q1.c
 cd ../../
 ls
-cd assignment-two
+cd week-01
 ls
-cd part2
+rm induction/assignment1.txt
+ls courses/
+cd i duction
+cd induction
+rm -r ../databases
 ls
-cd startup
+rm -r ../../databases
+cd ../
 ls
-vim linkedlist.h
-vim linkedlist.c
-vim main.h
-vim shared.h
-vim filio.c
-vim fileio.c
-vim fileio.h
-cd ../../
+cd induction
+rm -r ../courses/databases
 ls
-cd ../../
+cd ../
+lx
+ls
+cd courses
+ls
+mv maths-backup ,maths-backup
+ls
+ls -a
 ls
 cd ~/
 ls
-cd doom/2017
+cd wweks/week-01
+cd weeks/week-01
 ls
-vim q1.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1.c -o q1 -g
-./q1
-vim q1.c
-./q1
-gcc -ansi -Wall -pedantic -Wextra -Werror q1.c -o q1 -g
-./q1
-vim q1.c
-cd doom
+cd induction
 ls
-cd 2017
+cd ../
+cat windows.txt
+cd induction.txt
+cd induction
 ls
-cd qi.c
-vim q1.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1.c -o q1 -g
-./q1
-vim q1.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1.c -o q1 -g
-./q1
-vim q1.c
-cd doom
+cat windows.txt
+cat -v windows.txt
+cat windows.txt | tr -d "\r" > UNIX.txt
+cat -v windows.txt
 ls
-cd 2017
+cat UNIX.txt
+cp windows.txt win.txt
 ls
-vim a1.c
-vim q1.c
+dos2unix win.txt
+cat -v win.txt
+cat -v windows.txt
+scp win.txt s3496168@csit.rmit.edu.au:Downloads
 ls
-vim first.c
-cd doom
-cd 2017
+cat test.txt
+mkdir synonyms antonyms
+cp *.syn synonyms
+ls inuction *.ant
+ls ./d*
+cd synonyms
 ls
-vim q1.c
-cd doom
+nedit sad.syn
+vim sad.syn
+grep perplexed *.syn
+grep -n perplexed *.syn
+find ~/ -name assignment1.txt
+find ~/ -name "*.txt"
+find ~/ -name \*.txt
+cp *.ant antonyms
 ls
-cd 2017
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
+cd ../
+cp *.ant antonyms
+ls
+cd antonyms
+ls
+cd ../
+grep -n satisfied .syn .ant
+grep -n satisfied *.syn *.ant
+grep -n addlepated *.syn 
+find /usr/include -name scf.h
+~/
+cd ~/
+find /usr/include -name scf.h
+find /usr/include/ -name scf.h
+find ~/usr/include/ -name scf.h
+cd ../
+ls
+find ~/usr/include/ -name scf.h
+find /usr/include/ -name scf.h
 cd ../
 ls
 cd ../
 ls
-vim fileio.c
+find /usr/include/ -name scf.h
+cd usr
+ls
+cd include
+ls
+find /usr/include/ -name scf.h
+find /usr/include/ -name "scf.h"
+find /usr/include/sound -name "scf.h"
+find /usr/include/sys -name "scf.h"
+cat sys
+ls sys
+find /usr/include/layout -name "scf.h"
+find /usr/include/drm -name "scf.h"
+find /usr/include/oracle -name "scf.h"
+find /usr/include/openssl -name "scf.h"
+find /usr/include/tcl-private -name "scf.h"
+find /usr/include/lapacke -name "scf.h"
+find /usr/include/krb5 -name "scf.h"
+find /usr/include/xen -name "scf.h"
+find /usr/include/sys -name wait.h
+find /usr/include/ -name wait.h
+cd ~/
+find /usr/include/ -name wait.h
+cd weeks/week-01
+ls
+find /usr/include/ -name wait.h
+find /usr/include/ -name scf.h
+find /usr/include/ -name wait.h
+quota
+~/
+ls
+cd ~/
+quota
+quota -f
+quota vs
+quota s3496168
+quota -vs
+repquota /userquota
+ls
+repquota /userquota/
+quota -u s3496168
+quota -u $USER
+quota -s
+du -ks ~/*
+du -ks ~/.*
+du -ks ~/*
+ls
+du -ks ~/.*
+du -hs ~/*
+du -hs ~/.*
+quota -a
+quota -s
+ls
+cd weeks/week-01
+ls
+cd induction
+ls
+tar -czf backup.tar.gz *.syn
+tar -tzf backup.tar.gz
+tar -xzf backup.tar.gz
+ls
+tar -cjf backup.tar.bz2 *.syn
+tar -tjf backup.tar.bz2
+tar -xjf backup.tar.bz2
+zip backup.zip *.syn
+unzip backup.zip
+y
+ls -l
+ls
+chmod g+w UNIX.txt
+chmod ug+z UNIX.txt
+chmod ug+x UNIX.txt
+chmod ugo-x UNIX.txt
+chmod u+x UNIX.txt
+quota -s
+du -hs ~/*
+cd ~/
+ls -l
+pwd
+chmod 700 /home/sh8/s3496168
+ls -l
+chmod 700 /lastyear
+ls
+chmod 700 lastyear
+ls -l
+chmod 700 assignments
+ls -l
+cd weeks/week-01
+ls
+vi helloworld.txt
+chmod helloworld.txt
+ls -l helloworld.txt
+cd ../
+ls -l
+cd week-01
+ls -l
+cd ../
+ls
+cd ../
+ls
+chmod 700 weeks
+rm induction_2020
+rm -r induction_2020
+ls
+ls -l
+chmod 700 KDrive
+ls -l
+cd weeks/week-01
+ls
+chmod 700 helloworld.txt
+ls -l helloworld.txt
+chmod 740 helloworld.txt
+ls -l helloworld.txt
+chmod 722 helloworld.txt
+ls -l helloworld.txt
+chmod 777 helloworld.txt
+ls -l helloworld.txt
+chmod 700 helloworld.txt
+ls
+mkdir induction/myfirstvim
+cd induction/myfirstvim
+ls
+vim file1.txt
+ls
+vim file1.txt
+find ~/ -name vimrc.c
+find ~/ -name .vimrc.c
+cd ../
+ls
+mkdir myfirstc
+cd myfirstc
+vim firstc
+g++ -ansi -Wall -pedantic first.c -o first
+ls
+mv firstc first.c
+ls
+g++ -ansi -Wall -pedantic first.c -o first
+./first
 vim first.c
-cd doom/2017
-ls
-vim q2.c
-cd ../../
-ls
-vim first.c
-cd doom/2017/
-ls
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-cd doom/2017
-vim q2.c
-cd assignment-one
-ls
-vim options.c
-vim options.h
-cd doom/2017/
-ls
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-ls -a
-rm q2.c.swp
-rm .q2.c.swp
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-vim q2.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q2.c -o q2 -g
-./q2
-ls
-mv q2.c q1b.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1b.c -o q1b -g
-./q1b
-ls
-vim q1c.c
-ls
-cd doom
-ls
-cd 2017
-ls
-cd doom/2017
-vim q1-c.c
-ls
-vim q1c.c
-vim q1d.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q1d.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q1d.c
-cd doom/2017
-vim q2.c
-vim q1c.c
-vim q1d.c
-cd doom/2017
-vim q1d.c
-cd doom/2017
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q2.c
-vim q2.h
-vim q2.c
-ls
-vim q2.c
-vim q2.h
-vim q2.c
-cd doom/2017
-vim q1d.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q1d.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q1d.c
-gcc -ansi -Wall -pedantic -Wextra -Werror q1d.c -o q1d -g
-./q1d
-vim q1d.c
-ls
-vim q2.c
-vim q2.h
-vim q2.c
-vim q2.h
-vim q2.c
-cd doom/2017
-ls
-vim q2.c
-vim q2.h
-vim q2.c
-vim q2.h
-vim q2.c
-cd doom/2017
-vim q2
-vim q2.c
-ls -a
-rm .q2.c.swp
-ls
-vim q2.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-cd doom/2017
-ls
-vim q2-shared.h
-ls
-vim q2.h
-rm q2-shared.h q3-shared.h
-mv q2-shared.h q3-shared.h
-ls
-vim q3-shared.h
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3-shared.h
-cd assignment-one
-ls
-vim main.h
-vim options.h
-cd assignment-two/startup
-ls
-vim fileio.h
-vim fileio.c
-ls
-grep BOOLEAN *.c
-grep BOOLEAN *.h
-vim action.h
-cd ../assignment-one
-cd ../../assignment-one
-ls
-vim options.h
-vim shared.h
-vim action.h
-ls
-vim options.h
-cd doom/2017
-cd doom/2017
-vim q2.c
-vim q3.h
-vim q3.c
-vim q2.c
-vim q3.h
-vim q3.c
-ls
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3.c
-vim q3.h
-vim q3-shared.c
-vim q3-shared.h
-vim q3.c
-vim q3.h
-cd assignment-one
-ls
-vim shared.h
-cd doom/2017/
-ls
-vim q3-shared.h
-vim q3.h
-vim q3.c
-cd doom/2017
-vim q3.h
-vim q3-shared.h
-vim q3.c
-cd d00m/2017
-vim q3.c
-ls
-cd doom/2017
-ls
-vim q3.c
-cd doom/2017
-vim q4.c
-cd doom/2017/
-vim q4.c
-ls
-ls -a
-ls
-git add .
-git add --all
-git commit -m "post-exam-2019-SP4-Commit"
-git push origin master
-ls
-vim read.txt
-cd ~70949
-cd ~e70949/shared/vimconfig/copyconfig
+scl enable devtoolset-7 bash
 cd ~e70949/shared/vimconfig/
 ls
-copyconfig
 ./copyconfig
-cd
-mkdir demo
-cd demo
-vim hello.txt
 ls
+cd ~/weeks/week-01
+ls
+cd induction/myfirstc
+ls
+vim first.c
 cd ../
 ls
-help
-helptutorial
-help tutorial
-vim helptutorial
-vim demo.txt
-pwd
-ls /home
-date
-date -u
-history
-aprops
-apropos
-man man
-du -sh .
-mkdir induction_2020
-cd induction_2020
-exit
+vim meep.c
+mkdir meep
+mv meep.c /meep/meep.c
+mv meep.c meep/meep.c
+cd meep
 ls
+mv meep.c meep.txt
+vim meep.txt
+chmod 333 meep.txt
+ls -l
+chmod 400 meep.txt
+ls -l
+chmod 777 meep.txt
+chmodu+rgo-wx
+chmod u+rgo-wx meep.txt
+chmod 400 meep.txt
+man cat
+chmod u+x meep.txt
+ls -l
+find ~/ -name confused.syn
+cd ~e70949/shared/vimconfig/
+cd ../
+ls
+cd prog_in_c
+ls
+
+find ~e70949/shared/prog_in_c -name hello.c
+cd prog_in_c/lectures/Week-02
+ls
+./hello
+vim hello.c
+gcc -ansi -Wall -pedantic hello.c -o hello
+ls 
+cp switch.c ~/weeks/week-02
+cp switch2.c ~/weeks/week-02
+cd ~/weeks/week-02
+ls
+gcc -ansi -Wall -Werror -pedantic switch.c -o switch
+vim switch.c
+gcc -ansi -Wall -Werror -pedantic switch2.c -o switch2
+./switch2
+
+vim switch.c
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd week-02
+cd Week-02
+ls
+vim wile.c
+vim wihle.c
+vim while.c
+./while
+vim while.c
+vim dowhile.c
+./dowhile
+vim dowhile.c
+vim whileglt.c
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd Week-02
+lw
+ls
+vim for_while.c
+vim union.c
+vim size.c
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd week-02
+ls
+cd Week-02
+ls
+vim switch2.c
+vim dowhile.c
+vim while.c
+vim whileglt.c
+cd ~/
+ls
+vim weeks/week-02
+cd weeks/week-02
+ls
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+./demo
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo/
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+vim demo.c
+gcc -ansi -Wall -Werror -pedantic demo.c -o demo
+./demo
+ls
+cd ~e70949/shared/prog_in_c/lectures
+ls
+cd Week-02
+
+vim dowhile.c
+vim while.c
+cd ~/Weeks-02/
+cd ~/weeks/Weeks-02/
+cd ~/weeks
+ls
+cd week-02
+ls
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+./demo
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+./demo
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror demo.c -o demo -g
+vim demo.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+vim activity-one.c\
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o acitvity-one -g
+./activity-one
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o activity-one -g
+./activity-one
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o activity-one -g
+vim activity-one.c
+./activity-one
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o activity-one -g
+vim activity-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-one.c -o activity-one -g
+./activity-one
+ls
+rm acitvity-one
+ls
+vim act-two-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror activity-two.c -o activity-two -g
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-one.c -o act-two-one -g
+vim act-two-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-one.c -o act-two-one -g
+vim act-two-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-one.c -o act-two-one -g
+vim act-two-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-one.c -o act-two-one -g
+vim act-two-one.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-one.c -o act-two-one -g
+./act-two-one
+vim act-two-one.c
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-two
+vim act-two-two.c
+vim act-two-three.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-two.c -o act-two-two -g
+./act-two-three
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-three.c -o act-two-three -g
+./act-two-three
+vim act-two-three.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-three.c -o act-two-three -g
+./act-two-three
+vim act-two-three.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-three.c -o act-two-three -g
+./act-two-three
+vim act-two-three.c
+vim act-two-four.c
+ls
+cd weeks/week-02
+ls
+vim activity-one.c
+ls
+cd lasyear
+cd lastyear
+ls
+cd programming
+ls
+ls -a
+cd ../backup
+ls
+cd ../courses
+ls
+cd programming
+ls
+cd ../../
+cd new
+ls
+cd ../my-copy
+ls
+cd  ./
+cd ../
+find ~/lastyear -name ".c"
+find ~/lastyear/ -name ".c"
+find ~/ -name ".c"
+find ~/lastyear -name "*.c"
+cd lasyear
+ls
+cd tutorials
+ls
+cd wk2
+ls
+./rug
+vim rug.c
+cd ~/weeks
+ls
+cd week-02
+ls
+vim act-one.c
+vim activity-one.c
+scp activity-one s3496168@titan.csit.rmit.edu.au:Home/downloads
+scp activity-one s3496168@titan.csit.rmit.edu.au:home/downloads
+scp activity-one s3496168@titan.csit.rmit.edu.au:downloads
+ls
+scp activity-one.c s3496168@titan.csit.rmit.edu.au:downloads
+scp activity-one.c s3496168@titan.csit.rmit.edu.au:~/downloads
+exit
+cd weeks/week-02
+ls
+scp activity-one.c s3496168@titan.csit.rmit.edu.au:Downloads
+scp activity-one.c s3496168@titan.csit.rmit.edu.au:Home/Downloads
+scp activity-one.c s3496168@titan.csit.rmit.edu.au:
+exit
+cd weeks/week-02
+ls
+
+./act-two-three
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-four.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-four.c -o act-two-four -g
+./act-two-four
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+./act-two-five
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+./act-two-five
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+./act-two-five
+vim act-two-five.c
+gcc -ansi -Wall -pedantic -Wextra -Werror act-two-five.c -o act-two-five -g
+./act-two-five
