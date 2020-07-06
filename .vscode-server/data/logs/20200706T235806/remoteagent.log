@@ -1,0 +1,29 @@
+[2020-07-06 23:58:06.898] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2020-07-06 23:58:06.898] [remoteagent] [info] Extension host agent started.
+[2020-07-06 23:58:07.431] [remoteagent] [info] [127.0.0.1][23d01f3b][ManagementConnection] New connection established.
+[2020-07-06 23:58:07.432] [remoteagent] [info] [127.0.0.1][3a73974d][ExtensionHostConnection] New connection established.
+[2020-07-06 23:58:07.578] [remoteagent] [info] [127.0.0.1][3a73974d][ExtensionHostConnection] <35207> Launched Extension Host Process.
+[2020-07-07 00:01:30.852] [remoteagent] [info] [127.0.0.1][2bba7bd3][ManagementConnection] New connection established.
+[2020-07-07 00:01:30.872] [remoteagent] [info] [127.0.0.1][174a55e6][ExtensionHostConnection] New connection established.
+[2020-07-07 00:01:30.877] [remoteagent] [info] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Launched Extension Host Process.
+[2020-07-07 00:03:57.847] [remoteagent] [info] [127.0.0.1][2bba7bd3][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2020-07-07 00:03:58.869] [remoteagent] [info] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Extension Host Process exited with code: 0, signal: null.
+[2020-07-07 00:04:14.851] [remoteagent] [info] [127.0.0.1][ff58b857][ManagementConnection] New connection established.
+[2020-07-07 00:04:14.852] [remoteagent] [info] [127.0.0.1][10435fd0][ExtensionHostConnection] New connection established.
+[2020-07-07 00:04:14.858] [remoteagent] [info] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Launched Extension Host Process.
+[2020-07-07 00:20:42.731] [remoteagent] [info] [127.0.0.1][ff58b857][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2020-07-07 00:20:43.767] [remoteagent] [info] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Extension Host Process exited with code: 0, signal: null.
+[2020-07-07 00:20:53.797] [remoteagent] [info] [127.0.0.1][3d240db3][ManagementConnection] New connection established.
+[2020-07-07 00:20:53.797] [remoteagent] [info] [127.0.0.1][e834676f][ExtensionHostConnection] New connection established.
+[2020-07-07 00:20:53.804] [remoteagent] [info] [127.0.0.1][e834676f][ExtensionHostConnection] <39461> Launched Extension Host Process.
+[2020-07-07 00:47:29.691] [remoteagent] [info] [127.0.0.1][3d240db3][ManagementConnection] The client has reconnected.
+[2020-07-07 00:47:29.692] [remoteagent] [info] [127.0.0.1][e834676f][ExtensionHostConnection] The client has reconnected.

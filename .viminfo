@@ -2,13 +2,13 @@
 # You may edit it if you're careful!
 
 # Value of 'encoding' when this file was written
-*encoding=latin1
+*encoding=utf-8
 
 
 # hlsearch on (H) or off (h):
 ~H
 # Last Search Pattern:
-~MSle0~/invalid denom
+~Msle0~/\<str_function\>
 
 # Last Substitute Search Pattern:
 ~MSle0&?
@@ -19,10 +19,11 @@ $
 # Command Line History (newest to oldest):
 :q
 :wq
-:swq
 :w
-:ew
 :q!
+::w
+:swq
+:ew
 :wqa
 :$
 :qa
@@ -103,6 +104,12 @@ $
 :236
 
 # Search String History (newest to oldest):
+? \<themenu\>
+? \<NUM_MENU_CHOICES\>
+? \<str_function\>
+? \<c\>
+? \<token\>
+? \<l\>
 ?/i
 ?/*                                                                                                                  i
 ?/invalid denom
@@ -188,651 +195,913 @@ $
 
 # Registers:
 ""0	CHAR	0
-	#include <stdlib.h>
-	#include <stdio.h>
+	 normal_output("This: %s\n", themenu->selection);
 	
-	/** computing the distance of a marathon in kilometres **/
-	int main(void) {
-	    double miles, yards;
-	    double kilometres;
-	    yards = 26;
-	    miles = 385;
-	    kilometres = 1.609 * (miles + yards / 1760);
-	    printf("%f miles, %f yards, %f kilometres\n", miles, yards, kilometres);
-	    return EXIT_SUCCESS;
-	}
 "1	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void) {
-	    int i, j;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (i = zero; i < ten; ++i) {
-	        for (j = 0; j < ten; ++j) {
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	    return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "2	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void) {
-	    int i, j;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (i = zero; i < ten; ++i) {
-	        for (j = 0; j < i; ++j) {
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	    return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "3	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void) {
-	    int i,j,k,l;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (i = zero; i < ten; ++i) {
-	        for (j = 0; j < i; ++j) {
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	    return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "4	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void) {
-	    int i, j, k, l;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (i = zero; i < ten; ++i) {
-	        for (j = 0; j < i; ++j) {
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	    return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "5	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void) {
-	    int i, j, k, l;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (i = zero; i < ten; ++i) {
-	        for (j = 0; j <, i; ++j) {
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	    return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "6	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
 	
-	#define zero 0
-	#define one 1
-	#define ten 10
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	int main(void){
-	int i,j,k,l;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for(i=zero;i < ten; ++i){
-	        for (j=0; j z,i; ++j){
-	            printf("* ");
-	        }
-	        printf("\n");
-	    }
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	return EXIT_SUCCESS;
-	}
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
+	
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
+	
+	/**
 "7	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
-	#define one 1
-	#define ten 10
-	#define zero 0
-	#define minusone -1
+	#include <stdlib.h>
+	#include <string.h>
 	
-	int main(void) {
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	    int i;
-	    int j;
-	    int k;
-	    int m = one;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (k = one; k <= ten; ++k) {
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	        for (i = ten; i >= k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m += 2;
-	        printf("\n");
-	    }
-	    for (k = ten; k > minusone; --k) {
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
 	
-	        for (i = ten; i > k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m -= 2;
-	        printf("\n");
-	    }
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
 	
-	    return EXIT_SUCCESS;
-	}
+	/**
 "8	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
-	#define one 1
-	#define ten 10
-	#define zero 0
-	#define minustwo -2
+	#include <stdlib.h>
+	#include <string.h>
 	
-	int main(void) {
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	    int i;
-	    int j;
-	    int k;
-	    int m = one;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (k = one; k <= ten; ++k) {
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	        for (i = ten; i >= k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m += 2;
-	        printf("\n");
-	    }
-	    for (k = ten; k > minustwo; --k) {
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
 	
-	        for (i = ten; i > k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m -= 2;
-	        printf("\n");
-	    }
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
 	
-	    return EXIT_SUCCESS;
-	}
+	/**
 "9	LINE	0
-	#include <stdlib.h>
+	/******************************************************************************
+	 * Student Name    : Brearne Gibson
+	 * RMIT Student ID : s3496168
+	 *
+	 * Startup code provided by Paul Miller for use in "Programming in C",
+	 * Assignment 1, study period 2, 2020.
+	 *****************************************************************************/
+	#include "io.h"
+	#include "options.h"
+	
+	#include <ctype.h>
+	#include <limits.h>
 	#include <stdio.h>
-	#define one 1
-	#define ten 10
-	#define zero 0
+	#include <stdlib.h>
+	#include <string.h>
 	
-	int main(void) {
+	/**
+	 * this module is the place to implement all i/o functionality. You should not
+	 * call printf/fprintf, etc, outside this module as that will make it simpler
+	 * if we ever want to change the target for output for the program.
+	 **/
 	
-	    int i;
-	    int j;
-	    int k;
-	    int m = one;
+	/*the number of choices in the program*/
+	#define NUM_MENU_CHOICES 5
 	
-	    for (k = one; k <= ten; ++k) {
+	/*the minimum number of choices in the program*/
+	#define MIN_NUM_MENU_CHOICES 1
 	
-	        for (i = ten; i >= k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m += 2;
-	        printf("\n");
-	    }
-	    for (k = ten; k > zero; --k) {
+	/*custom constants*/
+	#define SCREENWIDTH 80
+	#define TWO 2
 	
-	        for (i = ten; i > k; --i) {
-	            printf(" ");
-	        }
-	        for (j = one; j <= m; ++j) {
-	            printf("*");
-	        }
-	        m -= 2;
-	        printf("\n");
-	    }
+	/*functions used in the program*/
+	/*static void clear_buffer();
+	BOOLEAN success = FALSE;
+	*/
+	/**
+	* function provided to clear the input buffer whenever you detect buffer
+	* overflow. It just reads the leftover bytes and throws them away, resetting
+	* the error state
+	**/
+	/*
+	static void clear_buffer(void) {
+	    int ch;
+	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	        ;
+	    clearerr(stdin);
+	}*/
 	
-	    return EXIT_SUCCESS;
-	}
+	/**
 "a	CHAR	0
 	':
 "-	CHAR	0
-	meep meep meep meep meep
+	 
 
 # global variables:
 
 # File marks:
-'0  58  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
-'1  35  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/strtol_example.c
-'2  16  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
-'3  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/atoi_example.c
-'4  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_string.c
-'5  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_int.c
-'6  47  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
-'7  56  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
-'8  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/readRestOfLine.c
-'9  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/matrix_add.c
+'0  47  0  ~/weeks/week-03/wk3q1.c
+'1  91  0  ~/assignments/a1/startup/io.c
+'2  73  49  ~/assignments/a1/startup/io.c
+'3  229  9  ~/assignments/a1/startup/io.c
+'4  229  3  ~/assignments/a1/startup/io.c
+'5  229  0  ~/assignments/a1/startup/io.c
+'6  229  28  ~/assignments/a1/startup/io.c
+'7  229  40  ~/assignments/a1/startup/io.c
+'8  229  26  ~/assignments/a1/startup/io.c
+'9  45  0  ~/assignments/a1/startup/main.c
 
 # Jumplist (newest first):
--'  58  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
--'  16  8  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
--'  35  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/strtol_example.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/strtol_example.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/atoi_example.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_string.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_int.c
--'  47  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
--'  56  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/readRestOfLine.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/matrix_add.c
--'  70  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/size.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/size.c
--'  33  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/counter.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/counter.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/swap.c
--'  1  0  ~/weeks/week-02/activity-one.c
--'  11  4  ~/weeks/week-02/activity-one.c
--'  1  0  ~/weeks/week-02/act-one.c
--'  7  9  ~/lastyear/lasyear/tutorials/wk2/rug.c
--'  1  0  ~/lastyear/lasyear/tutorials/wk2/rug.c
--'  12  26  ~/weeks/week-02/act-two-five.c
--'  20  4  ~/weeks/week-02/act-two-five.c
--'  6  18  ~/weeks/week-02/act-two-four.c
--'  40  4  ~/weeks/week-02/act-two-four.c
--'  52  0  ~/weeks/week-02/act-two-four.c
--'  1  0  ~/weeks/week-02/act-two-three.c
--'  16  8  ~/weeks/week-02/act-two-three.c
--'  27  8  ~/weeks/week-02/act-two-three.c
--'  1  0  ~/weeks/week-02/act-two-two.c
--'  16  12  ~/weeks/week-02/act-two-two.c
--'  25  4  ~/weeks/week-02/act-two-two.c
--'  1  0  ~/weeks/week-02/act-two-one.c
--'  18  0  ~/weeks/week-02/act-two-one.c
--'  19  4  ~/weeks/week-02/act-two-one.c
--'  14  4  ~/weeks/week-02/activity-one.c
--'  11  4  ~/weeks/week-02/demo.c
--'  18  4  ~/weeks/week-02/demo.c
--'  5  10  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/dowhile.c
+-'  47  0  ~/weeks/week-03/wk3q1.c
+-'  1  0  ~/weeks/week-03/wk3q1.c
+-'  91  0  ~/assignments/a1/startup/io.c
+-'  73  0  ~/assignments/a1/startup/io.c
+-'  229  0  ~/assignments/a1/startup/io.c
+-'  45  0  ~/assignments/a1/startup/main.c
+-'  31  1  ~/assignments/a1/startup/main.c
+-'  46  0  ~/assignments/a1/startup/main.c
+-'  10  19  ~/assignments/a1/startup/io.h
+-'  67  0  ~/assignments/a1/startup/io.h
+-'  1  0  ~/assignments/a1/startup/shared.h
+-'  15  16  /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
+-'  24  38  ~/assignments/a1/startup/readme.txt
+-'  13  0  ~/assignments/a1/startup/readme.txt
+-'  1  0  ~/assignments/a1/startup/r3eadme.txt
+-'  1  0  ~/assignments/a1/startup/readme.txt
+-'  1  0  ~/assignments/a1/startup/vim
+-'  45  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
+-'  70  4  ~/lastyear/assignment-one-answers/a1partb/menu.c
+-'  36  4  ~/lastyear/assignment-one-answers/a1partb/menu.c
+-'  1  0  ~/lastyear/assignment-one-answers/menu.c
+-'  1  0  ~/assignments/a1/startup/menu.c
 -'  4  0  ~/NERD_tree_2
--'  7  2  ~/NERD_tree_2
+-'  5  0  ~/NERD_tree_2
 -'  1  0  ~/NERD_tree_2
 -'  1  0  ~/NERD_tree_1
--'  7  2  ~/NERD_tree_1
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/whileglt.c
--'  48  58  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/switch2.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/switch2.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/wihle.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/wile.c
--'  1  0  ~/weeks/week-02/switch.c
--'  51  0  ~/weeks/week-02/switch2.c
--'  1  0  ~/weeks/week-02/switch2.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/hello.c
--'  1  0  ~/weeks/week-01/induction/meep/meep.txt
--'  2  22  ~/weeks/week-01/induction/meep.c
--'  3  0  ~/weeks/week-01/induction/meep.c
--'  1  0  ~/weeks/week-01/induction/myfirstc/first.c
--'  8  0  ~/weeks/week-01/induction/myfirstc/first.c
--'  6  25  ~/error.c
--'  9  8  ~/error.c
--'  53  61  ~/.vimrc
--'  52  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  10  0  ~/NERD_tree_1
--'  817  2  ~/NERD_tree_1
--'  4  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  21  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  1  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  210  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/helpers.c
--'  1  0  ~/pic_sp4_2019/a1/main.c
--'  44  0  ~/pic_sp4_2019/a1/NERD_tree_1
--'  61  2  ~/pic_sp4_2019/a1/NERD_tree_1
--'  829  7  ~/NERD_tree_1
--'  1627  2  ~/NERD_tree_1
--'  388  34  ~/pic_sp4_2019/a1/menu.c
--'  374  45  ~/pic_sp4_2019/a1/menu.c
--'  3  25  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  0  ~/pic_sp4_2019/.git/MERGE_MSG
--'  1  11  ~/pic_sp4_2019/.git/COMMIT_EDITMSG
--'  250  24  ~/pic_sp4_2019/a1/helpers.c
--'  166  35  ~/pic_sp4_2019/a1/helpers.c
--'  277  40  ~/pic_sp4_2019/a1/helpers.c
--'  80  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  1  0  ~/shared/prog_in_c/assignments/a1/startup/main.c
--'  17  8  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  40  0  ~/shared/prog_in_c/assignments/a1/startup/menu.h
--'  68  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.h
--'  58  18  ~/git/pic_sp4_2019_startup/a1/options.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/options.c
--'  15  8  ~/git/pic_sp4_2019_startup/a1/menu.c
--'  50  1  ~/git/pic_sp4_2019_startup/a1/main.c
--'  1  0  ~/git/pic_sp4_2019_startup/a1/main.h
+-'  5  0  ~/NERD_tree_1
+-'  128  4  ~/lastyear/assignment-one/main.c
+-'  65  4  ~/lastyear/assignment-one/main.c
+-'  169  0  ~/lastyear/assignment-one/menu.c
+-'  128  0  ~/lastyear/assignment-one/menu.c
+-'  18  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
+-'  1  0  ~/lastyear/assignment-one-answers/a1partb/menu.h
+-'  104  0  ~/lastyear/assignment-one-answers/a1partb/main.c
+-'  70  8  ~/lastyear/assignment-one-answers/a1partb/main.c
+-'  4  0  ~/lastyear/assignment-one-answers/NERD_tree_2
+-'  17  2  ~/lastyear/assignment-one-answers/NERD_tree_2
+-'  1  0  ~/lastyear/assignment-one-answers/NERD_tree_2
+-'  1  0  ~/lastyear/assignment-one-answers/NERD_tree_1
+-'  17  2  ~/lastyear/assignment-one-answers/NERD_tree_1
+-'  1  0  ~/lastyear/assignment-one-answers/main.c
+-'  229  8  ~/lastyear/assignment-one/menu.c
+-'  48  0  ~/assignments/a1/startup/main.c
+-'  248  4  ~/assignments/a1/startup/io.c
+-'  96  66  ~/assignments/a1/startup/options.c
+-'  109  0  ~/assignments/a1/startup/options.c
+-'  69  0  ~/assignments/a1/startup/options.h
+-'  1  0  ~/assignments/a1/startup/options.h
+-'  16  18  ~/assignments/a1/startup/helpers.h
+-'  23  0  ~/assignments/a1/startup/helpers.h
+-'  29  0  ~/assignments/a1/startup/helpers.c
+-'  1  0  ~/assignments/a1/startup/helpers.c
+-'  30  45  ~/assignments/a1/startup/readme.txt
+-'  1  0  ~/assignments/a1/startup/main.h
+-'  1  0  ~/assignments/io.c
+-'  1  1  ~/weeks/week-04/actual/lab.c
+-'  46  0  ~/weeks/week-04/actual/lab.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/random.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/reverseprint.c
+-'  20  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiveprint.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiveprint.c
+-'  31  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiverandom.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiverandom.c
+-'  36  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/fibonacci.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/fibonacci.c
+-'  30  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/factorial.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/factorial.c
+-'  67  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/bubble_improved.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/bubble_improved.c
+-'  19  0  ~/weeks/week-04/extra/one-demo.c
+-'  68  8  ~/weeks/week-04/extra/one-demo.c
+-'  57  33  ~/weeks/week-04/extra/sum.c
+-'  54  4  ~/weeks/week-04/extra/sum.c
+-'  1  0  ~/weeks/week-04/extra/sum.h
+-'  55  0  ~/weeks/week-04/extra/sum.c
+-'  1  0  ~/weeks/week-04/extra/sum.c
+-'  37  0  ~/weeks/week-03/wk3q0.c
+-'  5  0  ~/weeks/week-03/wk3q0.c
+-'  18  0  ~/weeks/week-03/wk3q4.c
+-'  59  4  ~/weeks/week-03/wk3q4.c
+-'  40  4  ~/weeks/week-03/wk3q0.c
+-'  11  4  ~/weeks/week-03/wk3q4.h
+-'  12  0  ~/weeks/week-03/wk3q4.h
+-'  13  0  ~/weeks/week-03/wk3q2.h
+-'  57  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
+-'  63  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
+-'  3  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
+-'  15  0  ~/lastyear/copies/tutorials/wk3/week-three-act-three.c
+-'  17  10  ~/weeks/week-03/wk3q2.c
+-'  1  0  ~/weeks/week-03/wk3q2.c
+-'  42  20  ~/weeks/week-03/wk3q3.c
+-'  53  0  ~/weeks/week-03/wk3q3.c
+-'  1  0  ~/weeks/week-03/sq3q3.c
+-'  53  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
+-'  9  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
+-'  24  0  ~/weeks/week-03/wk3q2.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
 
 # History of marks within files (newest to oldest):
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
-	"	58	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/strtol_example.c
-	"	35	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/atoi_example.c
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_string.c
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/scanf_int.c
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
+> ~/weeks/week-03/wk3q1.c
 	"	47	0
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/readRestOfLine.c
+> ~/assignments/a1/startup/io.c
+	"	91	0
+	+	229	3
+	+	229	34
+	+	229	51
+	+	229	3
+	+	229	6
+	+	229	2
+	+	229	28
+	+	229	24
+	+	229	37
+	+	229	14
+	+	229	0
+	+	229	1
+	+	229	10
+	+	229	17
+	+	229	32
+	+	229	20
+	+	229	35
+	+	229	46
+	+	229	57
+	+	229	29
+	+	229	15
+	+	229	6
+	+	229	22
+	+	229	31
+	+	229	0
+	+	229	5
+	+	229	1
+	+	229	4
+	+	229	1
+	+	229	0
+	+	229	27
+	+	229	22
+	+	229	22
+	+	229	48
+	+	229	40
+	+	229	47
+	+	229	44
+	+	229	18
+	+	229	54
+	+	229	54
+	+	229	1
+	+	229	6
+	+	229	1
+	+	229	2
+	+	229	5
+	+	229	28
+	+	229	30
+	+	229	42
+	+	229	52
+	+	229	0
+	+	229	13
+	+	229	21
+	+	229	0
+	+	229	54
+	+	229	29
+	+	229	35
+	+	229	24
+	+	229	1
+	+	229	2
+	+	229	2
+	+	229	53
+	+	229	7
+	+	229	7
+	+	229	32
+	+	229	34
+	+	229	38
+	+	229	2
+	+	229	6
+	+	229	5
+	+	229	1
+	+	229	3
+	+	229	1
+	+	229	4
+	+	229	1
+	+	229	1
+	+	229	28
+	+	229	1
+	+	229	2
+	+	229	1
+	+	229	1
+	+	229	0
+	+	229	2
+	+	229	26
+	+	229	4
+	+	229	40
+	+	229	28
+	+	229	28
+	+	229	27
+	+	229	27
+	+	229	54
+	+	229	41
+	+	229	0
+	+	229	0
+	+	229	1
+	+	229	0
+	+	229	0
+	+	229	13
+	+	229	4
+	+	229	9
+	+	229	0
+
+> /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
+	"	30	58
+
+> ~/assignments/a1/startup/helpers.h
 	"	1	0
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/matrix_add.c
-	"	1	0
+> ~/lastyear/assignment-one/main.c
+	"	63	0
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/size.c
-	"	70	0
+> ~/assignments/a1/startup/readme.txt
+	"	36	582
+	^	36	583
+	.	36	522
+	+	11	103
+	+	13	79
+	+	17	25
+	+	27	0
+	+	30	93
+	+	30	7
+	+	36	375
+	+	30	78
+	+	34	14
+	+	36	433
+	+	36	169
+	+	36	522
+
+> ~/assignments/a1/startup/main.c
+	"	28	0
+	+	53	17
+	+	53	9
+	+	53	18
+	+	53	17
+	+	53	0
+	+	53	10
+	+	53	16
+	+	53	11
+	+	53	12
+	+	53	0
+	+	53	8
+	+	53	8
+	+	53	31
+	+	53	8
+	+	53	25
+	+	53	29
+	+	53	31
+	+	53	19
+	+	53	20
+	+	53	58
+	+	53	0
+	+	53	0
+	+	53	1
+	+	53	1
+	+	53	0
+	+	53	0
+	+	53	32
+	+	53	10
+	+	53	11
+	+	53	16
+	+	53	0
+	+	53	24
+	+	53	0
+	+	53	25
+	+	53	10
+	+	53	23
+	+	53	21
+	+	53	15
+	+	53	7
+	+	53	18
+	+	53	10
+	+	53	7
+	+	53	15
+	+	53	22
+	+	53	24
+	+	53	15
+	+	53	21
+	+	53	15
+	+	53	0
+	+	53	25
+	+	53	27
+	+	53	4
+	+	53	4
+	+	53	0
+	+	53	24
+	+	53	1
+	+	53	1
+	+	53	2
+	+	53	37
+	+	53	16
+	+	53	11
+	+	53	10
+	+	53	15
+	+	53	16
+	+	53	14
+	+	53	22
+	+	53	33
+	+	53	15
+	+	53	0
+	+	53	16
+	+	53	24
+	+	53	35
+	+	53	0
+	+	53	16
+	+	53	0
+	+	53	0
+	+	53	14
+	+	53	4
+	+	53	21
+	+	53	24
+	+	53	18
+	+	53	16
+	+	53	0
+	+	53	24
+	+	53	19
+	+	53	25
+	+	53	5
+	+	53	4
+	+	51	0
+	+	51	0
+	+	51	4
+	+	51	0
+	+	51	12
+	+	51	18
+	+	51	24
+	+	51	35
+	+	51	0
+	+	51	31
+	+	51	10
+	+	51	0
+
+> ~/assignments/a1/startup/io.h
+	"	53	34
+	+	67	4
+	+	67	0
+	+	67	5
+	+	67	0
+	+	67	8
+	+	67	41
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	8
+	+	67	27
+	+	67	21
+	+	67	25
+	+	67	0
+	+	67	0
+	+	67	44
+	+	67	52
+	+	67	1
+	+	67	1
+	+	67	21
+	+	67	4
+	+	67	0
+	+	67	19
+	+	67	19
+	+	67	37
+	+	67	48
+	+	67	46
+	+	67	47
+	+	67	0
+	+	67	19
+	+	67	19
+	+	67	19
+	+	67	35
+	+	67	31
+	+	67	11
+	+	67	24
+	+	67	19
+	+	67	16
+	+	67	21
+	+	67	11
+	+	67	22
+	+	67	19
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	0
+	+	67	1
+	+	67	29
+	+	67	22
+	+	67	11
+	+	67	0
+
+> ~/lastyear/assignment-one/menu.c
+	"	176	1
+	+	349	30
 
 > /home/el9/E70949/shared/prog_in_c/lectures/Week-03/counter.c
-	"	33	4
+	"	22	44
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/swap.c
+> ~/lastyear/assignment-one/menu.h
+	"	39	0
+
+> ~/assignments/a1/startup/main.h
 	"	1	0
 
-> ~/weeks/week-02/activity-one.c
-	"	1	0
-	+	14	0
-	+	14	1
-	+	14	30
-	+	14	77
-	+	14	23
-	+	14	36
-	+	14	33
-	+	14	33
-	+	14	46
-	+	14	9
-	+	14	9
-	+	14	36
-	+	14	13
+> ~/weeks/week-03/wk3q3.c
+	"	37	0
 
-> ~/weeks/week-02/act-one.c
+> ~/weeks/week-03/wk3q2.c
+	"	43	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
+	"	37	0
+
+> ~/assignments/a1/startup/shared.h
 	"	1	0
 
-> ~/lastyear/lasyear/tutorials/wk2/rug.c
-	"	7	9
-
-> ~/weeks/week-02/act-two-five.c
-	"	18	23
-	+	31	15
-	+	31	19
-	+	31	14
-	+	31	13
-	+	31	12
-	+	31	0
-	+	31	0
-	+	31	11
-	+	31	29
-	+	31	20
-	+	31	0
-	+	31	20
-	+	31	22
-	+	31	23
-	+	31	14
-	+	31	12
-	+	31	26
-	+	31	16
-	+	31	16
-	+	31	37
-	+	31	26
-	+	31	0
-	+	31	27
-	+	31	20
-	+	31	21
-	+	31	20
-	+	31	0
-	+	31	21
-	+	31	45
-	+	31	0
-	+	31	25
-	+	31	3
-	+	31	23
-
-> ~/weeks/week-02/act-two-four.c
-	"	6	18
-	+	52	0
-	+	52	6
-	+	52	25
-	+	52	10
-	+	52	29
-	+	40	0
-	+	40	30
-	+	40	25
-	+	40	10
-	+	40	20
-	+	40	25
-	+	40	18
-	+	40	29
-	+	40	29
-	+	40	18
-
-> ~/weeks/week-02/act-two-three.c
+> ~/assignments/a1/startup/r3eadme.txt
 	"	1	0
-	+	27	0
-	+	27	16
-	+	27	27
-	+	27	19
-	+	27	10
-	+	27	15
-	+	27	27
-	+	27	13
-	+	27	11
-	+	27	22
 
-> ~/weeks/week-02/act-two-two.c
+> ~/assignments/a1/startup/vim
 	"	1	0
-	+	25	0
-	+	25	14
-	+	25	30
-	+	25	19
-	+	25	26
-	+	25	20
-	+	25	16
-	+	25	30
-	+	25	16
-	+	25	0
-	+	25	21
-	+	25	20
-	+	25	20
-	+	25	19
-	+	25	16
-	+	25	20
-	+	25	21
-	+	25	8
-	+	25	0
-	+	25	17
-	+	25	4
-	+	25	0
-	+	25	0
-	+	25	3
-	+	25	9
-	+	25	14
-	+	25	0
-	+	25	20
 
-> ~/weeks/week-02/act-two-one.c
-	"	1	0
-	+	19	20
-	+	19	20
-	+	19	0
-	+	19	30
-	+	19	4
-	+	19	17
-	+	19	0
-	+	19	0
-	+	19	11
-	+	19	13
-	+	19	10
-	+	19	26
-	+	19	5
-	+	19	10
-	+	19	18
-	+	19	20
-	+	19	0
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
+	"	45	0
 
-> ~/weeks/week-02/demo.c
-	"	11	4
-	+	18	26
-	+	18	8
-	+	18	21
-	+	18	8
-	+	18	23
-	+	18	20
-	+	18	12
-	+	18	27
-	+	18	11
-	+	18	26
-	+	18	11
-	+	18	0
-	+	18	3
-	+	18	10
-	+	18	8
-	+	18	23
-	+	18	0
-	+	18	60
-	+	18	8
-	+	18	0
-	+	18	11
-	+	18	0
-	+	18	0
-	+	18	12
-	+	18	16
-	+	18	23
-	+	18	11
-	+	18	0
-	+	18	9
-	+	18	23
-	+	18	43
-	+	18	12
-	+	18	27
-	+	18	12
-	+	18	22
-	+	18	13
-	+	18	26
-	+	18	18
-	+	18	14
-	+	18	20
-	+	18	8
-	+	18	23
-	+	18	8
-	+	18	11
-	+	18	26
-	+	18	12
-	+	18	21
-	+	18	23
-	+	18	12
-	+	18	23
-	+	18	18
-	+	18	9
-	+	18	11
-	+	18	26
-	+	18	25
-	+	18	16
-	+	18	16
-	+	18	22
-	+	18	9
-	+	18	24
-	+	18	20
-	+	18	24
-	+	18	8
-	+	18	14
-	+	18	10
-	+	18	14
-	+	18	23
-	+	18	0
-	+	18	11
-	+	18	0
-	+	18	26
-	+	18	15
-	+	18	12
-	+	18	23
-	+	18	8
-	+	18	12
-	+	18	15
-	+	18	43
-	+	18	19
-	+	18	23
-	+	18	16
-	+	18	19
-	+	18	47
-	+	18	12
-	+	18	19
-	+	18	21
-	+	18	18
-	+	18	11
-	+	18	0
-	+	18	12
-	+	18	16
-	+	18	21
-	+	18	43
-	+	18	4
-	+	18	0
-	+	18	0
-	+	18	17
-	+	18	17
-	+	18	0
-	+	18	4
+> ~/lastyear/assignment-one-answers/a1partb/menu.c
+	"	70	4

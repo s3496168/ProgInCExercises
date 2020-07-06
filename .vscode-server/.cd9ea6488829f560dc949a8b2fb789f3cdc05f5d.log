@@ -1,0 +1,36 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+IP Address: 10.118.128.3
+Extension host agent listening on 42583
+
+
+[23:58:06] Extension host agent started.
+[23:58:07] [127.0.0.1][23d01f3b][ManagementConnection] New connection established.
+[23:58:07] [127.0.0.1][3a73974d][ExtensionHostConnection] New connection established.
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+stdin: is not a tty
+[23:58:07] [127.0.0.1][3a73974d][ExtensionHostConnection] <35207> Launched Extension Host Process.
+[00:01:30] [127.0.0.1][2bba7bd3][ManagementConnection] New connection established.
+[00:01:30] [127.0.0.1][174a55e6][ExtensionHostConnection] New connection established.
+[00:01:30] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Launched Extension Host Process.
+[00:03:57] [127.0.0.1][2bba7bd3][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[00:03:58] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Extension Host Process exited with code: 0, signal: null.
+[00:04:14] [127.0.0.1][ff58b857][ManagementConnection] New connection established.
+[00:04:14] [127.0.0.1][10435fd0][ExtensionHostConnection] New connection established.
+[00:04:14] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Launched Extension Host Process.
+[00:20:42] [127.0.0.1][ff58b857][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[00:20:43] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Extension Host Process exited with code: 0, signal: null.
+[00:20:53] [127.0.0.1][3d240db3][ManagementConnection] New connection established.
+[00:20:53] [127.0.0.1][e834676f][ExtensionHostConnection] New connection established.
+[00:20:53] [127.0.0.1][e834676f][ExtensionHostConnection] <39461> Launched Extension Host Process.
+[00:47:29] [127.0.0.1][3d240db3][ManagementConnection] The client has reconnected.
+[00:47:29] [127.0.0.1][e834676f][ExtensionHostConnection] The client has reconnected.

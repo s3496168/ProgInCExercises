@@ -1,0 +1,50 @@
+Looking for git in: git
+Using git 1.8.3.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /home/sh8/s3496168
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git show :assignments/a1/startup/shared.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/shared.h
+> git show :assignments/a1/startup/main.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/main.h
+> git show :assignments/a1/startup/main.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/main.c
+> git show :assignments/a1/startup/io.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/io.h
+> git show :assignments/a1/startup/io.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/io.c
+> git show :assignments/a1/startup/helpers.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/helpers.h
+> git show :assignments/a1/startup/helpers.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/helpers.c
+> git show :assignments/a1/startup/options.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/options.c
+> git check-ignore -v -z --stdin
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/sh8/s3496168/assignments/a1/startup/options.c
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/sh8/s3496168/assignments/a1/startup/cpt220_menu_system
+> git check-ignore -v -z --stdin
+> git show :assignments/a1/startup/options.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/options.c
+> git show :assignments/a1/startup/helpers.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/helpers.c
+> git show :assignments/a1/startup/helpers.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/helpers.h
+> git show :assignments/a1/startup/io.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/io.c
+> git show :assignments/a1/startup/io.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/io.h
+> git show :assignments/a1/startup/main.c
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/main.c
+> git show :assignments/a1/startup/main.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/main.h
+> git show :assignments/a1/startup/shared.h
+> git ls-files --stage -- /home/sh8/s3496168/assignments/a1/startup/shared.h
