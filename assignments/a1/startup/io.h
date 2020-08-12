@@ -23,6 +23,35 @@
 /*
 #define SCREENWIDTH 80
 */
+
+/*new teacher code*/
+
+/*
+ * macro that prints out a line of chars of the length specified.
+ **/
+#define PUTLINE(num, character)                   \
+    {                                             \
+        long count;                               \
+        for (count = 0; count < (num); ++count) { \
+            putchar(character);                   \
+        }                                         \
+        putchar('\n');                            \
+    }
+
+/* forwards declaration of the anagram_pair type that is used in the options
+ * module */
+struct anagram_pair;
+
+/**
+ * struct that represents the inputs needed for the clusters implementation
+ **/
+struct map_input {
+    int x, y;
+    char cluster_text[LINELEN + 1];
+};
+
+/*end new teacher code*/
+
 /**
  * constants for the different options for the menu system
  **/
@@ -51,7 +80,17 @@ enum input_result {
  **/
 void init_the_menu();
 enum menu_choice get_menu_choice();
-void process_menu_choice(enum menu_choice);
+
+/*more new teacher code*/
+enum input_result string_from_keyboard(const char[], char[], long len);
+enum input_result int_from_keyboard(const char[], int*);
+enum input_result long_from_keyboard(const char[], long*);
+enum input_result get_wordscore_input(char[]);
+enum input_result get_asciitable_input(char[]);
+enum input_result get_anagram_input(struct anagram_pair*);
+enum input_result get_cluster_input(struct map_input*);
+/*end new teacher code*/
+
 
 struct menu {
     char selection[NUM_MENU_CHOICES];

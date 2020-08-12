@@ -37,13 +37,6 @@ struct map {
     BOOLEAN isvalid;
 };
 
-/**
- * struct that represents the inputs needed for the clusters implementation
- **/
-struct map_input {
-    int x, y;
-    char cluster_text[LINELEN + 1];
-};
 
 /**
  * the pair of words to check if they are an anagram. Please note that I
@@ -65,5 +58,7 @@ void asciitable(const char[]);
 int word_score(const char[]);
 struct map create_map(int, int, const char[]);
 void find_clusters(const struct map *);
+
+/*mine*/
 
 #endif

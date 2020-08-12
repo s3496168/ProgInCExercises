@@ -14,6 +14,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define WORDMAX 90 /*to give the user some leniency*/
+
 /**
  * this module contains the functions and data structures to implement the
  * requirements of the assignment other than the menu and other i/o.
@@ -60,8 +62,41 @@ const struct score scoretable[] = {{'A', 1},
  * sum of the scores for each letter.
  **/
 int word_score(const char word[]) {
-    normal_output("You have reached word score.\n");
-    return -1;
+    /*struct score scoring;*/
+    /*char plen;*/
+    int score = 0;
+  int i;
+  int j;
+    
+
+/*normal_output("%d letter: ", score.letter);*/
+
+
+   /* normal_output("The word is %s", word);
+    while (*word != '\0') {*/
+        /*if ((*word >= 'A' && *word <= 'Z') || (*word >= 'a' && *word <= 'z')) {*/
+           /* scoretable[i].score=scoretable[i].score+scoretable[i].letter;
+           
+            
+        }
+
+        word++;
+        
+    }*/
+ 
+    
+    for (i=0; i<WORDMAX; i++){
+     for (j=0; j<WORDMAX; j++){
+       /*if ((*word >= 'A' && *word <= 'Z') || (*word >= 'a' && *word <= 'z')) {*/
+     if(word[j]==scoretable[i].letter){
+
+        /*  normal_output(" %d %d ",scoretable[j].letter, scoretable[i].score);*/
+        score=score+scoretable[j].score;
+     }
+      
+     }
+    }
+    return score;
 }
 
 /**
@@ -91,9 +126,24 @@ void asciitable(const char input[]) {
  * create the map of characters based on the map string passed in.
  * Ensure that it is a valid map as defined in the spec.
  **/
+ /*here as a suggestion only-any feedback would be appreciated*/
 struct map create_map(int width, int height, const char map_string[]) {
-    struct map themap;
-    normal_output("You have reached the create a character map\n");
+   struct map themap;
+/*    char token;
+      int i;
+    int j;
+    themap.height=height; 
+    themap.width=width;
+
+  
+
+    for (i=0; i<width; i++){
+        for (j=0; j<height; j++){
+            token=strtok(height, map_string);
+            token = strtok(width, map_string);
+        }
+    }token=strtok(NULL, map_string);
+    token = strtok(NULL, map_string);*/
     return themap;
 }
 
@@ -103,6 +153,7 @@ struct map create_map(int width, int height, const char map_string[]) {
  * neighbours in all directions that contain the current character, including
  * the current cell.
  **/
+ /*map created with strtok would live here*/
 void find_clusters(const struct map* themap) {
     normal_output("You have reached the search a map\n");
 }

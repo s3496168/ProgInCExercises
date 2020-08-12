@@ -1,0 +1,24 @@
+[2020-08-12 10:17:21.271] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2020-08-12 10:17:21.271] [remoteagent] [info] Extension host agent started.
+[2020-08-12 10:17:21.664] [remoteagent] [info] [127.0.0.1][a1982199][ManagementConnection] New connection established.
+[2020-08-12 10:17:21.666] [remoteagent] [info] [127.0.0.1][690f62fa][ExtensionHostConnection] New connection established.
+[2020-08-12 10:17:21.803] [remoteagent] [info] [127.0.0.1][690f62fa][ExtensionHostConnection] <64179> Launched Extension Host Process.
+[2020-08-12 10:24:48.058] [remoteagent] [info] [127.0.0.1][a1982199][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2020-08-12 10:24:49.075] [remoteagent] [info] [127.0.0.1][690f62fa][ExtensionHostConnection] <64179> Extension Host Process exited with code: 0, signal: null.
+[2020-08-12 10:24:49.075] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2020-08-12 10:24:57.317] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2020-08-12 10:24:57.317] [remoteagent] [info] Cancelling previous shutdown timeout
+[2020-08-12 10:24:57.560] [remoteagent] [info] [127.0.0.1][0abe95f6][ManagementConnection] New connection established.
+[2020-08-12 10:24:57.561] [remoteagent] [info] [127.0.0.1][ebd10135][ExtensionHostConnection] New connection established.
+[2020-08-12 10:24:57.567] [remoteagent] [info] [127.0.0.1][ebd10135][ExtensionHostConnection] <65459> Launched Extension Host Process.
+[2020-08-12 10:29:57.325] [remoteagent] [info] New EH opened, aborting shutdown
+[2020-08-12 11:53:43.974] [remoteagent] [info] [127.0.0.1][0abe95f6][ManagementConnection] The client has reconnected.

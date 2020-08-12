@@ -10,6 +10,8 @@ fi
 
 # User specific aliases and functions
 
+source /opt/rh/devtoolset-9 /enable
+
 PATH=/home/el9/E70949/cutil/bin:$PATH; export PATH
 MANPATH=/home/el9/E70949/cutil/man:$MANPATH; export MANPATH
 INFOPATH=/home/el9/E70949/cutil/info:$INFOPATH; 

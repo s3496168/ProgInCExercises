@@ -2,7 +2,7 @@
 # You may edit it if you're careful!
 
 # Value of 'encoding' when this file was written
-*encoding=utf-8
+*encoding=latin1
 
 
 # hlsearch on (H) or off (h):
@@ -21,8 +21,11 @@ $
 :wq
 :w
 :q!
-::w
+:ConqueTermVSplit gdb
+:1
+::
 :swq
+::w
 :ew
 :wqa
 :$
@@ -44,7 +47,6 @@ $
 :commentary
 :set relativenumber
 :wsa
-:1
 :tabnew options.h
 :220
 :tabnew helpers.c
@@ -104,6 +106,8 @@ $
 :236
 
 # Search String History (newest to oldest):
+? \<filename\>
+? \<fpRead\>
 ? \<themenu\>
 ? \<NUM_MENU_CHOICES\>
 ? \<str_function\>
@@ -195,913 +199,812 @@ $
 
 # Registers:
 ""0	CHAR	0
-	 normal_output("This: %s\n", themenu->selection);
-	
+	e
 "1	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "2	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "3	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "4	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "5	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "6	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	static void clear_buffer();
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
 	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
-	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
-	}*/
+	    clearerr(fp);
+	}
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "7	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	/*static void clear_buffer();*/
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
-	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
 	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
+	    clearerr(fp);
 	}*/
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN + EXTRACHARS];
+	int load(struct file_data, FILE *);
+	fptr = fopen("filename[READING]", "r");
+	result = load(data, fptr);
+	
 "8	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	/*static void clear_buffer();*/
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
-	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
 	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
+	    clearerr(fp);
 	}*/
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[LINELEN+EXTRACHARS]
+	};
+	int load(struct file_data, FILE *);
+	fptr = fopen("filename[READING]", "r");
+	result = load(data, fptr);
 "9	LINE	0
 	/******************************************************************************
 	 * Student Name    : Brearne Gibson
 	 * RMIT Student ID : s3496168
 	 *
 	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 1, study period 2, 2020.
+	 * Assignment 2, study period 2, 2020.
 	 *****************************************************************************/
-	#include "io.h"
-	#include "options.h"
-	
-	#include <ctype.h>
-	#include <limits.h>
+	#include "fileio.h"
+	#include "helpers.h"
+	#include "shared.h"
 	#include <stdio.h>
-	#include <stdlib.h>
+	#include <assert.h>
 	#include <string.h>
+	#include <stdlib.h>
+	
+	/*added constants*/
+	#define READING 1
+	#define WRITING 2
+	#define LINELEN 80
+	#define EXTRACHARS 2
+	
+	/*added functions*/
+	/*int load(struct file_data *, FILE *);*/
+	FILE fpRead;
+	/*static void clear_buffer();*/
 	
 	/**
-	 * this module is the place to implement all i/o functionality. You should not
-	 * call printf/fprintf, etc, outside this module as that will make it simpler
-	 * if we ever want to change the target for output for the program.
+	 * modified clear_buffer() function to work with file input
 	 **/
-	
-	/*the number of choices in the program*/
-	#define NUM_MENU_CHOICES 5
-	
-	/*the minimum number of choices in the program*/
-	#define MIN_NUM_MENU_CHOICES 1
-	
-	/*custom constants*/
-	#define SCREENWIDTH 80
-	#define TWO 2
-	
-	/*functions used in the program*/
-	/*static void clear_buffer();
-	BOOLEAN success = FALSE;
-	*/
-	/**
-	* function provided to clear the input buffer whenever you detect buffer
-	* overflow. It just reads the leftover bytes and throws them away, resetting
-	* the error state
-	**/
 	/*
-	static void clear_buffer(void) {
+	static void clear_buffer(FILE *fp) {
 	    int ch;
-	    while (ch = getc(stdin), ch != '\n' && ch != EOF)
+	    while (ch = getc(fp), ch != '\n' && ch != EOF)
 	        ;
-	    clearerr(stdin);
+	    clearerr(fp);
 	}*/
 	
 	/**
+	 * loads the data into the appropriate list type according to the value
+	 * passed in.
+	 **/
+	struct file_data load_file(const char filename[], enum list_type type) {
+	    struct file_data data;
+	    int result;
+	    FILE *fptr;
+	    char line[iLINELEN+EXTRACHARS};
+	    int load(struct file_data, FILE *);
+	    fptr = fopen("filename[READING]", "r");
+	    result = load(data, fptr);
+	
 "a	CHAR	0
 	':
 "-	CHAR	0
-	 
+	e
 
 # global variables:
 
 # File marks:
-'0  47  0  ~/weeks/week-03/wk3q1.c
-'1  91  0  ~/assignments/a1/startup/io.c
-'2  73  49  ~/assignments/a1/startup/io.c
-'3  229  9  ~/assignments/a1/startup/io.c
-'4  229  3  ~/assignments/a1/startup/io.c
-'5  229  0  ~/assignments/a1/startup/io.c
-'6  229  28  ~/assignments/a1/startup/io.c
-'7  229  40  ~/assignments/a1/startup/io.c
-'8  229  26  ~/assignments/a1/startup/io.c
-'9  45  0  ~/assignments/a1/startup/main.c
+'0  43  8  ~/assignments/a2/partb/startup/fileio.c
+'1  67  23  ~/assignments/a2/partb/startup/fileio.c
+'2  35  4  ~/assignments/a2/partb/startup/main.c
+'3  27  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
+'4  19  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+'5  1  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+'6  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
+'7  20  20  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+'8  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+'9  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
 
 # Jumplist (newest first):
--'  47  0  ~/weeks/week-03/wk3q1.c
--'  1  0  ~/weeks/week-03/wk3q1.c
--'  91  0  ~/assignments/a1/startup/io.c
--'  73  0  ~/assignments/a1/startup/io.c
--'  229  0  ~/assignments/a1/startup/io.c
--'  45  0  ~/assignments/a1/startup/main.c
--'  31  1  ~/assignments/a1/startup/main.c
--'  46  0  ~/assignments/a1/startup/main.c
--'  10  19  ~/assignments/a1/startup/io.h
--'  67  0  ~/assignments/a1/startup/io.h
--'  1  0  ~/assignments/a1/startup/shared.h
--'  15  16  /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
--'  24  38  ~/assignments/a1/startup/readme.txt
--'  13  0  ~/assignments/a1/startup/readme.txt
--'  1  0  ~/assignments/a1/startup/r3eadme.txt
--'  1  0  ~/assignments/a1/startup/readme.txt
--'  1  0  ~/assignments/a1/startup/vim
--'  45  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
--'  70  4  ~/lastyear/assignment-one-answers/a1partb/menu.c
--'  36  4  ~/lastyear/assignment-one-answers/a1partb/menu.c
--'  1  0  ~/lastyear/assignment-one-answers/menu.c
--'  1  0  ~/assignments/a1/startup/menu.c
--'  4  0  ~/NERD_tree_2
--'  5  0  ~/NERD_tree_2
--'  1  0  ~/NERD_tree_2
--'  1  0  ~/NERD_tree_1
--'  5  0  ~/NERD_tree_1
--'  128  4  ~/lastyear/assignment-one/main.c
--'  65  4  ~/lastyear/assignment-one/main.c
--'  169  0  ~/lastyear/assignment-one/menu.c
--'  128  0  ~/lastyear/assignment-one/menu.c
--'  18  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/while.c
--'  1  0  ~/lastyear/assignment-one-answers/a1partb/menu.h
--'  104  0  ~/lastyear/assignment-one-answers/a1partb/main.c
--'  70  8  ~/lastyear/assignment-one-answers/a1partb/main.c
--'  4  0  ~/lastyear/assignment-one-answers/NERD_tree_2
--'  17  2  ~/lastyear/assignment-one-answers/NERD_tree_2
--'  1  0  ~/lastyear/assignment-one-answers/NERD_tree_2
--'  1  0  ~/lastyear/assignment-one-answers/NERD_tree_1
--'  17  2  ~/lastyear/assignment-one-answers/NERD_tree_1
--'  1  0  ~/lastyear/assignment-one-answers/main.c
--'  229  8  ~/lastyear/assignment-one/menu.c
--'  48  0  ~/assignments/a1/startup/main.c
--'  248  4  ~/assignments/a1/startup/io.c
--'  96  66  ~/assignments/a1/startup/options.c
--'  109  0  ~/assignments/a1/startup/options.c
--'  69  0  ~/assignments/a1/startup/options.h
--'  1  0  ~/assignments/a1/startup/options.h
--'  16  18  ~/assignments/a1/startup/helpers.h
--'  23  0  ~/assignments/a1/startup/helpers.h
--'  29  0  ~/assignments/a1/startup/helpers.c
--'  1  0  ~/assignments/a1/startup/helpers.c
--'  30  45  ~/assignments/a1/startup/readme.txt
--'  1  0  ~/assignments/a1/startup/main.h
--'  1  0  ~/assignments/io.c
--'  1  1  ~/weeks/week-04/actual/lab.c
--'  46  0  ~/weeks/week-04/actual/lab.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/random.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/reverseprint.c
--'  20  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiveprint.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiveprint.c
--'  31  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiverandom.c
+-'  43  8  ~/assignments/a2/partb/startup/fileio.c
+-'  67  8  ~/assignments/a2/partb/startup/fileio.c
+-'  86  4  ~/assignments/a2/partb/startup/fileio.c
+-'  35  4  ~/assignments/a2/partb/startup/main.c
+-'  38  2  ~/assignments/a2/partb/startup/main.c
+-'  27  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
+-'  19  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
+-'  20  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/convert.c
+-'  21  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
+-'  44  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
+-'  31  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
+-'  29  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/loader.c
+-'  1  0  ~/assignments/a2/partb/startup/shared.h
+-'  1  0  ~/weeks/week-09/tutorial/testing/ctu.txt
+-'  38  19  ~/weeks/week-09/tutorial/testing/testing.c
+-'  47  12  ~/weeks/week-09/tutorial/testing/testing.c
+-'  15  1  ~/weeks/week-09/tutorial/testing/testing.h
+-'  24  0  ~/weeks/week-09/tutorial/testing/testing.h
+-'  20  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/fsupport.h
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phone.h
+-'  30  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.h
+-'  71  12  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  21  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  27  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/fsupport.h
+-'  42  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/every_other.c
+-'  23  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/add_spaces.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/add_spaces.c
+-'  47  0  ~/assignments/a2/partb/startup/fileio.h
+-'  1  0  ~/assignments/a2/partb/startup/fileio.h
+-'  1  0  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.h
+-'  98  34  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.c
+-'  1  0  ~/assignments/a2/partb/startup/shared.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/list.c
+-'  7  19  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/personlist.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/personlist.c
+-'  28  4  ~/weeks/week-06/mistake.c
+-'  21  4  ~/weeks/week-06/mistake.c
+-'  1  0  ~/weeks/week-06/lab5/solution/ceaserlib.h
+-'  139  0  ~/weeks/week-06/lab5/solution/ceaserlib.c
+-'  1  0  ~/weeks/week-06/lab5/solution/ceaserlib.c
+-'  75  0  ~/weeks/week-06/lab5/solution/ceaser.c
+-'  1  0  ~/weeks/week-06/lab5/solution/ceaser.c
+-'  1  0  ~/weeks/week-06/lab5/ceaserlib.c
+-'  40  16  ~/weeks/week-06/lab5/ceaser.c
+-'  79  40  ~/weeks/week-06/lab5/ceaser.c
 -'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiverandom.c
--'  36  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/fibonacci.c
+-'  1  0  ~/weeks/week-06/mistake.c
+-'  13  34  ~/.bashrc
+-'  1  0  ~/.bashrc
+-'  1  0  ~/weeks/week-06/.bashrc
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/conditional1.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/conditionall.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/notinit.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault2.c
+-'  14  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault1.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault1.c
+-'  64  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/size.c
+-'  56  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/ctype_example.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/ctype_example.c
 -'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/fibonacci.c
--'  30  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/factorial.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/factorial.c
--'  67  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/bubble_improved.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/bubble_improved.c
--'  19  0  ~/weeks/week-04/extra/one-demo.c
--'  68  8  ~/weeks/week-04/extra/one-demo.c
--'  57  33  ~/weeks/week-04/extra/sum.c
--'  54  4  ~/weeks/week-04/extra/sum.c
--'  1  0  ~/weeks/week-04/extra/sum.h
--'  55  0  ~/weeks/week-04/extra/sum.c
--'  1  0  ~/weeks/week-04/extra/sum.c
--'  37  0  ~/weeks/week-03/wk3q0.c
--'  5  0  ~/weeks/week-03/wk3q0.c
--'  18  0  ~/weeks/week-03/wk3q4.c
--'  59  4  ~/weeks/week-03/wk3q4.c
--'  40  4  ~/weeks/week-03/wk3q0.c
--'  11  4  ~/weeks/week-03/wk3q4.h
--'  12  0  ~/weeks/week-03/wk3q4.h
--'  13  0  ~/weeks/week-03/wk3q2.h
--'  57  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
--'  63  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
--'  3  0  ~/lastyear/copies/tutorials/wk3/week-three-act-four.c
--'  15  0  ~/lastyear/copies/tutorials/wk3/week-three-act-three.c
--'  17  10  ~/weeks/week-03/wk3q2.c
--'  1  0  ~/weeks/week-03/wk3q2.c
--'  42  20  ~/weeks/week-03/wk3q3.c
--'  53  0  ~/weeks/week-03/wk3q3.c
--'  1  0  ~/weeks/week-03/sq3q3.c
--'  53  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
--'  9  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
--'  24  0  ~/weeks/week-03/wk3q2.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/read_rest_of_line.c
+-'  74  10  ~/assignments/a1/startup/options.c
+-'  72  12  ~/assignments/a1/startup/options.c
+-'  122  0  ~/assignments/a1/startup/options.c
+-'  194  5  ~/lastyear/assignment-one/options.c
+-'  1  0  ~/lastyear/assignment-one/options.c
+-'  325  0  ~/lastyear/assignment-one/menu.c
+-'  1  0  ~/lastyear/assignment-one/menu.c
+-'  1  0  ~/lastyear/assignment-one/vim
+-'  143  0  ~/lastyear/assignment-one-answers/a1partb/menu.c
+-'  39  1  ~/lastyear/assignment-one-answers/a1partb/menu.c
+-'  51  0  ~/assignments/a1/startup/main.c
+-'  145  12  ~/assignments/a1/startup/main.c
+-'  28  11  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
+-'  15  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
+-'  51  12  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
+-'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/enumtostring.c
+-'  88  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/io.c
+-'  63  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/io.c
+-'  8  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
+-'  74  0  ~/assignments/a1/startup/io.c
+-'  35  4  ~/assignments/a2/partb/startup/main.c
 
 # History of marks within files (newest to oldest):
 
-> ~/weeks/week-03/wk3q1.c
-	"	47	0
+> ~/assignments/a2/partb/startup/fileio.c
+	"	43	8
+	+	86	24
+	+	86	11
+	+	86	15
+	+	86	0
+	+	86	0
+	+	86	32
+	+	86	12
+	+	86	30
+	+	86	28
+	+	86	25
+	+	86	31
+	+	86	25
+	+	86	23
+	+	86	9
+	+	86	0
+	+	86	4
+	+	86	6
+	+	86	31
+	+	86	1
+	+	86	6
+	+	86	1
+	+	86	2
+	+	86	30
+	+	86	56
+	+	86	1
+	+	86	6
+	+	86	2
+	+	86	26
+	+	86	27
+	+	86	19
+	+	86	19
+	+	86	47
+	+	86	19
+	+	86	19
+	+	86	22
+	+	86	27
+	+	86	19
+	+	86	0
+	+	86	1
+	+	86	35
+	+	86	44
+	+	86	18
+	+	86	13
+	+	86	7
+	+	86	35
+	+	86	13
+	+	86	44
+	+	86	30
+	+	86	29
+	+	86	30
+	+	86	0
+	+	86	31
+	+	86	53
+	+	86	0
+	+	86	41
+	+	86	34
+	+	86	32
+	+	86	19
+	+	86	20
+	+	86	32
+	+	86	0
+	+	86	32
+	+	86	8
+	+	86	13
+	+	86	38
+	+	86	0
+	+	86	1
+	+	86	27
+	+	86	27
+	+	86	17
+	+	86	11
+	+	86	23
 
-> ~/assignments/a1/startup/io.c
-	"	91	0
-	+	229	3
-	+	229	34
-	+	229	51
-	+	229	3
-	+	229	6
-	+	229	2
-	+	229	28
-	+	229	24
-	+	229	37
-	+	229	14
-	+	229	0
-	+	229	1
-	+	229	10
-	+	229	17
-	+	229	32
-	+	229	20
-	+	229	35
-	+	229	46
-	+	229	57
-	+	229	29
-	+	229	15
-	+	229	6
-	+	229	22
-	+	229	31
-	+	229	0
-	+	229	5
-	+	229	1
-	+	229	4
-	+	229	1
-	+	229	0
-	+	229	27
-	+	229	22
-	+	229	22
-	+	229	48
-	+	229	40
-	+	229	47
-	+	229	44
-	+	229	18
-	+	229	54
-	+	229	54
-	+	229	1
-	+	229	6
-	+	229	1
-	+	229	2
-	+	229	5
-	+	229	28
-	+	229	30
-	+	229	42
-	+	229	52
-	+	229	0
-	+	229	13
-	+	229	21
-	+	229	0
-	+	229	54
-	+	229	29
-	+	229	35
-	+	229	24
-	+	229	1
-	+	229	2
-	+	229	2
-	+	229	53
-	+	229	7
-	+	229	7
-	+	229	32
-	+	229	34
-	+	229	38
-	+	229	2
-	+	229	6
-	+	229	5
-	+	229	1
-	+	229	3
-	+	229	1
-	+	229	4
-	+	229	1
-	+	229	1
-	+	229	28
-	+	229	1
-	+	229	2
-	+	229	1
-	+	229	1
-	+	229	0
-	+	229	2
-	+	229	26
-	+	229	4
-	+	229	40
-	+	229	28
-	+	229	28
-	+	229	27
-	+	229	27
-	+	229	54
-	+	229	41
-	+	229	0
-	+	229	0
-	+	229	1
-	+	229	0
-	+	229	0
-	+	229	13
-	+	229	4
-	+	229	9
-	+	229	0
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
+	"	10	12
 
-> /home/el9/E70949/shared/prog_in_c/examples/Structs/strtodate.c
-	"	30	58
-
-> ~/assignments/a1/startup/helpers.h
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
 	"	1	0
 
-> ~/lastyear/assignment-one/main.c
-	"	63	0
+> ~/assignments/a2/partb/startup/main.c
+	"	35	4
+	+	38	72
+	+	38	13
+	+	38	34
+	+	38	17
+	+	38	25
+	+	38	11
+	+	38	26
+	+	38	8
+	+	38	4
+	+	38	0
+	+	38	0
+	+	38	5
+	+	38	14
+	+	38	4
+	+	38	0
+	+	38	5
+	+	38	25
+	+	38	13
+	+	38	4
+	+	38	17
+	+	38	47
+	+	38	17
+	+	38	1
+	+	38	20
+	+	38	0
+	+	38	0
 
-> ~/assignments/a1/startup/readme.txt
-	"	36	582
-	^	36	583
-	.	36	522
-	+	11	103
-	+	13	79
-	+	17	25
-	+	27	0
-	+	30	93
-	+	30	7
-	+	36	375
-	+	30	78
-	+	34	14
-	+	36	433
-	+	36	169
-	+	36	522
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
+	"	27	0
 
-> ~/assignments/a1/startup/main.c
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
+	"	1	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
+	"	1	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/convert.c
+	"	1	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
+	"	21	0
+
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
+	"	44	4
+
+> ~/assignments/a2/partb/startup/fileio.h
 	"	28	0
-	+	53	17
-	+	53	9
-	+	53	18
-	+	53	17
-	+	53	0
-	+	53	10
-	+	53	16
-	+	53	11
-	+	53	12
-	+	53	0
-	+	53	8
-	+	53	8
-	+	53	31
-	+	53	8
-	+	53	25
-	+	53	29
-	+	53	31
-	+	53	19
-	+	53	20
-	+	53	58
-	+	53	0
-	+	53	0
-	+	53	1
-	+	53	1
-	+	53	0
-	+	53	0
-	+	53	32
-	+	53	10
-	+	53	11
-	+	53	16
-	+	53	0
-	+	53	24
-	+	53	0
-	+	53	25
-	+	53	10
-	+	53	23
-	+	53	21
-	+	53	15
-	+	53	7
-	+	53	18
-	+	53	10
-	+	53	7
-	+	53	15
-	+	53	22
-	+	53	24
-	+	53	15
-	+	53	21
-	+	53	15
-	+	53	0
-	+	53	25
-	+	53	27
-	+	53	4
-	+	53	4
-	+	53	0
-	+	53	24
-	+	53	1
-	+	53	1
-	+	53	2
-	+	53	37
-	+	53	16
-	+	53	11
-	+	53	10
-	+	53	15
-	+	53	16
-	+	53	14
-	+	53	22
-	+	53	33
-	+	53	15
-	+	53	0
-	+	53	16
-	+	53	24
-	+	53	35
-	+	53	0
-	+	53	16
-	+	53	0
-	+	53	0
-	+	53	14
-	+	53	4
-	+	53	21
-	+	53	24
-	+	53	18
-	+	53	16
-	+	53	0
-	+	53	24
-	+	53	19
-	+	53	25
-	+	53	5
-	+	53	4
-	+	51	0
-	+	51	0
-	+	51	4
-	+	51	0
-	+	51	12
-	+	51	18
-	+	51	24
-	+	51	35
-	+	51	0
-	+	51	31
-	+	51	10
-	+	51	0
 
-> ~/assignments/a1/startup/io.h
-	"	53	34
-	+	67	4
-	+	67	0
-	+	67	5
-	+	67	0
-	+	67	8
-	+	67	41
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	8
-	+	67	27
-	+	67	21
-	+	67	25
-	+	67	0
-	+	67	0
-	+	67	44
-	+	67	52
-	+	67	1
-	+	67	1
-	+	67	21
-	+	67	4
-	+	67	0
-	+	67	19
-	+	67	19
-	+	67	37
-	+	67	48
-	+	67	46
-	+	67	47
-	+	67	0
-	+	67	19
-	+	67	19
-	+	67	19
-	+	67	35
-	+	67	31
-	+	67	11
-	+	67	24
-	+	67	19
-	+	67	16
-	+	67	21
-	+	67	11
-	+	67	22
-	+	67	19
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	0
-	+	67	1
-	+	67	29
-	+	67	22
-	+	67	11
-	+	67	0
-
-> ~/lastyear/assignment-one/menu.c
-	"	176	1
-	+	349	30
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/counter.c
-	"	22	44
-
-> ~/lastyear/assignment-one/menu.h
-	"	39	0
-
-> ~/assignments/a1/startup/main.h
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader
 	"	1	0
 
-> ~/weeks/week-03/wk3q3.c
-	"	37	0
-
-> ~/weeks/week-03/wk3q2.c
-	"	43	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
-	"	37	0
-
-> ~/assignments/a1/startup/shared.h
+> /home/el9/E70949/shared/prog_in_c/lectures/Week-04/loader.c
 	"	1	0
 
-> ~/assignments/a1/startup/r3eadme.txt
+> ~/assignments/a2/partb/startup/shared.h
 	"	1	0
 
-> ~/assignments/a1/startup/vim
+> ~/weeks/week-09/tutorial/testing/ctu.txt
+	"	1	0
+	^	1	51
+	.	1	51
+	+	1	51
+	+	1	53
+	+	1	51
+
+> ~/weeks/week-09/tutorial/testing/testing.c
+	"	38	19
+	+	47	14
+	+	47	4
+	+	47	6
+	+	47	4
+	+	47	4
+	+	47	33
+	+	47	18
+	+	47	32
+	+	47	36
+	+	47	42
+	+	47	38
+	+	47	4
+	+	47	0
+	+	47	13
+	+	47	19
+	+	47	19
+	+	47	15
+	+	47	13
+	+	47	36
+	+	47	3
+	+	47	43
+	+	47	35
+	+	47	0
+	+	47	61
+	+	47	0
+	+	47	61
+	+	47	0
+	+	47	42
+	+	47	13
+	+	47	43
+	+	47	20
+	+	47	19
+	+	47	21
+	+	47	72
+	+	47	29
+	+	47	59
+	+	47	0
+	+	47	62
+	+	47	35
+	+	47	69
+	+	47	32
+	+	47	0
+	+	47	25
+	+	47	55
+	+	47	72
+	+	47	46
+	+	47	0
+	+	47	56
+	+	47	37
+	+	47	36
+	+	47	38
+	+	47	36
+	+	47	39
+	+	47	35
+	+	47	34
+	+	47	36
+	+	47	37
+	+	47	21
+	+	47	23
+	+	47	23
+	+	47	36
+	+	47	20
+
+> ~/weeks/week-09/tutorial/testing/testing.h
+	"	15	1
+	+	24	21
+	+	24	0
+	+	24	0
+	+	24	1
+	+	24	1
+
+> ~/weeks/week-09/phone.h
 	"	1	0
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-04/tm_examp.c
-	"	45	0
+> ~/weeks/week-09/fsupport.h
+	"	1	0
 
-> ~/lastyear/assignment-one-answers/a1partb/menu.c
-	"	70	4
+> ~/weeks/week-09/phonebk_strtok.c
+	"	1	0

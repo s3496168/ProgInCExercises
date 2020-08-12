@@ -9,28 +9,32 @@
 
 
 IP Address: 10.118.128.3
-Extension host agent listening on 42583
+Extension host agent listening on 42204
 
 
-[23:58:06] Extension host agent started.
-[23:58:07] [127.0.0.1][23d01f3b][ManagementConnection] New connection established.
-[23:58:07] [127.0.0.1][3a73974d][ExtensionHostConnection] New connection established.
+[12:33:39] Extension host agent started.
+[12:33:39] [127.0.0.1][2ab678c6][ManagementConnection] New connection established.
+[12:33:39] [127.0.0.1][5a2d0b4e][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 stdin: is not a tty
-[23:58:07] [127.0.0.1][3a73974d][ExtensionHostConnection] <35207> Launched Extension Host Process.
-[00:01:30] [127.0.0.1][2bba7bd3][ManagementConnection] New connection established.
-[00:01:30] [127.0.0.1][174a55e6][ExtensionHostConnection] New connection established.
-[00:01:30] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Launched Extension Host Process.
-[00:03:57] [127.0.0.1][2bba7bd3][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[00:03:58] [127.0.0.1][174a55e6][ExtensionHostConnection] <35893> Extension Host Process exited with code: 0, signal: null.
-[00:04:14] [127.0.0.1][ff58b857][ManagementConnection] New connection established.
-[00:04:14] [127.0.0.1][10435fd0][ExtensionHostConnection] New connection established.
-[00:04:14] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Launched Extension Host Process.
-[00:20:42] [127.0.0.1][ff58b857][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[00:20:43] [127.0.0.1][10435fd0][ExtensionHostConnection] <36351> Extension Host Process exited with code: 0, signal: null.
-[00:20:53] [127.0.0.1][3d240db3][ManagementConnection] New connection established.
-[00:20:53] [127.0.0.1][e834676f][ExtensionHostConnection] New connection established.
-[00:20:53] [127.0.0.1][e834676f][ExtensionHostConnection] <39461> Launched Extension Host Process.
-[00:47:29] [127.0.0.1][3d240db3][ManagementConnection] The client has reconnected.
-[00:47:29] [127.0.0.1][e834676f][ExtensionHostConnection] The client has reconnected.
+[12:33:39] [127.0.0.1][5a2d0b4e][ExtensionHostConnection] <17959> Launched Extension Host Process.
+[12:34:35] [127.0.0.1][2ab678c6][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[12:34:36] [127.0.0.1][5a2d0b4e][ExtensionHostConnection] <17959> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[12:34:36] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[12:34:51] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[12:34:51] Cancelling previous shutdown timeout
+[12:34:51] [127.0.0.1][4a21f3d4][ManagementConnection] New connection established.
+[12:34:51] [127.0.0.1][7af28171][ExtensionHostConnection] New connection established.
+[12:34:51] [127.0.0.1][7af28171][ExtensionHostConnection] <18420> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[12:39:51] New EH opened, aborting shutdown
+[17:14:16] [127.0.0.1][4a21f3d4][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:14:17] [127.0.0.1][7af28171][ExtensionHostConnection] <18420> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[17:14:17] Last EH closed, waiting before shutting down
+Last EH closed, shutting down
+[17:19:17] Last EH closed, shutting down

@@ -36,13 +36,43 @@ static BOOLEAN sum_equals(const struct int_list *thelist, int desired_sum) {
     }
     return sum == desired_sum;
 }
-
+int get_intlist_element(const struct int_list *thelist, long i){
+    return thelist->nums[i];
+}
 /**
  * define your algorithm here to check wheter any subset of the numbers in the
  * array match the target sum. This is the only function you need to implement
  * for tutorial 4
  **/
-BOOLEAN matching_sum(const struct int_list *thelist, int desired_sum) {}
+BOOLEAN matching_sum(const struct int_list *thelist, int desired_sum) {
+
+    long skip count;
+
+    if(thelist->len == 0){
+        return false;
+    }
+
+      if(sum_equals(thelist, desired_sum)){
+        return true;
+    }
+
+    for (skip_count = 0; skip_count < thelist->len ++skip_count){
+        struct int_list newlist;
+        long count;
+        intlist_init(&newlist);
+        for (count = 0; skip_count < thelist->len; ++skip_count){
+            if(count !=skip_count){
+                if (!intlist_add(&newlist, get_intlist_element(thelist, count))){
+                    return false;
+                }
+
+            }
+        }
+        if (matching_sum(&newlist, desired_sum)){
+            return true;
+        }
+    }
+}return false;
 
 #define ARRAYSIZE 3
 #define TARGETSUM 12
