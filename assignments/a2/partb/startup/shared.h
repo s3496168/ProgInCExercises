@@ -8,7 +8,10 @@
 /**
  * This file
  **/
+#include <stdlib.h>
+#include <stdio.h>
 #ifndef SHARED_H
+
 #define SHARED_H
 /**
  * definition of the boolean type for you to use in your program
@@ -32,4 +35,6 @@ struct word {
     /* how many times this word has been seen */
     long count;
 };
+
+
 #endif

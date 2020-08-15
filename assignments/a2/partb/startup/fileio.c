@@ -18,11 +18,13 @@
 #define WRITING 2
 #define LINELEN 80
 #define EXTRACHARS 2
+#define WORDLEN 12
 
 /*added functions*/
 /*int load(struct file_data *, FILE *);*/
-FILE fpRead;
+int load(struct file_data, FILE*);
 static void clear_buffer();
+
 
 /**
  * modified clear_buffer() function to work with file input
@@ -40,21 +42,27 @@ static void clear_buffer(FILE *fp) {
  * passed in.
  **/
 struct file_data load_file(const char filename[], enum list_type type) {
+     FILE *fptr;
     struct file_data data;
-    int result;
-    FILE *fptr;
+   /* char result;*/
     char line[LINELEN + EXTRACHARS];
-    int load(struct file_data, FILE *);
+   
     fptr = fopen("filename[READING]", "r");
-    result = load(data, fptr);
-
+   /* char = load(data, fptr);*/
+   
     /* if there is an error opening the file, report it */
-    if (result <= 0) {
+    if (!fptr) {
         perror("There has been an error opening the file");
         /*return EXIT_FAILURE;*/
     }
+   
+     /*load the data into the struct*/
+    /*fgets to obtain user input*/
 
     while (fgets(line, BUFSIZ, fptr) != NULL) {
+char * punct_token;
+
+char word[WORDLEN+EXTRACHARS]; 
 
         /*manage buffer overflow*/
         if (line[strlen(line) - 1] != '\n') {
@@ -65,15 +73,34 @@ struct file_data load_file(const char filename[], enum list_type type) {
 
         /*remove trailing newline-not needed anymore*/
         line[strlen(line) - 1] = 0;
-    }
-    fclose(fptr);
-    /*load the data into the struct*/
-    /*fgets*/
 
-    /*tokenize here too*/
+ /*tokenize here too-obtain the first token*/
+punct_token = strtok(line, PUNCTUATION SPACES NUMBERS);
 
+/*obtain other tokens*/
+
+while(punct_token){
+ 
+            /*copy the data into a string*/           
+            strcpy(word, punct_token);
+            punct_token = strtok(NULL, PUNCTUATION SPACES NUMBERS);
+}
+
+       
+}
+ fclose(fptr);
     return data;
 }
+
+/**
+*loading function
+**/
+/*
+char load(struct file_data entries, FILE* fpRead){
+    
+return word;
+}*/
+
 /**
  * saves data from the current list type to the output file that was
  *specified

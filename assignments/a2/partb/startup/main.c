@@ -13,9 +13,12 @@
 #define NUMARGS 2
 
 enum list_type array_list;
+struct file_data load_file();
+
+
 int main(int argc, char* argv[]) {
-    int result;
     struct file_data my_file_data;
+
     /* check the command line args */
     if (argc != NUMARGS) {
         perror("Error: the entrant is ont a file type.");
@@ -26,7 +29,7 @@ int main(int argc, char* argv[]) {
     /* 1 may contain the filename */
     my_file_data = load_file(argv[NUMARGS], array_list);
 
-    if (result == 0) {
+    if (!load_data(&my_file_data)) {
         perror("Error: failed to load data\n");
         return EXIT_FAILURE;
     }

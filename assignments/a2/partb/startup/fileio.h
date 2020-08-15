@@ -49,6 +49,8 @@ struct file_data load_file(const char[], enum list_type);
 
 BOOLEAN save_data(struct file_data *, const char[]);
 
+BOOLEAN load_data(struct file_data* data);
+
 /**
  * additional function prototypes for this module
  **/
