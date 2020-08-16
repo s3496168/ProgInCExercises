@@ -7,6 +7,9 @@
  *****************************************************************************/
 #include "shared.h"
 #include <stdio.h>
+/*programmer added libraries*/
+#include <stdlib.h>
+#include <string.h>
 #ifndef ARRAY_LIST
 #define ARRAY_LIST
 
