@@ -1,0 +1,964 @@
+/* Insert your styles here */
+body{
+  background-color: #434343ff;
+  color: #ebe1dcff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/*primary heading font*/
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Lexend Peta', sans-serif;
+}
+/*end primary heading font*/
+
+/**reinforce* correct size*/
+h1{
+  font-size: 32px;
+}
+/** end reinforce* correct size*/
+
+/*booking page classes*/
+/* Style the hidden paragraph to be initially hidden */
+/*barbie*/
+    #bsu {
+      display: none;
+    }
+
+	  #bmo {
+      display: none;
+    }
+	  #btu {
+      display: none;
+    }
+
+	  #bwe {
+      display: none;
+    }
+
+	  #bth {
+      display: none;
+    }
+
+	  #bfr {
+      display: none;
+    }
+
+	   #bsa {
+      display: none;
+    }
+/*standard and discount tables*/
+#bst{
+	display: none;
+}
+
+#bdt{
+	display: none;
+}
+
+/*small barbie tables*/
+#ssabst{display: none;} 
+#sscbst{display: none;} 
+#sskbst{display: none;} 
+#sfabst{display: none;} 
+#sfcbst{display: none;} 
+#sfkbst{display: none;} 
+#ssabdt{display: none;} 
+#sscbdt{display: none;} 
+#sskbdt{display: none;} 
+#sfabdt{display: none;} 
+#sfcbdt{display: none;} 
+#sfkbdt{display: none;} 
+
+
+/*end barbie*/
+/*tmnt*/
+#tsu{
+ display: none;
+}
+
+	  #tmo {
+      display: none;
+    }
+	  #ttu {
+      display: none;
+    }
+
+	  #twe {
+      display: none;
+    }
+
+	  #tth {
+      display: none;
+    }
+
+	  #tfr {
+      display: none;
+    }
+
+	   #tsa {
+      display: none;
+    }
+
+
+#tst{
+	display: none;
+}
+
+#tdt{
+	display: none;
+}
+/*small tmnt tables*/
+#ssatst{display: none;} 
+#ssctst{display: none;} 
+#ssktst{display: none;} 
+#sfatst{display: none;} 
+#sfctst{display: none;} 
+#sfktst{display: none;} 
+#ssatdt{display: none;} 
+#ssctdt{display: none;} 
+#ssktdt{display: none;} 
+#sfatdt{display: none;} 
+#sfctdt{display: none;} 
+#sfktdt{display: none;} 
+/*ij*/
+
+#isu{
+ display: none;
+}
+
+	  #imo {
+      display: none;
+    }
+	  #itu {
+      display: none;
+    }
+
+	  #iwe {
+      display: none;
+    }
+
+	  #ith {
+      display: none;
+    }
+
+	  #ifr {
+      display: none;
+    }
+
+	   #isa {
+      display: none;
+    }
+
+
+#ist{
+	display: none;
+}
+
+#idt{
+	display: none;
+}
+/*small IJ tables*/
+#ssaist{display: none;} 
+#sscist{display: none;} 
+#sskist{display: none;} 
+#sfaist{display: none;} 
+#sfcist{display: none;} 
+#sfkist{display: none;} 
+#ssaidt{display: none;} 
+#sscidt{display: none;} 
+#sskidt{display: none;} 
+#sfaidt{display: none;} 
+#sfcidt{display: none;} 
+#sfkidt{display: none;} 
+
+
+/*op*/
+#osu{
+ display: none;
+}
+
+	  #omo {
+      display: none;
+    }
+	  #otu {
+      display: none;
+    }
+
+	  #owe {
+      display: none;
+    }
+
+	  #oth {
+      display: none;
+    }
+
+	  #ofr {
+      display: none;
+    }
+
+	   #osa {
+      display: none;
+    }
+
+
+#ost{
+	display: none;
+}
+
+#odt{
+	display: none;
+}
+/*small Op tables*/
+#ssaost{display: none;} 
+#sscost{display: none;} 
+#sskost{display: none;} 
+#sfaost{display: none;} 
+#sfcost{display: none;} 
+#sfkost{display: none;} 
+#ssaodt{display: none;} 
+#sscodt{display: none;} 
+#sskodt{display: none;} 
+#sfaodt{display: none;} 
+#sfcodt{display: none;} 
+#sfkodt{display: none;} 
+
+/*end booking page classes*/
+
+/*dropdowns-php */
+#standardTable{
+	display: inline-block;
+}
+
+#FCCmini{
+	display: none;
+}
+
+#FCCHmini{
+	display: none;
+}
+
+#FCAmini{
+	display: none;
+}
+#FCAmini{
+	display: none;
+}
+#childMini{
+	display: none;
+}
+#CAmini{
+	display: none;
+}
+#SAmini{
+	display: none;
+}
+/*sections*/
+
+/*automated radio rd*/
+.code.screening{
+	display: inline-block;
+}
+
+#smallTableForRBs{
+	display: none;
+}
+/*end automated radio rd*/
+
+.first{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.second{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.third{
+	background-color: lemonchiffon;
+	color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.fourth{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+/**/
+/*responsive image class*/
+.responsive{
+ width: 100%;
+}
+/*end responsive image class*/
+
+/*actual header*/
+header{
+  width: 105%;
+  background-color: black;
+  margin-left: -5%;
+  padding-top: 5%;
+  margin-top: -2%;
+}
+
+/*grid header*/
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10%;
+  /* position: sticky !important;
+     top: 0 !important;
+  z-index: 100 !important;*/
+}
+
+.popcorn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 0;
+  padding-left: 6%;
+}
+
+/*
+
+nav{
+    position: fixed !important;
+    position: -webkit-fixed /*in case if safari users*//* !important;
+    top: 0 !important;
+  z-index: 100 !important;
+  overflow: auto !important;
+}*/
+/*navigation styles
+
+}*/
+
+.navbar{
+    width: 105%;
+    margin-left: -5%;
+    background-color: black;
+    padding-left: 38%;
+    position: sticky !important;
+    position: -webkit-sticky  /*in case if safari users*/ !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    overflow: auto !important;
+}
+/*
+@moz-document url-prefix(){
+nav{
+    position: fixed !important;
+    position: -webkit-fixed /*in case if safari users*//* !important;
+    top: 0 !important;
+  z-index: 100 !important;
+  overflow: auto !important;
+}
+}*/
+.links{
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  justify-content: center;
+  position: sticky !important;
+  position: -webkit-sticky /*in case if safari users*/ !important;
+  top: 0 !important;
+}
+
+.links ul{
+  display: inline-block;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  justify-content: center;
+  position: sticky !important;
+  position: -webkit-sticky /*in case if safari users*/ !important;
+  top: 0 !important;
+}
+
+.links li{
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* sticky attempts */
+}
+/*navigation styles*/
+
+/*classes for hyperlinks*/
+a:link{
+  color: #ebe1dcff;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #ebe1dcff;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #fffbf9ff;
+  text-decoration: none;
+  transition: 1s;
+}
+
+a:active{
+  color: #ffffffff;
+  text-decoration: none;
+}
+/*end classes for hyperlinks*/
+
+/*classes to display text part of logo*/
+span.logo{
+  display: inline-block;
+
+}
+
+/*classes to display logo*/
+.logo{
+  display: inline-block;
+
+}
+
+/*end logo*/
+/*start non header colour*/
+
+/*chair and dolby styles*/
+.chair{
+  vertical-align: top;
+  display: inline-block;
+	padding: 20px;
+}
+
+.half
+{
+  width: 50%;
+  display: table;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.quarter{
+  width: 25%;
+}
+/*end chair styles*/
+
+/*start responsive*/
+
+/*css for flipcards*/
+
+.times{
+    text-align:center;
+    color: black;
+}
+
+.tANDr{
+    display: table;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: black;
+}
+
+.tANDr.moreSpace{
+    margin-bottom: 0;
+    margin-top: 30px;
+    color: black;
+}
+
+ .littleSpace{
+   margin-bottom: 0;
+   margin-top: 10px;
+   color: black;
+}
+
+.poster{
+    width: 65%;
+    display: table;
+    margin: 0 auto;
+    color: black
+}
+
+div.bookNow{
+    padding-top: 15%;
+}
+
+.small{
+	display: none;
+}
+.booking{
+    padding: 10px 15px 10px 15px;
+    display: table;
+    margin: 0 auto;
+    background-color: gold;
+}
+    div.descriptive{
+        background-color: white;
+        width: 80%;
+        display: table;
+        margin: 0 auto;
+    }
+
+     div.card3D {
+    border: dotted black thin;
+    background-color: orange;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px 2px orange;
+       
+  }
+  div.card3D > div:nth-child(1) {
+    border: 4px white groove;
+    background-color:yellow;
+   
+  }
+  div.card3D > div:nth-child(2) {
+    border: 4px lemonchiffon groove;
+    background-color:white;
+  }
+
+  div.card3D {
+  height: 350px;
+  width: 250px;
+  padding: 5px;
+  overflow: auto;
+}
+
+div.card3D > div {
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+
+div.card3D {
+  position: relative;
+}
+
+div.card3D > div {
+  position: absolute;
+}
+
+div.card3D > div:nth-child(1){
+  transform: rotateY(0deg);
+}
+
+div.card3D > div:nth-child(2){
+  transform: rotateY(180deg);
+  overflow: auto;
+}
+
+div.card3D > div {
+  transition: 1s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+div.card3D:hover > div:nth-child(1) {
+  transform: rotateY(180deg);
+}
+div.card3D:hover > div:nth-child(2) {
+  transform: rotateY(360deg);
+}
+
+.more{
+  font-size: 32px;
+}
+
+.bitMore{
+ font-size: 24px;
+}
+
+.littleBitMore{
+   font-size: 16px;
+}
+
+.extra{
+  text-align: center;
+}
+
+.eggs{
+	padding-top: 3%;
+}
+
+.bitLeft{
+  padding-left: 30%;
+}
+
+.tinyLeft{
+  padding-left: 10%;
+}
+
+.littlePG{
+font-size: 80%;
+}
+/*end css for flipcards*/
+
+/*inner grid for tiles*/
+.inner-grid-container{
+  width: 50%;
+  padding-left: 27%;
+  visibility: visible;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   
+  grid-gap: 5%;
+  column-gap: 50%;
+}
+
+.outer-grid > div {
+    background-color: orange;
+    color: white;
+    padding: 8px;
+  }
+
+  /*end grid for tiles*/
+
+* {
+    box-sizing: border-box;
+  }
+
+  /* Style the header */
+.header {
+    grid-area: header;
+    background-color: black; /* For browsers that do not support gradients */
+    background-image: linear-gradient(black, #434343ff);
+    padding-top: 30px;
+  }
+
+  /* The grid container */
+.grid-container {
+    display: grid;
+    grid-template-areas: 
+      'header header header header header header' 
+      'left middle middle middle middle right' 
+      'left footer footer footer footer right';
+    /* grid-column-gap: 10px; - if you want gap between the columns */
+  } 
+
+.left,
+.middle,
+.right {
+  
+	display: grid;
+}
+
+/* Style the left column */
+.left {
+    grid-area: left;
+	  padding: 50px;
+  }
+  
+  /* Style the middle column */
+  .middle {
+    grid-area: middle;
+  }
+  
+  /* Style the right column */
+  .right {
+    grid-area: right;
+	  padding: 50px;
+  }
+  
+  /* Style the footer */
+  .footer {
+    grid-area: footer;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+ /*show part intended for medium grid*/
+ .card3D.large{
+  display:inline;
+}
+/*hide part intended for medium grid*/
+.large.hideMe{
+  display: none;
+}
+
+span.onlyMid{
+  display: none;
+}
+
+.onlyMid{
+  display: none;
+}
+
+span.notLarge{
+  display: none;
+}
+
+/*radio DIVs*/
+#barbie{
+  display: none;
+}
+
+#tmnt{
+  display: none;
+}
+
+#ij{
+  display: none;
+}
+
+#op{
+  display: none;
+}
+
+/*radio*/
+
+fieldset { width:fit-content; display: flex; 
+	border-width: 0px; margin: 10px;}
+
+
+fieldset legend { 
+	 text-align: center; 
+}
+
+fieldset input[type="radio"] { display: none; }
+
+fieldset input[type="radio"] + label { 
+	display: inline-block;
+	
+	text-transform:uppercase;
+	padding: 10px 15px;  
+	background-color:#654321; 
+	transition: 0.3s;
+	color:yellow;}
+
+	fieldset input[type="radio"]:checked + label { 
+	color:#654321; 
+	background-color:yellow; 
+}
+
+fieldset input[type="radio"]:first-of-type + label { 
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+fieldset input[type="radio"]:last-of-type + label { 
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.midOnly{
+	display: none;
+}
+.smallOnly{
+	display: none;
+}
+
+.box{
+	margin-left: 5%;
+	text-align: center;
+	border: 2px gold;
+	padding-bottom: 50px;
+}
+
+.submit{
+margin-left: 20%;
+}
+/*end radio*.
+/*760px-481px for medium-sized devices (eg tablets)*/
+@media only screen and (max-width: 760px) and (min-width: 481px){
+	
+span.notLarge{
+    display: inline;
+	  margin-left: 40px;
+	  margin-top: 40px;
+  }
+	
+.push{
+	margin-left: 60px;
+}
+
+.left,
+.middle,
+.right {
+      padding: 10px;
+    }
+  
+    
+.grid-container  {
+        grid-template-areas: 
+          'header header header header header header' 
+          'left left left left left left' 
+          'middle middle middle middle middle middle' 
+          'right right right right right right' 
+          'footer footer footer footer footer footer';
+      }
+
+span.oval{
+        background-color:royalblue;
+        display:inline-block;
+      }
+
+.card3D.large{
+        display:none;
+    }
+
+span.onlyMid{
+      display: inline;
+    }
+  
+.card3D.onlyMid{
+      display: none;
+    }
+         
+.onlyMid{
+    display: none;
+     }
+
+.span.largeOnly{
+      display: none;
+    }
+    
+.largeOnly{
+      display: none;
+    }
+  
+.smallest{
+  display: inline;
+} 
+
+  .inner-grid-container{
+  grid-gap: 5px;
+      padding-left: 10%;
+}
+
+}
+/*
+480px-1px for small devices (eg tablets)
+*/
+@media only screen and (max-width: 480px) and (min-width: 1px){
+	
+/*nav styling*/
+.most{display: none;}
+.small{
+	display: inline-block;
+}
+
+/*form styling*/
+.belowFifty, #ssabst.belowFifty{
+	padding-bottom: 50px;
+}
+	
+fieldset table td label{
+	display: inline-block;
+	text-transform: uppercase;
+	padding: 10px 95px;
+  background-color: #654321;
+  transition: 0.3s;
+  color: yellow;
+  width: 100%;
+}
+
+fieldset table td input[type="radio"]:checked + label { 
+	color: #654321; 
+	background-color: yellow; 
+}
+
+fieldset { width:fit-content; display: flex; 
+	border-width: 0px; margin: 40px;}
+
+fieldset legend { 
+	 text-align: center; 
+	  margin-left: 45%;
+}
+
+fieldset input[type="radio"] { display: none; }
+
+.links li{
+text-decoration: none;
+  text-align: center;
+  display: block;
+  padding-left: 0px;
+  padding-right: 5px;
+}
+/*end nav styling*/
+  /*remainder is for the grids*/
+
+.left,
+.middle,
+.right {
+      padding: 5px;
+    }
+
+span.onlyMid{
+      display: none;
+    }
+
+.large.mid{
+      display: none;
+    }
+
+.grid-container  {
+        grid-template-areas: 
+          'header header header header header header' 
+          'left left left left left left' 
+          'middle middle middle middle middle middle' 
+          'right right right right right right' 
+          'footer footer footer footer footer footer';
+  }
+
+.oval{
+       display: block;
+  }
+  
+.inner-grid-container{
+  padding-left: 20%;
+    grid-template-columns:  repeat(1, 1fr);  
+    grid-gap: 5px;
+}
+
+.theRest{
+    padding-left: 0px;
+  }
+  
+/*dropdowns-php */
+#standardTable{
+	display: none;
+}
+
+#FCCmini{
+	display: inline-block;
+}
+#FCCHmini{
+	display: inline-block;
+}
+#FCAmini{
+	display: inline-block;
+}
+#FCAmini{
+	display: inline-block;
+}
+#childMini{
+	display: inline-block;
+}
+#CAmini{
+	display: inline-block;
+}
+#SAmini{
+	display: inline-block;
+}
+	/*automated radio rd*/
+.code.screening{
+	display: none;
+}
+
+#smallTableForRBs{
+	display: inline-block;
+}
+/*end automated radio rd*/
+}
+/*end responsive design*/

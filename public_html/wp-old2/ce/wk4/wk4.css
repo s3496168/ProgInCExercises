@@ -1,0 +1,28 @@
+
+body{
+    background-color: #E6E6FA;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4B0082;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, legend, th{
+    font-family: Fantasy, serif;
+    color: #452c63;
+}
+
+/*classes for submit button feature*/
+.hidden {
+    color: #33006F;  
+}
+
+.invisible {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 5000ms, opacity 200s;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
