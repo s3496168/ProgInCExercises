@@ -1,1000 +1,1000 @@
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd assignments/a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd assignments
-ls
-cd a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-cd assignments/a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-cd assignments
-ls
-cd a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-9
-./cpt220_menu_system
-cd assignments
-ls
-cd a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-  } else{*/
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-ls
-cd lastyear
-ls
-cd assignment-one-answers
-ls
-cd a1partb
-ls
-vim menu.c
-cd ../
-ls
-cd ../
-ls
-cd assignment-one
-ls
-vim vim menu.c
-vim menu.c
-vim options.c
-cd assignments
-ls
-cd a1
-ls
-cd stratup
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-cd assignments
-ls
-cd a1
-ls
-cd startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-gcc -ansi -Wall -Werror -pedantic puzzle.c options.c helpers.c io.c -o puzzle 
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-gcc -ansi -Wall -Werror -pedantic puzzle.c options.c helpers.c  -o puzzle
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-cd assignments/a1/startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd assignments/a1/startup
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-cd assignments/a1/startup
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-vim options.c
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-vim options.c
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-vim options.c
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-vim options.c
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd assignments/a1/startup
-cd assignments/a1/
-cd assignments/a1
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd assignments/a1
-./cpt220_menu_system
-ls
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-./cpt220_menu_system
-gcc -ansi -Wall -Werror -pedantic main.c options.c helpers.c io.c -o cpt220_menu_system 
-cd weeks
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd  lectures
-ls
-cd week-04
-cd Week-04
-ls
-cd fibonacci.c
-vim fibonacci.c
-cd ../
-ls
-cd Week-03
-ls
-grep -n struct *.c
-vim ctype_example.c
-vim size.c
-cd ../
-ls
-cd Week-02
-ls
-grep -n struct *.c
-vim union.c
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd lectures
-ls
-cd Week-06
-ls
-vim segfault1.c
-gcc -ansi -Wall -pedantic segfault1.c -o segfault -g
-vim segfault2.c
-gcc -ansi -Wall -pedantic segfault2.c -o segfault -g
-ddd --seperate segfault2 
-vim notinit.c
-source /opt/rh/devtoolset-9 /enable
-vim conditionall.c
-ls
-vim conditional1.c
-ls -a
-cd ~/
-ls
-ls -a
-PATH=/home/el9/E70949/cutil/bin:$PATH; export PATH
-MANPATH=/home/el9/E70949/cutil/man:$MANPATH; export MANPATH
-INFOPATH=/home/el9/E70949/cutil/info:$INFOPATH;
-vim .bashrc
-ddd
-exit
-ddd
-exit
-man cdecl
-man cundecl
-cdecl
-cdecl --
-cdecl
-ddd
-cundecl
-ls
-cd weeks/week-02
-ls
-splint act-two-one.c
-cd ../
-ls
-cd week=06
-cd week-06
-ls
-splint mistake.c
-source /opt/rh/devtoolset-9 /enable
-vim .bashrc
-cd ~/
-ls
-ls -a
-vim .bashrc
-cd swweks/week-06
-cd weeks/week-06
+cd ~/img
+ls -la
+pwd
 ld
 ls
-gcc -g -ansi -Wall -pedantic mistake.c
-gdb mistake
-./mistake
-scl enable devtoolset-9
-scl enable devtoolset-9 zsh
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd../../
-cd ../../
+cd public_html
 ls
-cd lectures
+cd wp
 ls
-cd Week-03
+cd ../media
 ls
-grep -n rand *.c
-grep -n rand *.h
-cd ../
-cd Week-04
-grep -n rand *.c
-cd recursiverandom.c
-vim recursiverandom.c
-cd ../
+cd ../wp
+ls
+ls -a
+git pull
+ls
+vim index.html
+cd ../media
 ls
 cd ../
 ls
 cd ../
 ls
-cd lab5
-ls
-cd ../
-ls
-cp -r lab ~/weeks/week-06
-cp -r lab5 ~/weeks/week-06
-cd ~/weeks/week-06
-ls
-cd lab5
-ls
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../
-ls
-cd a2/debugginglabs
-ls
-cp -r lab3 ~/assignments/a2/a
-cd ~/assignments/a2/a
-ls
-cd lab3
-ls
-scl enable devtoolset-9 bash
-scl enable devtoolset-9 zsh
-scl enable devtoolset-9 bash
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd lectures
-ls
-cd Week-03
-ls
-cd ../
-ls
-cd Week-05
-ls
-vim phonebk_strtok.c
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd assignments
-ls
-cd a2
-ls
-cd debugging_poker
-ls
-cd ../
-cp -r debugging_poker ~/weeks/week-06
-cd debugging_poker
-ls
-scl enable devtools-9 zsh
+ls -a
+cd public_html
+ls -a
+cd wp
+ls -a
+git pull
 cd ~/
-scl enable devtools-9 zsh
-scl enable devtoolset-9 zsh
-cd weeks/week-06
 ls
-cd mistake.c
-vim mistake.c
-cd weeks/week-06
+cd public_html/wp
+got pull
+git pull
+ld
 ls
-scl enable devtoolset-9 zsh
-cd ~e70949/shared/prog_in_c/assignments/a1
+../
+ls
+../
+cd ../
+ls
+cd media
+ls
+cd ../wp
+ls
+cd ../media
+ls
+cd ../
+ls
+cd wp
+git pull
+ls
+ls -a
+git pull
+ls
+git pull
+cd ../media
+ls
+cd ../wp
+git pull
+chmod 701 ~/public_html/media
+find ~/public_html/media -type d -exec chmod 701 '{}' ';'
+find ~/public_html/media -type f -exec chmod 604 '{}' ';'
+ls
+ls -a
+git pull
+cd ~/
+ls
+cd img
+cd ../
+chmod 701 ~/img
+find ~/img -type d -exec chmod 701 '{}' ';'
+find ~/img -type f -exec chmod 604 '{}' ';'
+cd img
+ls
+cd ../
+ls
+cd public_html
+cd wo
+cd wp
+git pull
 cd ../../
 ls
-cd tutes
-ls
-cd class_B_SP2
+cd img
 ls
 cd ../
-cd class_A_SP2
+cd public_html
+cd wp
+git pull
+cd ../../../
 ls
-cd ../
+cd ~/
+cd ls
 ls
-cd ../
+chmod 701 ~
+chmod 701 ~/img
+find ~/img -type d -exec chmod 701 '{}' ';'
+find ~/img -type f -exec chmod 604 '{}' ';'
 ls
-cd lectures
+cd public_html
+cd wp
+git pull
+cd •/
+cd ~/
 ls
-cd Week-09
+cd img
+pwd
+cd ../public_html
+cd wd
+cd wp
+git pull
+cd ../../img
 ls
-cd ../
-ls
-cd ../
-ls
-cd examples
-ls
-cd ../
-ls
-cd lectures
-ls
-cd Week-09
-ls
-cd ../
-ls
-cd ../
-ls
-cd tutes
-ls
-cd class_A_SP2
-ls
-cd week5
+find ~/img -type f -exec chmod 604 '{}' ';'
+find ~/img -type d -exec chmod 701 '{}' ';'
+chmod 701 ~/img
+find ~/img -type d -exec chmod 701 '{}' ';'
+find ~/img -type f -exec chmod 604 '{}' ';'
+cd ../public_html/wp
 ls
 cd ../../
 ls
-cp -r class_A_SP2 ~/weeks/week-09/tutorial
-cd ~/weeks/week-09/tutorial
+cd img
+ls -la
+cd ../public_html/wp
+ls -la
+cd ../media
+ls -la
+cd ../wp
+git pu
+git pull
+cd ../../img
 ls
-cd personlist
+cd public_html
+cd wp
+ls -a
+mv .htacces .htaccess
+ls -a
+vim .htaccess
+cd public_html
+ls -al
+cd wp
+ls -la
+cd wp
+cd public_html
+ls -a
+cd wp
+git config credential.helper store 
+git config user.name "s3496168" 
+git config user.email s3496168@student.rmit.edu.au 
+cd public_html
+cd wp
+git status
+git config --global push.default simple
+touch .gitignore
+vim .gitignore
+git add -A
+git commit -m "My first Coreteaching based changes (I think)"
+git push
+git log
+cd public_html
+cd wp
 ls
-cd ~e70949/shared/prog_in_c/assignments/a1
+git log
+pwd
+chmod 700 .git
+cd public_Html
+cd public_html
+ls
+cd wp
+ls
+mkdir wk2
+cd wk2
+touch index.html
+touch wk2.css
+vim wk2.css
+cd public_Html/wp/wk2
+cd public_html/wp/wk2
+ls
+vim wk2.css
+vim index.html
+cd public_html/wp/wk2
+vim index.html
+cd public_html/wp/wk2
+vim index.html
+cd ../
+ls -la
+git add *
+git commit -m "added table demonstration"
+git push
+ls
+cd wk2
+ls
+cd ../
+ls
+ls -la
+ls -a
+git pull
+cd wp
+cd wk2
+ls -a
+rm .wk2.css.swp
+gut push
+git push
+ls -a
+vim w2.css
+vim wk2.css
+cd ../
+git add .
+git commit -m "removed unecessary header alignment from wk 2 content"
+git push
+git pull
+git push
+git pull
+chmod 701
+chmod 701 ~
+chmod 701 ~/public_html
+chmod 701 ~/public_html/wp
+find ~/public_html/wp -type d -exec chmod 701 '{}' ';'
+find ~/public_html/wp -type f -exec chmod 604 '{}' ';'
+cd public_html
+cd wp
+ls
+git pu
+git pull
+cd publuc_html/wp
+cd public_html/wp
+cd media
+ls
+cp wk2 /wp/ce
+cp -r wk /wp/ce/wk2
+cp -r wk2 /wp/ce/wk2
+cp -r wk2 /wp/ce/
+cp -r wk2 /public_html/wp/ce/wk2
+cp -r wk2 /public_html/wp/ce/
+cp -r wk2 /public_html/wp/ce
+cp -r ~/public_html/wp/ce/wk2
+cp -r ~/public_html/wp/ce
+cp -r ~/public_html/wp/ce/
+cp -r ~/public_html/wp/ce/cp -r wk2 ~/public_html/wp/ce/wk2
+cp -r wk2 ~/public_html/wp/ce/wk2
+cd ce
+ls
+cd wk2
+ls
 cd ../../
 ls
-cd lectures
+rm -r wk2
+cd ../
 ls
-cd Week-09
+cd media
 ls
-vim personlist.c
-vim list.c
-grep delete *.c
+cd ../wp
+vim index.html
+chmod 701
+chmod ~701
+chmod 701 ~
+chmod 701 ~/public_html
+chmod 701 ~/public_html/wp
+find ~/public_html/wp -type d -exec chmod 701 '{}' ';'
+find ~/public_html/wp -type f -exec chmod 604 '{}' ';'
+cd public_html/wp
+git push
+git add -A
+git commit -m "relocated wekk 2 work"
+git push
+git pull
 ls
-cd assignments
+cd ../
 ls
+cd media
+ls
+cd ../
+cd wp
+ls
+git pull
+git pu
+git pull
+cd public_html
+ls
+cd wp/ce
+cp -r wk2 wk3
+ls
+cd wk3
+vim index.html
+cd ../../
+ld
+ls
+git pull
+cd ce
+rm -r wk3
+cp -r wk2 wk3
+cd wk3
+vim index.html
+vim wk2.css
+mv wk2.css wk4.css
+vim index.html
+cd ../
+mv -r wk3 wk4
+mv wk3 wk4
+ls
+cd wk4
+vim index.html
+cd ../
+ls
+git add .
+git commit -m "start of wk 4 tasks"
+git push
+cd public_html
+cd wp
+ls
+cd ce/wk4
+vim wk4.css
+vim index.html
+cd ../../
+ls
+git add .
+git commit -m "changed time that the invisible class is applied"
+git push
+cd ce/wk4
+vim index.html
+vim wk4.css
+cd ../../
+ls
+git add .
+git commit -m "changed time that the invisible class is applied...again"
+git push
+cd public_html/wp/ce/wk4
+ vim index.html
+cd public_html/wp/ce/wk4
+ vim index.html
+cd public_html/wp
+ls
+git pull
+cd public_html/wp
+ls
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html
+ls
+cd wp
+git pull
+cd public_html
+cd wp
+git pull
+ping 8.8.8.8
+cd public_html/wp
+git pull
+ls
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+ls
+cd a3
+ls
+d a2
+cd a2
+cd ../
 cd a2
 ls
-cc a
-mkdir partb
-cd ~e70949/shared/prog_in_c/assignments/a1
+cp booking.php ../a3/
+cp style.css ../a3/
+cp index.php../a3/
+cp index.php ../a3/
+cd ../a3
+ls
+git add .
+git commit -m "added a2 files"
+pit push
+git push
+git pull
+cd public_html/wp
+ls
+git pull
+cd public_html
+ls
+cd public_html/wp
+ls
+cd a3
+ls
+vim index.php
+cd public_html/wp
+git pull
+git add .
+git commit -m "ma
+git add .
+git commit -m "made code pretty"
+git push
+git pull
+cd public_html/wp
+git pull
+ls
+cd public_html
+git pu
+git pull
+ls
+cd wp
+git pu
+git pull
+cd public_html
+cd wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+git pul
+git pull
+cd public_html/wp
+git pull
+ls -a
+ cd ../
+ls
 cd ../
+ls
+rm -r temps
+cd public_html/wp
+git pull
+df
+repquota
+quota
+df -H
+cd ../
+ls
+cd ../
+ls
+rm media
+ls
+df -H
+cd public_html/wp
+git pull
+ls -a
+cd ../
+ls
+ls-a
+ls -a
+rm .vscode-server
+rm -r .vscode-server
+rm .Xauthority
+rm .zcompdump
+rm .zshrc
+cd public_html
+cd wp
+git pu
+git pull
+cd public_html/wp
+ls
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wphhh
+git pull
+cd public_html/wp
+cd a3
+ls
+vim booking.php
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+git pu
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+ls
+cd ce
+ls
+rm wk2
+rm -r wk2
+cd ../
+git pull
+cd ../
+ls
+cd media
+ls
+cd img
+ls
+cd ../
+rm -r img
+cd ../
+ls
+cd wp
+git pull
+cd ../../
+ls
+rm qone
+rm qtwo
+rm qtwotaskfive
+rm qtwotaskfour
+rm qtwotasktwo
+rm qtwotaskthree
+ls
+rm test
+cd public_html
+ls
+cd wp
+git pull
+cd ../
+ls
+cd media
+ls
+cd ../../
+ls
+ls -a
+rm -r .mozilla
+rm -r .vscode-server
+rm -r .dotnet
+cd public_html
+ls
+cd wp
+git pull
+ls -a
+cd ../../
+ls
+cd public_html
+cd wp
+git pull
+ls
+cd ce
+ls
+cd ../../
+ls
+xd media
+cd media
+ls -a
+cd ../
+ls
+cd ../
+ls
+cd public_html
+cd ../
+ls
+ls -a
+rm .opts.sh.swp
+rm .gitconfig
+rm .lesshst
+rm kshrc
+rm .kshrc
+rm .pki
+rm -r .pki
+rm .git-credentials
+rm -r .cache
+rm -r .ddd
+rm .emacs
+cd public_html
+cd wp
+git pull
+pwd
+git config credential.helper store
+cd ../
+ls
+cd public_html
+ls
+cd wp
+git pull
+wp
+pwd
+git config credential.helper store
+git config user.name " s3496168"
+git config user.email s3496168@student.rmit.edu.au
+git status
 ls
 cd a2
+cd ../a3
 ls
-cp startup ~/assignments/a2/partb
-cp -r startup ~/assignments/a2/partb
-cp -r sample ~/assignments/a2/partb
-cd ~/assignments/a2/partb
+vim tools.php
+vim booking.php
+vim post-validation.php
+cd public_html
+cd wp
+git pull
+cd a3
 ls
-cd startup
+vim post-validation.php
+vim tools.php
 ls
-vim main.c
-vim shared.c
-cd assignments
+vim script.js
+git add .
+git commit -m "added php from course content"
+git push origin main
+git pull
+cd public_html/wp
+git pull
+cd public_html
+cd wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
 ls
-cd a1
-ls
-cd startup
-ls
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd tutes
-ls
-cd week4
-ls
-cd ../
-ls
-cd class_A_SP2
-ls
-cd personlist
-ls
-vim list.c
-vim list.h
-cd assignments/a2/partb
-ls
-cd startup
-ls
-grep -n open *.c
-grep -n open *.h
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd lectures
-ls
-cd Week-07
-ls
-cd tutorial
-ls
-grep -n main *.c
-vim account_list.c
-grep -n FILE *.c
-grep -n FILE *.h
-cd assignments/a2/partb
-ls
-cd startup
-ls
-gre -n enum *.h
-grep -n enum *.h
-vim fileio.c
-vim fileio.h
-vim fileio.c
-grep -n enum *.g
-grep -n enum *.c
-grep -n union *.c
-grep -n list *.c
-grep save *.c
-vim fileio.c
-grep -n stdout *.c
-grep -n stderr *.c
-grep -n stderr *.h
-vim fileio.c
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd lecturex
-cd lectures
-grep -n argv * .c
-grep -n argv *.c
-ls
-cd Week-05
-grep -n argv *.c
-vim add_spaces.c
-vim fsupport.h
-vim add_spaces.c
-vim fsupport.h
-grep -n argv *.h
-vim every_other.c
-vim phonebk_strtok.c
-vim fsupport.h
-vim phonebk_strtok.c
-ls
-cd testing
-ls
-gcc testing.c -o testing
-testing ctu.txt
-./testing ctu.txt
-testing ctu.txt
-gcc testing.c -o testing
-./testing ctu.txt
-gcc testing.c -o testing
-./testing ctu.txt
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
-ls
-cd testing
-ls
-gcc -g testing.c -o testing
-gcc -g phonebk_strtok.c -o phonebk_strtok
-cd ../
+git pull
+cd public_html/wp
+git pull
 ls
 cd ../
 ls
-gcc -g phonebk_strtok.c -o phonebk_strtok
-scl enable devtoolset-9 zsh
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
+cd media
 ls
-cd lectures/Week-05
-ls
-vim phonebk_strtok.c
-grep -n phone_entry *.c
-grep -n phone_entry phonebk_strtok.c
-vim phonebk_strtok.c
-grep -n DIRECTORYSIZE *.x
-grep -n DIRECTORYSIZE *.c
-grep -n DIRECTORYSIZE *.h
-vim phonebk_strtok.c
-vim phonebk_strtok.h
-grep -n phone_entry *.h
-vim phone.h
-vim phonebk_strtok.c
-grep -n gropen phonebk_strtok.c
-vim phonebk_strtok.c
-vim phonebk_strtok.h
-vim fsupport.h
-vim phonebk_strtok.c
-vim phone.h
-vim fsupport.h
-vim phonebk_strtok.c
-cp phonebl_strtok.c weeks/week-09
-cp phonebk_strtok.c weeks/week-09
-cp phonebk_strtok.c weeks/week-09/
-cp -r phonebk_strtok.c weeks/week-09/
-cp -r phonebk_strtok.c ~/weeks/week-09/
-cp -r fsupport.h ~/weeks/week-09/
-cp -r phone.h ~/weeks/week-09/
-grep -n gropen *.h
-grep -n gropen *.c
-vim reader.c
-cd weeks
-ls
-cd week-09
-ls
+mv classification-m-square.png M.png
+mv classification-pg-square.png PG-13.png
+mv classification-r18-square.png R.png
+cd ../wp
+git pull
+cd media
 cd ../
-cd week-10
+cd media
 ls
+cp Teenage_Mutant_Ninja_Turtles_-_Mutant_Mayhem.jpg tt8589698
+cp Oppenheimer_(film).jpg tt15398776.png
+cp Oppenheimer_(film).jpg tt15398776.pngcp Oppenheimer_/(film/).jpg tt15398776.png
 cd ../
 ls
-cd week-09
+cd wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+[A
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
 ls
-cd tutprial
-cd tutorial
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
+cd public_html/wp
+git pull
 ls
-cd testing
+cd public_html
 ls
-gcc -g testing.c -o testing
-vim testing.c
-vim testing.h
-vim testing.c
-cd ~e70949/shared/prog_in_c/assignments/a1
-cd ../../
+cd wp
 ls
-cd lectures
-ls
-cd week-05
-cd Week-05
-ls
-grep -n gropen *.c
-grep -n gropen *.h
-vim support.h
-vim tsupport.h
-vim fsupport.h
-ls
-cd ~/weeks/week-09
-ls
-cd tutorial
-ls
-cd testing
-
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-vim testing.h
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-vim testing.h
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-vim testing.c
-cd ../
-ls
-cd  ../
-ls
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address phonebk_strtok.c -o phonebk_strtok
-gcc -g -ansi -Wall -Werror -pedantic phonebk_strtok.c -o phonebk_strtok
-cd ../
-ls
-cd week-09
-ls
-cd tutorial
-ls
-cd testing
-ls
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.h
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic -fsanitize=address testing.c -o testing
-cd ../
-ls
-cd ../
-ls
-gcc -g -ansi -Wall -Werror -pedantic phonebk_strtok.c -o phonebk_strtok
-vim phonebk_strtok.c
-vim fsupport.h
-vim phone.h
-cd assignments
-ls
-cd a2
-ls
-cd partb
-ls
-cd startup
-ls
-gcc -g -ansi -Wall -Werror -pedantic main.c fileo.c array_list.c shared.c -o cpt220_counter
-gcc -g -ansi -Wall -Werror -pedantic main.c fileio.c array_list.c shared.c -o cpt220_counter
-vim fileio.c
-cd weeks/week-09
-ls
-cd tutorial
-ls
-cd testing
-ls
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing
-./testing ctu.txt
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing ctu.txt
-vim testing.c
-vim testing.h
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.h
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing ctu.txt
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing ctu.txt
-vim ctu.txt
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing ctu.txt
-vim ctu.txt
-./testing ctu.txt
-vim ctu.txt
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-vim testing.c
-gcc -g -ansi -Wall -Werror -pedantic testing.c -o testing
-./testing ctu.txt
-vim ctu.txt
-cd ../
-ls
-zip -r testing.zip testing/
+cd ce
 ls
 cd ../../
 ls
 cd ../
 ls
-cd assignments
+cd public_html
+ps
 ls
-cd a2
+cd wp
 ls
-cd partb
+cp -r a4 ce/past
+cd ce/past
 ls
-cd startup
-ls
-grep -n - *.h
-vim shared.h
-cd ~e70949/shared/prog_in_c/assignments/a1
+vim index.php
 cd ../../
 ls
-cd lectures
-ls
-cd week-04
-cd Week-04
-ls
-grep -n fgets *.c
-vim loader.c
 cd ../
 ls
-cd Week-05
+cd wp/ce/past
+vim index.php
+vim tools.php
+vim booking.php
+vim index.php
+vim booking.php
+cd wp
 ls
-vim reader.c
-cdcassignments
-cd assignments
+cd public_html
 ls
-cd a2
+cd wp
 ls
-cd partb
-ls
-
-ls
-gcc -g -ansi -Wall -Werror -pedantic main.c fileio.c shared.c array_list.c -o cpt220_counter
-vim main.c
-vim fileio.c
-vim main.c
-vim fileio.c
-cd ~e70949/shared/prog_in_c/assignments/a1
+git pull
+git merge
+git commit merge
+cd ce/
+rm -r past
 cd ../../
 ls
-cd lectures
+cd wp
 ls
-cd Week-06
+git pull
+cd public_html/wp
+git pull
+quit
+exit
+cd public_html/wp
+git pull
+quiy
+quit
+exit
+cd public_html/wp
+git pull
+exit
 ls
-cd ../Week-07
+exit
+cd public_html/wp
+git pull
 ls
-cd ../Week-05
+git checkout 0425d3e733b4cde3a364975615df0ad8bd9950f2
+exit
+cd public_html/wp
+git pull
 ls
-vim reader
-vim reader.c
-cd assingments/a2
-cd assingments
+git pull origin main
 ls
-cd assingments/a2
-cd assingments
-cd assignments
+cd ce
 ls
-cd a2
+cd past
 ls
-cd partb
+git pull 
+git pull origin main
 ls
-cd startup
+cd public_html/wp
 ls
-vim fileio.h
-cd assignments
+git pull
+git pull remote main
 ls
-cs a2/partb
-cd a2/partb
+ls -a
+git pull
+git branch -r
+git pull
+git-pull(1)
+git pull origin main
+exit
+cd public_html/wp
+git pull origin main
+cd public_html/wp
+git pull origin main
+exit
+cd public_html/wp
+git pull origin main
+cd public_html/wp
+git pull origin main
 ls
-cd startup
+cd publuc_html
+cd public_html
 ls
-vim main.c
-cd ~e70949/shared/prog_in_c/
+cd wp
+git pull
+git pull origin main
+exit
+cd ~
+pwd
+ls -al
 ls
-cd lectures/Week-05
+cd public_html
 ls
-vim reader.c
+mv media media-old
+mv wp wp-old
+ls
+mkdir media
+mkdir wp
+cd wp
+git clone https://github.com/s3496168/wp
+cd ../
+ls
+cd media-old
+ls
+cd ../
+git pull
+cd ../wp-old
+cd ../
+ls
+cd public-html
+cd public_html
+ls
+cd wp-old
+ls
+git pull
+git pull origi n main
+git pull origin main
+git rebase main
+git branch
+git branch -a
+git checkout main
+git merge main
+git commit -a
+ls
+git add .
+git commit -m "gah"
+cd past
+ls
+cd ce/past
+ls
+vim index.php
+git pull
+git pull origin main
+ls
+cd ../
+ls
+cd past
+pwd
+ls
+vim booking.php
+git pull origin main
+git checkout origin main
+git checkout main
+git pull
+cd ../
+ls
+cd ../
+ls
+rm -r wp-old
+ls
+mv wp-old wp-old2
+mkdir wp-old
+git clone https://github.com/s3496168/wp-old
+git pull
+git rebase
+git add *
+git commit -m "changes"
+git push origin main
+git add *
+git commit -m "changes"
+git push origin main
+git add *
+git commit -m "changes"
+git push origin main
+git pull
+ls
+cd wp-old
+cd ce/past
+ls
+vim index.php
+git pull
+cd ../../../
+ls
+cd media-old
+ls
+cd ../
+ls
+cd wp-old
+ls
+cd ce
+ls
+cd past
+ls
+cd ../../../
+ls
+git pull
+wp-old
+cd wp-old
+git pull
+ls
+cd ce/past
+ls
+cd index.php
+vim index.php
+cd ../../
+ls
+git pull
+pwd
+ls
+cd ce/past
+ls
+vim index.php
+cd ../../../
+ls
+cd wp-old
+git pull
+cd ce/past/
+ls
+vim index.php
+cd ../../../
+ls
+cd wp-old
+git pull
+cd wp-old
+exit
+cd public_
+cd public_html
+ls
+cd media
+ls
+cd ../
+ls
+cd wp
+ls
+mv wp ../../wp
+cd ../../
+ls
+mv wp public_html/wp
+cd public_html
+ls
+cd wp
+ls
+mv wp ../../wp
+cd ../../wp
+ls
+cd ../
+mv wp public_html/wp
+cd public_html
+ls
+cd wp
+ls
+cd ../../wp
+mv wp ../../wp
+cd ../
+ls
+cd ../
+mv wp public_html/
+cd public/html
+cd public_html
+ls
+cd wp
+ls
+cd public_html
+ls
+cd wp
+cd ../
+pwd
+ls
+cd media
+ls
+cd ../wp
+git pull
+ls
+cd ../
+ls
+cd media
+ls
+mv ME.jpg me jpg
+mv ME.jpg me.jpg
+cd ../
+ls
+cd wp
+ls
+git pull
+ls
+git pull
+ls
+vim index.html
+cd ../
+ls
+cd media
+ls
+cd ../wp
+ls
+cd ../media
+ls
+cd public_html
+ls
+cd wp
+git config credential.helper store
+git config user.name "s3496168"
+git config user.email s3496168@student.rmit.edu.au
+git status
+git config --global push.default simple
+ls
+vim index.html
+git add .
+git commit -m "making progress on A1"
+git push
+git pull

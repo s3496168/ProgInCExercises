@@ -1,0 +1,28 @@
+*
+* Visual Studio Code Server
+*
+* By using the software, you agree to
+* the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
+* the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
+*
+Server bound to 127.0.0.1:44778 (IPv4)
+Extension host agent listening on 44778
+
+[19:37:17] 
+
+
+
+
+[19:37:17] Extension host agent started.
+[19:37:17] Started initializing default profile extensions in extensions installation folder. file:///home/sh8/s3496168/.vscode-server/extensions
+[19:37:17] Completed initializing default profile extensions in extensions installation folder. file:///home/sh8/s3496168/.vscode-server/extensions
+[19:37:17] [127.0.0.1][3c74a202][ManagementConnection] New connection established.
+[19:37:17] [127.0.0.1][01931948][ExtensionHostConnection] New connection established.
+[19:37:17] [127.0.0.1][01931948][ExtensionHostConnection] <14186> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[19:42:17] New EH opened, aborting shutdown
+[02:14:40] [127.0.0.1][01931948][ExtensionHostConnection] <14186> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[02:14:40] Last EH closed, waiting before shutting down
+Last EH closed, shutting down
+[02:19:40] Last EH closed, shutting down

@@ -2,194 +2,20 @@
 # You may edit it if you're careful!
 
 # Value of 'encoding' when this file was written
-*encoding=latin1
+*encoding=utf-8
 
 
 # hlsearch on (H) or off (h):
 ~H
-# Last Search Pattern:
-~Msle0~/\<str_function\>
-
-# Last Substitute Search Pattern:
-~MSle0&?
-
-# Last Substitute String:
-$
-
 # Command Line History (newest to oldest):
-:q
 :wq
-:w
 :q!
-:ConqueTermVSplit gdb
-:1
-::
-:swq
-::w
-:ew
-:wqa
-:$
-:qa
-:help syntastic-checkers-c
-:print syntastic-checkers-c
-:syntastic-checkers-c
-:help syntastic-recommended
-:help syntaxstic-checkers
-:.ll
-:wa
-:tabnew menu.c
-:tabnew options.c
-:tabnew optioins.c
-:qa!
-:!qa
-:vsp reverseinput
-:ClangFormatAutoDisable
-:commentary
-:set relativenumber
-:wsa
-:tabnew options.h
-:220
-:tabnew helpers.c
-:409
-:tabnew menu.h
-:o options.h
-:sp
-:207
-:171
-:tabnew main.h
-:NERDTree
-:make 
-:118
-:tabnew main.c
-:tabnew helpers.h
-:sp helpers.c
-:vsp helpers.c
-:vsp menu.c
-:51
-:337
-:wqa'
-:sp options.h
-:vsp main.h
-:sp menu.h
-:ConqueTerm bash
-:make
-:tabnew ~/.vim/colors/taffy.vim
-:wqz
-:ws
-:'<,'>%s//
-:'<,'>%s/\/\//
-:!pwd
-:>qa
-:qa'
-:ConqueTermVSplit fish
-:s
-:a
-:'<,'>qa
-:tabnew ThreadPool.cpp
-:browse tabnew
-:tabnew Search.h
-:tabnew Experiment.cpp
-:162
-:148
-:130
-:112
-:113
-:108
-:%s/?//g
-:%s/\?//g
-:sp Data.h
-:tabnew list.h
-:199
-:105
-:254
-:342
-:236
+: wq
+:w
+:ii
+:'<,'>w
 
 # Search String History (newest to oldest):
-? \<filename\>
-? \<fpRead\>
-? \<themenu\>
-? \<NUM_MENU_CHOICES\>
-? \<str_function\>
-? \<c\>
-? \<token\>
-? \<l\>
-?/i
-?/*                                                                                                                  i
-?/invalid denom
-?/guess
-?/process_menu
-?/init
-? \<newreg\>
-? \<request_count\>
-?/return
-?/skip_array
-?/can
-? \<tok_part\>
-?/register
-? \<denom_result\>
-?/PUT
-? \<process_change_requests\>
-? \<quit_succ\>
-?/ires
-?/guess_a_number
-?/process
-? \<current_guess\>
-? \<lreg\>
-? \<skip_array\>
-? \<l_reg_skip_array\>
-? \<value_count\>
-?/help
-?/assert(FALSE)
-? \<single_thread\>
-?/main
-? \<read_lock\>
-?/read
-?/lock
-? \<writeLock\>
-?/sleep
-? \<publicLock\>
-?/pthread
-?/omment
-?/ommend
-? \<strdup\>
-?/CHOIC
-?/normal
-?/MAX
-? \<can_give_all_changes\>
-?/runner
-?/manyAllocations
-? \<thread_run\>
-?/thread_run
-?/readUlock
-? \<readUnlock\>
-? \<freelistReader\>
-?/NUM_ALLOCS
-? \<justAlloc\>
-?/create
-? \<addReader\>
-? \<findBestFit\>
-? \<runner\>
-?/unlock
-? \<makeAllocations\>
-? \<master\>
-? \<readLock\>
-?/read_
-? \<THREADNUM\>
-? \<alloc_firstFit\>
-? \<waiting_readers\>
-?/alloc_worker
-? \<alloc_worker\>
-? \<writing_mutex\>
-? \<thread_lock\>
-?/genData
-? \<bestChunk\>
-? \<worstFit\>
-? \<alloc_thread\>
-? \<freeReadLock\>
-?/read'
-? \<readLockStart\>
-?/mutex
 
 # Expression History (newest to oldest):
 
@@ -198,813 +24,397 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	e
-"1	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
+"0	CHAR	0
+	 <div>><img src="../media/RMIT-Logo.png" alt="RMIT University logo" height=80 > </div>
 	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
+""1	CHAR	0
 	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
 	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
+"2	CHAR	0
+	 
 	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
+"3	CHAR	0
 	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
 	
-"2	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
+"4	CHAR	0
+	 
 	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
+"5	CHAR	0
 	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
-	
-"3	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
-	
-"4	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
-	
-"5	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
 	
 "6	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
+	/* Insert your javascript here */
+	/*a2 script-index.php*/
+	      // Attach a click event listener to button 2
 	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	static void clear_buffer();
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
-	
-"7	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	/*static void clear_buffer();*/
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	/*
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}*/
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN + EXTRACHARS];
-	int load(struct file_data, FILE *);
-	fptr = fopen("filename[READING]", "r");
-	result = load(data, fptr);
-	
-"8	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	/*static void clear_buffer();*/
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	/*
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}*/
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[LINELEN+EXTRACHARS]
-	};
-	int load(struct file_data, FILE *);
-	fptr = fopen("filename[READING]", "r");
-	result = load(data, fptr);
-"9	LINE	0
-	/******************************************************************************
-	 * Student Name    : Brearne Gibson
-	 * RMIT Student ID : s3496168
-	 *
-	 * Startup code provided by Paul Miller for use in "Programming in C",
-	 * Assignment 2, study period 2, 2020.
-	 *****************************************************************************/
-	#include "fileio.h"
-	#include "helpers.h"
-	#include "shared.h"
-	#include <stdio.h>
-	#include <assert.h>
-	#include <string.h>
-	#include <stdlib.h>
-	
-	/*added constants*/
-	#define READING 1
-	#define WRITING 2
-	#define LINELEN 80
-	#define EXTRACHARS 2
-	
-	/*added functions*/
-	/*int load(struct file_data *, FILE *);*/
-	FILE fpRead;
-	/*static void clear_buffer();*/
-	
-	/**
-	 * modified clear_buffer() function to work with file input
-	 **/
-	/*
-	static void clear_buffer(FILE *fp) {
-	    int ch;
-	    while (ch = getc(fp), ch != '\n' && ch != EOF)
-	        ;
-	    clearerr(fp);
-	}*/
-	
-	/**
-	 * loads the data into the appropriate list type according to the value
-	 * passed in.
-	 **/
-	struct file_data load_file(const char filename[], enum list_type type) {
-	    struct file_data data;
-	    int result;
-	    FILE *fptr;
-	    char line[iLINELEN+EXTRACHARS};
-	    int load(struct file_data, FILE *);
-	    fptr = fopen("filename[READING]", "r");
-	    result = load(data, fptr);
-	
-"a	CHAR	0
-	':
+	/*a2 script-booking page*/
+	        //barbie
+	        function showParaBSu() {
+	            var bsu = document.getElementById("bsu");
+	            var bmo = document.getElementById("bmo");
+	            var btu = document.getElementById("btu");
+	            var bwe = document.getElementById("bwe");
+	            var bth = document.getElementById("bth");
+	            var bfr = document.getElementById("bfr");
+	            var bsa = document.getElementById("bsa");
+	            var bst = document.getElementById("bst");
+	            var bdt = document.getElementById("bdt");
+	            var ssabst = document.getElementById("ssabst");
+	            var sscbst = document.getElementById("sscbst");
+	            var sskbst = document.getElementById("sskbst");
+	            var sfabst = document.getElementById("sfabst");
+	            var sfcbst = document.getElementById("sfcbst");
+	            var sfkbst = document.getElementById("sfkbst");
+	            var ssabdt = document.getElementById("ssabdt");
+	            var sscbdt = document.getElementById("sscbdt");
+	            var sskbdt = document.getElementById("sskbdt");
+	            var sfabdt = document.getElementById("sfabdt");
+	            var sfcbdt = document.getElementById("sfcbdt");
+	            var sfkbdt = document.getElementById("sfkbdt");
+	            var w = window.innerWidth;
+	            ssabst.style.display = "none";
+	            sscbst.style.display = "none";
+	            sskbst.style.display = "none";
+	            sfabst.style.display = "none";
+	            sfcbst.style.display = "none";
+	            sfkbst.style.display = "none";
+	            ssabdt.style.display = "none";
+	            sscbdt.style.display = "none";
+	            sskbdt.style.display = "none";
+	            sfabdt.style.display = "none";
+	            sfcbdt.style.display = "none";
+	            sfkbdt.style.display = "none";
+	            bmo.style.display = "none";
+	            bwe.style.display = "none";
+	            bth.style.display = "none";
+	            bfr.style.display = "none";
+	            bsa.style.display = "none";
+	            btu.style.display = "none";
+	            bdt.style.display = "none";
+	            bsu.style.display = "block";
+	            bst.style.display = "block";
 "-	CHAR	0
-	e
+	  
 
 # global variables:
 
 # File marks:
-'0  43  8  ~/assignments/a2/partb/startup/fileio.c
-'1  67  23  ~/assignments/a2/partb/startup/fileio.c
-'2  35  4  ~/assignments/a2/partb/startup/main.c
-'3  27  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
-'4  19  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
-'5  1  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
-'6  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
-'7  20  20  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
-'8  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
-'9  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
+'0  32  30  ~/public_html/wp/index.html
+'1  36  12  ~/public_html/wp/index.html
+'2  1  0  ~/public_html/balls/index.html
+'3  31  30  ~/public_html/wp/index.html
+'4  40  7  ~/public_html/wp/index.html
+'5  344  42  ~/public_html/wp-old/ce/past/index.php
+'6  343  40  ~/public_html/wp-old/ce/past/index.php
+'7  313  0  ~/public_html/wp-old/ce/past/index.php
+'8  53  0  ~/public_html/wp-old/ce/past/booking.php
+'9  38  0  ~/public_html/wp-old/ce/past/index.php
 
 # Jumplist (newest first):
--'  43  8  ~/assignments/a2/partb/startup/fileio.c
--'  67  8  ~/assignments/a2/partb/startup/fileio.c
--'  86  4  ~/assignments/a2/partb/startup/fileio.c
--'  35  4  ~/assignments/a2/partb/startup/main.c
--'  38  2  ~/assignments/a2/partb/startup/main.c
--'  27  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
--'  19  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
--'  20  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/convert.c
--'  21  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
--'  44  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
--'  31  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
--'  29  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/loader.c
--'  1  0  ~/assignments/a2/partb/startup/shared.h
--'  1  0  ~/weeks/week-09/tutorial/testing/ctu.txt
--'  38  19  ~/weeks/week-09/tutorial/testing/testing.c
--'  47  12  ~/weeks/week-09/tutorial/testing/testing.c
--'  15  1  ~/weeks/week-09/tutorial/testing/testing.h
--'  24  0  ~/weeks/week-09/tutorial/testing/testing.h
--'  20  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/fsupport.h
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phone.h
--'  30  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.h
--'  71  12  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  21  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  27  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/fsupport.h
--'  42  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/every_other.c
--'  23  4  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/add_spaces.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-05/add_spaces.c
--'  47  0  ~/assignments/a2/partb/startup/fileio.h
--'  1  0  ~/assignments/a2/partb/startup/fileio.h
--'  1  0  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.h
--'  98  34  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/tutes/class_A_SP2/personlist/list.c
--'  1  0  ~/assignments/a2/partb/startup/shared.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/list.c
--'  7  19  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/personlist.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-09/personlist.c
--'  28  4  ~/weeks/week-06/mistake.c
--'  21  4  ~/weeks/week-06/mistake.c
--'  1  0  ~/weeks/week-06/lab5/solution/ceaserlib.h
--'  139  0  ~/weeks/week-06/lab5/solution/ceaserlib.c
--'  1  0  ~/weeks/week-06/lab5/solution/ceaserlib.c
--'  75  0  ~/weeks/week-06/lab5/solution/ceaser.c
--'  1  0  ~/weeks/week-06/lab5/solution/ceaser.c
--'  1  0  ~/weeks/week-06/lab5/ceaserlib.c
--'  40  16  ~/weeks/week-06/lab5/ceaser.c
--'  79  40  ~/weeks/week-06/lab5/ceaser.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/recursiverandom.c
--'  1  0  ~/weeks/week-06/mistake.c
--'  13  34  ~/.bashrc
--'  1  0  ~/.bashrc
--'  1  0  ~/weeks/week-06/.bashrc
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/conditional1.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/conditionall.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/notinit.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault2.c
--'  14  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault1.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-06/segfault1.c
--'  64  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/size.c
--'  56  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/ctype_example.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/ctype_example.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-04/fibonacci.c
--'  74  10  ~/assignments/a1/startup/options.c
--'  72  12  ~/assignments/a1/startup/options.c
--'  122  0  ~/assignments/a1/startup/options.c
--'  194  5  ~/lastyear/assignment-one/options.c
--'  1  0  ~/lastyear/assignment-one/options.c
--'  325  0  ~/lastyear/assignment-one/menu.c
--'  1  0  ~/lastyear/assignment-one/menu.c
--'  1  0  ~/lastyear/assignment-one/vim
--'  143  0  ~/lastyear/assignment-one-answers/a1partb/menu.c
--'  39  1  ~/lastyear/assignment-one-answers/a1partb/menu.c
--'  51  0  ~/assignments/a1/startup/main.c
--'  145  12  ~/assignments/a1/startup/main.c
--'  28  11  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
--'  15  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
--'  51  12  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-03/is_int.c
--'  1  0  /home/el9/E70949/shared/prog_in_c/lectures/Week-02/enumtostring.c
--'  88  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/io.c
--'  63  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/io.c
--'  8  0  /home/el9/E70949/shared/prog_in_c/assignments/a1/a1bsolution/main.c
--'  74  0  ~/assignments/a1/startup/io.c
--'  35  4  ~/assignments/a2/partb/startup/main.c
+-'  32  30  ~/public_html/wp/index.html
+-'  36  4  ~/public_html/wp/index.html
+-'  31  8  ~/public_html/wp/index.html
+-'  1  0  ~/public_html/balls/index.html
+-'  40  4  ~/public_html/wp/index.html
+-'  59  7  ~/public_html/wp/index.html
+-'  344  42  ~/public_html/wp-old/ce/past/index.php
+-'  343  40  ~/public_html/wp-old/ce/past/index.php
+-'  313  36  ~/public_html/wp-old/ce/past/index.php
+-'  38  0  ~/public_html/wp-old/ce/past/index.php
+-'  53  0  ~/public_html/wp-old/ce/past/booking.php
+-'  1  0  ~/public_html/wp-old/ce/past/booking.php
+-'  1  0  ~/public_html/wp-old/ce/past/index.php
+-'  47  42  ~/public_html/wp/ce/past/booking.php
+-'  22  4  ~/public_html/wp/ce/past/booking.php
+-'  45  42  ~/public_html/wp/ce/past/index.php
+-'  21  4  ~/public_html/wp/ce/past/index.php
+-'  222  36  ~/public_html/wp/ce/past/index.php
+-'  1  2  ~/public_html/wp/ce/past/booking.php
+-'  244  19  ~/public_html/wp/ce/past/tools.php
+-'  1  0  ~/public_html/wp/ce/past/tools.php
+-'  182  36  ~/public_html/wp/ce/past/index.php
+-'  143  36  ~/public_html/wp/ce/past/index.php
+-'  1  0  ~/public_html/wp/ce/past/index.php
+-'  1437  22  ~/public_html/wp/a3/script.js
+-'  1455  0  ~/public_html/wp/a3/script.js
+-'  197  47  ~/public_html/wp/a3/tools.php
+-'  193  0  ~/public_html/wp/a3/tools.php
+-'  12  0  ~/public_html/wp/a3/post-validation.php
+-'  33  4  ~/public_html/wp/a3/post-validation.php
+-'  34  0  ~/public_html/wp/a3/post-validation.php
+-'  1  0  ~/public_html/wp/a3/post-validation.php
+-'  10  63  ~/public_html/wp/a3/booking.php
+-'  2837  57  ~/public_html/wp/a3/booking.php
+-'  174  0  ~/public_html/wp/a3/tools.php
+-'  1  0  ~/public_html/wp/a3/tools.php
+-'  1  1  ~/public_html/wp/a3/booking.php
+-'  370  0  ~/public_html/wp/a3/index.php
+-'  1  0  ~/public_html/wp/a3/index.php
+-'  22  31  ~/public_html/wp/ce/wk4/index.html
+-'  28  6  ~/public_html/wp/ce/wk4/index.html
+-'  57  16  ~/public_html/wp/ce/wk4/index.html
+-'  23  0  ~/public_html/wp/ce/wk4/wk4.css
+-'  17  0  ~/public_html/wp/ce/wk4/wk4.css
+-'  30  2  ~/public_html/wp/ce/wk4/index.html
+-'  1  0  ~/public_html/wp/ce/wk4/wk4.css
+-'  1  0  ~/public_html/wp/ce/wk4/index.html
+-'  14  12  ~/public_html/wp/ce/wk3/index.html
+-'  18  2  ~/public_html/wp/ce/wk3/index.html
+-'  17  0  ~/public_html/wp/ce/wk3/wk2.css
+-'  1  0  ~/public_html/wp/ce/wk3/wk2.css
+-'  23  4  ~/public_html/wp/ce/wk3/index.html
+-'  1  0  ~/public_html/wp/ce/wk3/index.html
+-'  49  4  ~/public_html/wp/index.html
+-'  11  23  ~/public_html/wp/wk2/wk2.css
+-'  5  4  ~/public_html/wp/wk2/wk2.css
+-'  1  0  ~/public_html/wp/wk2/w2.css
+-'  18  15  ~/public_html/wp/wk2/index.html
+-'  6  0  ~/public_html/wp/wk2/index.html
+-'  4  0  ~/public_html/wp/wk2/index.html
+-'  20  0  ~/public_html/wp/wk2/index.html
+-'  1  0  ~/public_html/wp/wk2/index.html
+-'  1  0  ~/public_html/wp/wk2/wk2.css
+-'  7  13  ~/public_html/wp/wk2/wk2.css
+-'  1  0  ~/public_html/wp/.gitignore
+-'  16  4  ~/public_html/wp/.htaccess
+-'  1  1108  ~/public_html/wp/.htaccess
+-'  1  0  ~/public_html/wp/index.html
+-'  7  0  ~/public_html/wp/.htacces
+-'  1  0  ~/public_html/wp/.htacces
+-'  4  17  ~/exam/opts.sh
+-'  3  0  ~/exam/opts.sh
+-'  15  0  ~/exam/opts.sh
+-'  1  0  ~/exam/opts.sh
+-'  12  0  ~/opts.sh
+-'  1  0  ~/opts.sh
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  12  0  ~/opts.sh
+-'  1  0  ~/opts.sh
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  12  2  ~/exam/opts.sh
+-'  12  0  ~/opts.sh
+-'  1  0  ~/opts.sh
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  12  0  ~/opts.sh
+-'  1  0  ~/opts.sh
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  13  0  ~/.vimrc
+-'  1  0  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
-> ~/assignments/a2/partb/startup/fileio.c
-	"	43	8
-	+	86	24
-	+	86	11
-	+	86	15
-	+	86	0
-	+	86	0
-	+	86	32
-	+	86	12
-	+	86	30
-	+	86	28
-	+	86	25
-	+	86	31
-	+	86	25
-	+	86	23
-	+	86	9
-	+	86	0
-	+	86	4
-	+	86	6
-	+	86	31
-	+	86	1
-	+	86	6
-	+	86	1
-	+	86	2
-	+	86	30
-	+	86	56
-	+	86	1
-	+	86	6
-	+	86	2
-	+	86	26
-	+	86	27
-	+	86	19
-	+	86	19
-	+	86	47
-	+	86	19
-	+	86	19
-	+	86	22
-	+	86	27
-	+	86	19
-	+	86	0
-	+	86	1
-	+	86	35
-	+	86	44
-	+	86	18
-	+	86	13
-	+	86	7
-	+	86	35
-	+	86	13
-	+	86	44
-	+	86	30
-	+	86	29
-	+	86	30
-	+	86	0
-	+	86	31
-	+	86	53
-	+	86	0
-	+	86	41
-	+	86	34
-	+	86	32
-	+	86	19
-	+	86	20
-	+	86	32
-	+	86	0
-	+	86	32
-	+	86	8
-	+	86	13
-	+	86	38
-	+	86	0
-	+	86	1
-	+	86	27
-	+	86	27
-	+	86	17
-	+	86	11
-	+	86	23
+> ~/public_html/wp/index.html
+	"	32	30
+	^	32	31
+	.	33	24
+	+	64	30
+	+	67	23
+	+	70	36
+	+	73	23
+	+	61	22
+	+	79	31
+	+	76	21
+	+	85	0
+	+	92	17
+	+	11	13
+	+	35	4
+	+	33	26
+	+	32	13
+	+	32	93
+	+	33	8
+	+	33	42
+	+	32	58
+	+	33	61
+	+	30	64
+	+	29	77
+	+	30	3
+	+	30	3
+	+	30	3
+	+	30	3
+	+	30	3
+	+	31	30
+	+	33	14
+	+	32	13
+	+	33	24
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.c
-	"	10	12
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strtok.c
+> ~/public_html/balls/index.html
 	"	1	0
 
-> ~/assignments/a2/partb/startup/main.c
-	"	35	4
-	+	38	72
-	+	38	13
-	+	38	34
-	+	38	17
-	+	38	25
-	+	38	11
-	+	38	26
-	+	38	8
-	+	38	4
-	+	38	0
-	+	38	0
-	+	38	5
-	+	38	14
-	+	38	4
-	+	38	0
-	+	38	5
-	+	38	25
-	+	38	13
-	+	38	4
-	+	38	17
-	+	38	47
-	+	38	17
-	+	38	1
-	+	38	20
-	+	38	0
-	+	38	0
+> ~/public_html/wp-old/ce/past/index.php
+	"	344	42
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/list.h
-	"	27	0
+> ~/public_html/wp-old/ce/past/booking.php
+	"	53	0
 
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-07/personlist.h
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/phonebk_strok.c
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/convert.c
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-02/union.c
-	"	21	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader.c
-	"	44	4
-
-> ~/assignments/a2/partb/startup/fileio.h
-	"	28	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-05/reader
-	"	1	0
-
-> /home/el9/E70949/shared/prog_in_c/lectures/Week-04/loader.c
-	"	1	0
-
-> ~/assignments/a2/partb/startup/shared.h
-	"	1	0
-
-> ~/weeks/week-09/tutorial/testing/ctu.txt
-	"	1	0
-	^	1	51
-	.	1	51
-	+	1	51
-	+	1	53
-	+	1	51
-
-> ~/weeks/week-09/tutorial/testing/testing.c
-	"	38	19
-	+	47	14
-	+	47	4
-	+	47	6
-	+	47	4
-	+	47	4
-	+	47	33
-	+	47	18
-	+	47	32
-	+	47	36
+> ~/public_html/wp/ce/past/booking.php
+	"	47	42
+	^	47	43
+	.	47	42
+	+	22	35
 	+	47	42
-	+	47	38
-	+	47	4
-	+	47	0
-	+	47	13
-	+	47	19
-	+	47	19
-	+	47	15
-	+	47	13
-	+	47	36
-	+	47	3
-	+	47	43
-	+	47	35
-	+	47	0
-	+	47	61
-	+	47	0
-	+	47	61
-	+	47	0
-	+	47	42
-	+	47	13
-	+	47	43
-	+	47	20
-	+	47	19
-	+	47	21
-	+	47	72
-	+	47	29
-	+	47	59
-	+	47	0
-	+	47	62
-	+	47	35
-	+	47	69
-	+	47	32
-	+	47	0
-	+	47	25
-	+	47	55
-	+	47	72
-	+	47	46
-	+	47	0
-	+	47	56
-	+	47	37
-	+	47	36
-	+	47	38
-	+	47	36
-	+	47	39
-	+	47	35
-	+	47	34
-	+	47	36
-	+	47	37
-	+	47	21
-	+	47	23
-	+	47	23
-	+	47	36
-	+	47	20
 
-> ~/weeks/week-09/tutorial/testing/testing.h
-	"	15	1
-	+	24	21
-	+	24	0
-	+	24	0
-	+	24	1
-	+	24	1
+> ~/public_html/wp/ce/past/index.php
+	"	45	42
+	^	45	43
+	.	45	42
+	+	143	56
+	+	182	55
+	+	143	53
+	+	105	59
+	+	222	59
+	+	21	35
+	+	45	42
 
-> ~/weeks/week-09/phone.h
+> ~/public_html/wp/ce/past/tools.php
+	"	244	19
+	^	244	20
+	.	267	35
+	+	267	35
+
+> ~/public_html/wp/a3/script.js
+	"	1437	22
+	+	1455	0
+	+	1455	55
+	+	1455	34
+	+	1455	15
+	+	1455	0
+	+	1455	0
+	+	1455	22
+	+	1455	22
+
+> ~/public_html/wp/a3/tools.php
+	"	197	47
+	^	197	48
+	.	197	47
+	+	167	18
+	+	174	2
+	+	175	18
+	+	194	0
+	+	185	47
+	+	187	37
+	+	193	5
+	+	202	46
+	+	197	47
+
+> ~/public_html/wp/a3/post-validation.php
+	"	12	0
+	^	30	1
+	.	30	0
+	+	27	1
+	+	27	48
+	+	27	0
+	+	27	0
+	+	35	0
+	+	34	1
+	+	26	33
+	+	32	7
+	+	29	101
+	+	33	4
+	+	30	0
+
+> ~/public_html/wp/a3/booking.php
+	"	10	63
+	^	10	64
+	.	10	63
+	+	8	61
+	+	10	63
+
+> ~/public_html/wp/a3/index.php
+	"	370	0
+
+> ~/public_html/wp/ce/wk4/index.html
+	"	22	31
+	^	22	32
+	.	22	31
+	+	31	0
+	+	18	17
+	+	30	37
+	+	57	33
+	+	29	21
+	+	25	6
+	+	28	31
+	+	23	21
+	+	22	31
+
+> ~/public_html/wp/ce/wk4/wk4.css
+	"	23	0
+	^	23	1
+	.	22	55
+	+	22	55
+
+> ~/public_html/wp/ce/wk3/index.html
+	"	14	12
+	^	14	13
+	.	14	12
+	+	12	39
+	+	19	0
+	+	18	11
+	+	14	12
+
+> ~/public_html/wp/ce/wk3/wk2.css
+	"	17	0
+	^	17	1
+	.	3	28
+	+	11	17
+	+	16	17
+	+	5	17
+	+	3	28
+
+> ~/public_html/wp/wk2/wk2.css
+	"	11	23
+	^	11	24
+	.	12	0
+	+	7	12
+	+	5	0
+	+	4	45
+	+	3	22
+	+	5	4
+	+	11	24
+	+	12	0
+
+> ~/public_html/wp/wk2/w2.css
 	"	1	0
 
-> ~/weeks/week-09/fsupport.h
-	"	1	0
+> ~/public_html/wp/wk2/index.html
+	"	18	15
+	^	18	16
+	.	18	15
+	+	19	6
+	+	1	15
+	+	3	15
+	+	20	6
+	+	4	3
+	+	4	0
+	+	15	0
+	+	12	60
+	+	15	6
+	+	6	5
+	+	14	0
+	+	15	21
+	+	2	40
+	+	4	0
+	+	2	52
+	+	5	47
+	+	5	2
+	+	2	1
+	+	7	3
+	+	9	31
+	+	11	35
+	+	18	15
 
-> ~/weeks/week-09/phonebk_strtok.c
+> ~/public_html/wp/.gitignore
 	"	1	0
+	^	1	2
+	.	1	1
+	+	4	0
+	+	1	1

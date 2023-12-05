@@ -1,0 +1,50 @@
+2023-08-26 19:37:20.542 [info] Log level: Info
+2023-08-26 19:37:20.542 [info] Validating found git in: "git"
+2023-08-26 19:37:20.542 [info] Using git "1.8.3.1" from "git"
+2023-08-26 19:37:20.542 [info] > git rev-parse --show-toplevel [7ms]
+2023-08-26 19:37:20.542 [info] > git rev-parse --git-dir --git-common-dir [1ms]
+2023-08-26 19:37:20.542 [info] Open repository: /home/sh8/s3496168/public_html/wp
+2023-08-26 19:37:20.542 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/sh8/s3496168/public_html/wp/--git-common-dir/config'
+2023-08-26 19:37:20.542 [info] > git config --get commit.template [18ms]
+2023-08-26 19:37:20.542 [info] > git remote --verbose [32ms]
+2023-08-26 19:37:20.542 [info] > git rev-parse --show-toplevel [5ms]
+2023-08-26 19:37:20.542 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main [61ms]
+2023-08-26 19:37:20.545 [info] > git rev-list --left-right --count main...origin/main [22ms]
+2023-08-26 19:37:20.579 [info] > git status -z -uall [23ms]
+2023-08-26 19:37:20.606 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/sh8/s3496168/public_html/wp/--git-common-dir/config'
+2023-08-26 19:37:20.619 [info] > git remote --verbose [14ms]
+2023-08-26 19:37:20.633 [info] > git config --get commit.template [15ms]
+2023-08-26 19:37:20.636 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main [5ms]
+2023-08-26 19:37:20.653 [info] > git rev-list --left-right --count main...origin/main [6ms]
+2023-08-26 19:37:20.674 [info] > git status -z -uall [10ms]
+2023-08-26 19:37:21.059 [info] > git show --textconv :a3/booking.php [28ms]
+2023-08-26 19:37:21.059 [info] > git ls-files --stage -- /home/sh8/s3496168/public_html/wp/a3/booking.php [16ms]
+2023-08-26 19:37:21.074 [info] > git check-ignore -v -z --stdin [18ms]
+2023-08-26 19:37:21.077 [info] > git cat-file -s b9672856b8289738df1bdebd4913b3ea95ec4281 [7ms]
+2023-08-26 19:37:21.825 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/sh8/s3496168/public_html/wp/--git-common-dir/config'
+2023-08-26 19:37:21.838 [info] > git remote --verbose [13ms]
+2023-08-26 19:37:21.840 [info] > git config --get commit.template [3ms]
+2023-08-26 19:37:21.856 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main [5ms]
+2023-08-26 19:37:21.872 [info] > git rev-list --left-right --count main...origin/main [5ms]
+2023-08-26 19:37:21.893 [info] > git status -z -uall [8ms]
+2023-08-26 19:37:21.950 [info] > git ls-files --stage -- /home/sh8/s3496168/public_html/wp/a3/booking.php [3ms]
+2023-08-26 19:37:21.965 [info] > git cat-file -s b9672856b8289738df1bdebd4913b3ea95ec4281 [4ms]
+2023-08-26 19:37:22.002 [info] > git show --textconv :a3/booking.php [6ms]
+2023-08-26 22:29:56.604 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/sh8/s3496168/public_html/wp/--git-common-dir/config'
+2023-08-26 22:29:56.616 [info] > git remote --verbose [12ms]
+2023-08-26 22:29:56.617 [info] > git config --get commit.template [2ms]
+2023-08-26 22:29:56.636 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main [9ms]
+2023-08-26 22:29:56.656 [info] > git rev-list --left-right --count main...origin/main [12ms]
+2023-08-26 22:29:56.666 [info] > git ls-files --stage -- /home/sh8/s3496168/public_html/wp/a3/booking.php [12ms]
+2023-08-26 22:29:56.678 [info] > git cat-file -s 964a44026581a2b1c3a2f9dc9e6c7a6b9bac91fa [3ms]
+2023-08-26 22:29:56.684 [info] > git status -z -uall [19ms]
+2023-08-26 22:29:56.710 [info] > git show --textconv :a3/booking.php [5ms]
+2023-08-26 22:29:58.004 [info] > git ls-files --stage -- /home/sh8/s3496168/public_html/wp/a3/booking.php [3ms]
+2023-08-26 22:29:58.017 [info] > git cat-file -s 964a44026581a2b1c3a2f9dc9e6c7a6b9bac91fa [3ms]
+2023-08-26 22:29:58.053 [info] > git show --textconv :a3/booking.php [5ms]
+2023-08-26 22:30:51.581 [warning] getRemotes() - ENOENT: no such file or directory, open '/home/sh8/s3496168/public_html/wp/--git-common-dir/config'
+2023-08-26 22:30:51.592 [info] > git remote --verbose [10ms]
+2023-08-26 22:30:51.593 [info] > git config --get commit.template [2ms]
+2023-08-26 22:30:51.607 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main [5ms]
+2023-08-26 22:30:51.622 [info] > git rev-list --left-right --count main...origin/main [5ms]
+2023-08-26 22:30:51.641 [info] > git status -z -uall [9ms]
